@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Nasjonal produktspesifikasjon for arealplan og digitalt planregister Del 3.1: Kommuneplanens arealdel 2024-02-20</title>
+<title>Nasjonal produktspesifikasjon for arealplan og digitalt planregister Del 3.1: Kommuneplanens arealdel 2024-02-28</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,7 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="document toc2 toc-left">
 <div id="header">
-<h1>Nasjonal produktspesifikasjon for arealplan og digitalt planregister <br>  Del 3.1: Kommuneplanens arealdel <br> 2024-02-20</h1>
+<h1>Nasjonal produktspesifikasjon for arealplan og digitalt planregister <br>  Del 3.1: Kommuneplanens arealdel <br> 2024-02-28</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Innhold</div>
 <ul class="sectlevel1">
@@ -494,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_innhold_og_struktur">5. Innhold og struktur</a>
 <ul class="sectlevel2">
-<li><a href="#_applicationschema_kommuneplan_2024">5.1. «ApplicationSchema» Kommuneplan-2024</a>
+<li><a href="#_applicationschema_kommuneplan_2024_utkast">5.1. «ApplicationSchema» Kommuneplan-2024-Utkast</a>
 <ul class="sectlevel3">
 <li><a href="#_pakke_fellesegenskaper">5.1.1. Pakke: Fellesegenskaper</a>
 <ul class="sectlevel4">
@@ -524,7 +524,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#kpplantype">5.1.3.7. «CodeList» Plantype</a></li>
 </ul>
 </li>
-<li><a href="#_pakke_planområde">5.1.4. Pakke: Planområde</a>
+<li><a href="#_pakke_kpområde">5.1.4. Pakke: KpOmråde</a>
 <ul class="sectlevel4">
 <li><a href="#kpkpobjekt">5.1.4.1. <em>«FeatureType» KpObjekt (abstrakt)</em></a></li>
 <li><a href="#kpkpområde">5.1.4.2. «FeatureType» KpOmråde</a></li>
@@ -617,6 +617,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#kparealbruksretningslinjer">5.1.11.6. «CodeList» Arealbruksretningslinjer</a></li>
 </ul>
 </li>
+<li><a href="#_pakke_endringer_fra_2019">5.1.12. Pakke: Endringer fra 2019</a></li>
 </ul>
 </li>
 </ul>
@@ -655,9 +656,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p><span class="line-through"><strong>Publisert:</strong> Utkast 2024-02-20 </span><br>
+<p><span class="line-through"><strong>Publisert:</strong> Utkast 2024-02-28 </span><br>
 <strong>Korrigert:</strong><br>
-<strong>Denne versjonen finnes på:</strong> <span class="line-through"><a href="https://sosi.geonorge.no/Produktspesifikasjoner/NPAD-Del_3.3-Reguleringsplanforslag/20240220" class="bare">https://sosi.geonorge.no/Produktspesifikasjoner/NPAD-Del_3.3-Reguleringsplanforslag/20240220</a> </span><br>
+<strong>Denne versjonen finnes på:</strong> <span class="line-through"><a href="https://htmlpreview.github.io/?https://github.com/kartverket/prodspek_arealplan/blob/main/Kommuneplan/index.html" class="bare">https://htmlpreview.github.io/?https://github.com/kartverket/prodspek_arealplan/blob/main/Kommuneplan/index.html</a> </span><br>
 <span class="line-through"><strong>Dette dokumentet kan også lastes ned fra</strong>
 <a href="https://www.regjeringen.no/no/tema/plan-bygg-og-eiendom/plan_bygningsloven/planlegging/veiledning/plankart_planregister/plankart/">regjeringen.no</a></span><br>
 <span class="line-through"><strong>Gjeldende versjon finnes på:</strong><br>
@@ -764,7 +765,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_historikk">1.2. Historikk</h3>
 <div class="paragraph">
-<p>NPAD for kommuneplanens arealdel er basert på fagområdestandarden Plan 5.0, men har vært revidert flere ganger. Se kap. 1.3 Endringslogg for detaljer.</p>
+<p>NPAD for kommuneplanens arealdel er basert på fagområdestandarden Plan 5.0. Både fagpmådestandarden og denne produktspesifikasjonen har vært revidert flere ganger. Se kap. 1.3 Endringslogg for detaljer.</p>
 </div>
 </div>
 <div class="sect2">
@@ -835,20 +836,20 @@ Ny modell for kommuneplanens arealdel er basert på den nye fagområdestandarden
 <div class="ulist">
 <ul>
 <li>
-<p>Toppobjektet i modellen er Arealplan slik det har vært i NPAD planregister.</p>
+<p>Toppobjektet i modellen er Arealplan, slik det har vært i NPAD planregister. Objekttypen er ny for denne produktspesifikasjoen</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Arealplan er supplert med egenskaper som tidligere lå til KpOmråde med unntak av førstedigitaliseringsdato og kvalitet</p>
-</li>
-<li>
-<p>Arealplan har fått de nye egenskapene versjonsdato, versjonsnummer og alternativReferanse, samt gruppeegenskapen planhøring for bruk i høringsprosessen</p>
+<p>Arealplan har overtatt mange av egenskapene som tidligere tilhørte KpOmråde. KpOmråde har beholdt geometri og egenskaper knyttet til denne (førstedigitaliseringsdato og kvalitet)</p>
 </li>
 <li>
 <p>Arealplan har ingen egen geometri, men har koblinger til sine planområder (KpOmråde), som har flategeometri og vertikalnivå</p>
 </li>
 <li>
-<p>Egenskapen omplanbestemmelser er nytt navn på egenskapen planbestemmelse fra KpOmråde. Navneendringen er foretatt for å markere at egenskapen ikke er en peker til digitale bestemmelser.</p>
+<p>Arealplan har fått noen egenskaper til bruk i prosessen fram til vedtak: versjonsdato, versjonsnummer og alternativReferanse, samt gruppeegenskapen planhøring</p>
+</li>
+<li>
+<p>Egenskapen omplanbestemmelser er det nye navnet på egenskapen planbestemmelse fra KpOmråde. Navneendringen er foretatt for å markere at egenskapen ikke er en peker til digitale bestemmelser.</p>
 </li>
 </ul>
 </div>
@@ -861,56 +862,56 @@ Ny modell for kommuneplanens arealdel er basert på den nye fagområdestandarden
 <div class="ulist">
 <ul>
 <li>
-<p>Delt geometri for flater er erstattet av helheid flategeometri. Det betyr at de separate avgrensingslinjene er tatt bort fra modellen. For å ivareta informasjon om kvalitet har KpOmråde og KpArealformålOmråde/KpArealbrukOmråde likevel beholdt avgrensings¬linjene som et tillegg til flategeometrien.</p>
+<p>Delt geometri for flater er erstattet av helheid flategeometri. Det betyr at de separate avgrensingslinjene er tatt bort fra modellen. For å ivareta informasjon om kvalitet har KpOmråde og KpArealformålOmråde/KpArealbrukOmråde likevel beholdt avgrensingslinjene som et tillegg til flategeometrien.</p>
 </li>
 <li>
-<p>Geometritypene punkt, linje og flate er erstattet av de likeverdige typene GM_Point, GM_Curve og GM_Surface</p>
+<p>Geometritypene punkt, linje og flate er i modellen erstattet av de likeverdige typene GM_Point, GM_Curve og GM_Surface</p>
 </li>
 <li>
 <p>GM_Multisurface er innført som et alternativ til GM_Surface. Det betyr at området ikke nødvendigvis trenger å bestå av en sammenhengende flate, men kan bestå av flere nærliggende enkeltflater som utgjør en funksjonell enhet.</p>
 </li>
 <li>
-<p>Man kan anvende posisjonskvalitet, men egenskapen målemetode er endret til datafangstmetode som i FKB 5.0. Kodelista fra FKB er dessuten utvidet med en egenskap. Kodelista er ekstern.</p>
+<p>I gruppeegenskapen posisjonskvalitet er egenskapen målemetode erstattet av datafangstmetode som i FKB 5.0, men supplert med en kode for matrikkeldata. Egenskapen målemetode er beholdt for fortsatt brukt i forvalmingen av planer der denne egnskapen allerede er brukt.</p>
 </li>
 <li>
 <p>Hovedregelen er fortsatt 2D-geometri.</p>
 </li>
 <li>
-<p>I tråd med kart- og planforskriftens §9 er vertikalnivå innført. 5 nivå er tillatt.</p>
+<p>I tråd med kart- og planforskriftens §9 er vertikalnivå innført som en generell mulighet.</p>
 </li>
 <li>
-<p>Rom-geometri er tillatt som frivillig tilleggsgeometri for noen utvalgte objekttyper. Geometritypen GM_Solid ligger til egne 3D-objekter, som er koblet til sine samsvarende 2D-objekter. Dette gjelder, KpBestemmelseRom og KpHensynRom. (KpHandlingOmråde/KpHandlingRom mangler foreløpig i modellen)</p>
+<p>Rom-geometri er tillatt som frivillig tilleggsgeometri for noen utvalgte objekttyper. Geometritypen GM_Solid ligger til egne 3D-objekter, som er koblet til sine samsvarende 2D-objekter. Dette gjelder KpHandlingRom, KpBestemmelseRom og KpHensynRom.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>KpHensynSone er  brukt i modellen for å vise hvilke egenskaper hensynssonene skal ha, men er abstrakt og skal ikke realiseres.</p>
+<p>KpHensynSone er  brukt i modellen for å vise egenskaper som er felels for alle typer hensynssonen. Siden den er abstrakt, skal den ikke realiseres.</p>
 </li>
 <li>
-<p>Det er innført to nye egenskaper på objektet KpRegulertHøyde. Egenskapen Terrengreferanse angis etter egen kodeliste (ferdigPlanertTerreng, gatenivå og eksisterendeTerreng), og egenskapen TypeHøyde angis etter egen kodeliste (GH, MH, TH ogPH) egenskapen</p>
+<p>Det er innført to nye egenskaper på objektet KpRegulertHøyde. Egenskapen Terrengreferanse angis etter egen kodeliste (ferdigPlanertTerreng, gatenivå og eksisterendeTerreng), og egenskapen TypeHøyde angis etter egen kodeliste (GH, MH, TH og PH) som angir hvilken del av tiltaket høyden referer til.</p>
 </li>
 <li>
-<p>Kodelistene er eksterne for å unngå endring av spesifikasjonen når nye koder innføres. Kodelistene blir oppdatert så snart ny kart- og planforskriften er vedtatt.</p>
+<p>I henhold til ny praksis til bl.a. FKB er kodelistene definert som eksterne kodelister. Disse ligger i geonorge-registeret. Dette sikrer gjenbruk der det er aktuelt, og nye koder kan innføres uten at spesifikasjonene behøver å endres. Kodelistene blir oppdatert så snart ny kart- og planforskriften er vedtatt.</p>
 </li>
 <li>
 <p>Navnsetting / feltkoder</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Feltkode er egenskapen som bærer kartobjektets navn. De ulike flatene, linjene og punktene har egne feltkode-navn (områdenavn, hensynssonenavn, bestemmelseområdenavn, objektnavn) for å kunne skilles fra hverandre, blant annet i validatoren. Feltkoden anvendes som koblingsnøkkel til bestemmelsene.</p>
+<p>Feltkode er en fellesbetegnelse på egenskaper som bærer kartobjektets navn. De ulike objekttypene bruker ulike egenskapsnavn på feltkode (områdenavn, hensynssonenavn, bestemmelseområdenavn, objektnavn) for at de skal kunne skilles fra hverandre, blant annet i validatoren. Feltkoden anvendes som koblingsnøkkel til bestemmelsene.</p>
 </li>
 <li>
-<p>Selv om denne spesifikasjonen ikke krever at det knyttes digitale bestemmelser til kommuneplan, er modellen likevel tilrettelagt for at det kan bli aktuelt i en senere versjon av standarden.</p>
+<p>Selv om denne spesifikasjonen ikke krever at det knyttes digitale bestemmelser til kommuneplan, er modellen likevel tilrettelagt for at det kan bli aktuelt i en senere versjon av standarden. En viktig tilpasning er at alle objekter kan gis en feltkode, slik at de etterhvert skal kunne kobles til planbstemmelsene</p>
 </li>
 <li>
-<p>Områdenavn på formålsflater bygger på standardiserte forkortelser for arealformålet fra liste hos KDD. De standardiserte forkortelsene er entydige bortsett fra at LNF-områder kan kodes med LNF eller LNFR, avhengig av om kommunen har reindrift.</p>
+<p>Områdenavn på formålsflater bygger på standardiserte forkortelser for arealformålet fra liste hos KDD. De standardiserte forkortelsene er entydige bortsett fra LNF / LNFR, som er likeverdige.</p>
 </li>
 <li>
-<p>For juridiske linjer og punkt er den frivillige egenskapen objektnavn lagt til som feltkode for fremtidig kobling til bestemmelsene. Den gir også mulighet til å gi supplerende bestemmelser. (Denne mangler i modellen!)</p>
+<p>For juridiske linjer og punkt er den frivillige egenskapen objektnavn lagt til som frivillig feltkode</p>
 </li>
 <li>
-<p>Det er lagt inn relasjon til KpPåskrift og objektet det gir tekst til slik at når objektet tas ut blir også teksten tatt ut</p>
+<p>For påskrift er det lagt inn mulighet for en kobling fra KpPåskrift til det kartobjektet påskriften omhandler.</p>
 </li>
 <li>
 <p>Det er gitt strengere navnsettingsregler for feltkoder. Feltkoden skal være kort og unik, og den skal gjengi kartobjektets hovedinnhold.</p>
@@ -997,13 +998,13 @@ Kommuneplanens arealdel</p>
 </div>
 <div class="paragraph">
 <p><strong>Versjon</strong><br>
-Utkast 20240220</p>
+Utkast 20240228</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_referansedato">3.2. Referansedato</h3>
 <div class="paragraph">
-<p>Utkast 2024-02-20</p>
+<p>Utkast 2024-02-28</p>
 </div>
 </div>
 <div class="sect2">
@@ -1170,6 +1171,9 @@ Objekttypene som skal angis i 3D er:</p>
 <div class="ulist">
 <ul>
 <li>
+<p>KpHandlingRom</p>
+</li>
+<li>
 <p>KpHensynRom</p>
 </li>
 <li>
@@ -1209,9 +1213,9 @@ Det er brukt flere mekanismer for å identifisere dette.</p>
 <p>Koder som har status "utgått" er ikke tillatt brukt i nye planer, men de kan være brukt i eldre planer (både etter pbl. 1985 og pbl. 2008) som fortsatt er rettskraftig.</p>
 </div>
 <div class="sect2">
-<h3 id="_applicationschema_kommuneplan_2024">5.1. «ApplicationSchema» Kommuneplan-2024</h3>
+<h3 id="_applicationschema_kommuneplan_2024_utkast">5.1. «ApplicationSchema» Kommuneplan-2024-Utkast</h3>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> modell for kommune (-del) plan (pbl. 1985 § 20-4 første ledd, eller pbl. 2008 § 11-5)</p>
+<p><strong>Definisjon:</strong> modell for kommuneplan eller -delplan (pbl. 1985 § 20-4 første ledd, eller pbl. 2008 § 11-5)</p>
 </div>
 <h4 id="_profilparametre_i_tagged_values" class="discrete">Profilparametre i tagged values</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -1234,7 +1238,7 @@ Det er brukt flere mekanismer for å identifisere dette.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_modellstatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">utkastOgSkjult</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">utkast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_spesifikasjonstype</p></td>
@@ -1242,7 +1246,11 @@ Det er brukt flere mekanismer for å identifisere dette.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">targetNamespace</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/20240215" class="bare">http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/20240215</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/2024" class="bare">http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/2024</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20240228</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xmlns</p></td>
@@ -1250,7 +1258,7 @@ Det er brukt flere mekanismer for å identifisere dette.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xsdDocument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kommuneplan.xsd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kommuneplan_2024.xsd</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xsdEncodingRule</p></td>
@@ -1313,13 +1321,6 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 <a class="image" href="diagrammer\Realisering Fellesegenskaper.png"><img src="diagrammer/Realisering%20Fellesegenskaper.png" alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"></a>
 </div>
 <div class="title">Figur 5. Realisering Fellesegenskaper</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring Fellesegenskaper.png"><img src="diagrammer/Endring%20Fellesegenskaper.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
-</div>
-<div class="title">Figur 6. Endring Fellesegenskaper</div>
 </div>
 <hr>
 <div class="sect4">
@@ -1961,21 +1962,14 @@ Datafangstmetoden beskriver hvordan objektene er posisjonert fra et datagrunnlag
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram ArealplanID.png"><img src="diagrammer/Hoveddiagram%20ArealplanID.png" alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."></a>
 </div>
-<div class="title">Figur 7. Hoveddiagram ArealplanID</div>
+<div class="title">Figur 6. Hoveddiagram ArealplanID</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering NasjonalArealplanId.png"><img src="diagrammer/Realisering%20NasjonalArealplanId.png" alt="Diagram som viser hvordan denne spesifikasjonen realiserer klasser fra fagområdestandarden"></a>
 </div>
-<div class="title">Figur 8. Realisering NasjonalArealplanId</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring NasjonalArealplanId.png"><img src="diagrammer/Endring%20NasjonalArealplanId.png" alt="Diagram som viser hvordan denne spesifikasjonen realiserer klasser fra fagområdestandarden"></a>
-</div>
-<div class="title">Figur 9. Endring NasjonalArealplanId</div>
+<div class="title">Figur 7. Realisering NasjonalArealplanId</div>
 </div>
 <hr>
 <div class="sect4">
@@ -2212,28 +2206,21 @@ landkode-&gt;notEmpty() and landkode='NO'</pre></div></td>
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram Arealplan.png"><img src="diagrammer/Hoveddiagram%20Arealplan.png" alt="Diagram med navn  Hoveddiagram Arealplan  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 10. Hoveddiagram Arealplan</div>
+<div class="title">Figur 8. Hoveddiagram Arealplan</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram Arealplan Kodelister.png"><img src="diagrammer/Hoveddiagram%20Arealplan%20Kodelister.png" alt="Diagram med navn  Hoveddiagram Arealplan Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 11. Hoveddiagram Arealplan Kodelister</div>
+<div class="title">Figur 9. Hoveddiagram Arealplan Kodelister</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering Arealplan.png"><img src="diagrammer/Realisering%20Arealplan.png" alt="Diagram som viser hvordan denne spesifikasjonen realiserer klasser fra fagområdestandarden"></a>
 </div>
-<div class="title">Figur 12. Realisering Arealplan</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring Arealplan.png"><img src="diagrammer/Endring%20Arealplan.png" alt="Diagram som viser hvordan denne spesifikasjonen realiserer klasser fra fagområdestandarden"></a>
-</div>
-<div class="title">Figur 13. Endring Arealplan</div>
+<div class="title">Figur 10. Realisering Arealplan</div>
 </div>
 <hr>
 <div class="sect4">
@@ -2806,7 +2793,7 @@ samt planens rettsvirkning (pbl. 1985 §§  20-6, 28-2 og 31 / pbl. §§ 8-3, 8-
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpplanområde">«FeatureType» Planområde</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpplanområde">«FeatureType» Planområde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sequenceNumber</p></td>
@@ -2842,7 +2829,7 @@ samt planens rettsvirkning (pbl. 1985 §§  20-6, 28-2 og 31 / pbl. §§ 8-3, 8-
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpområde">«FeatureType» KpOmråde</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpområde">«FeatureType» KpOmråde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inlineOrByReference</p></td>
@@ -3191,37 +3178,30 @@ plantype = 20 OR plantype = 21 OR plantype = 22</pre></div></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_planområde">5.1.4. Pakke: Planområde</h4>
+<h4 id="_pakke_kpområde">5.1.4. Pakke: KpOmråde</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> modellpakke for planområde</p>
+<p><strong>Definisjon:</strong> modellpakke for planområde til kommuneplan</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Oversiktsdiagram Planområde.png"><img src="diagrammer/Oversiktsdiagram%20Planområde.png" alt="Diagram med navn  Oversiktsdiagram Planområde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 14. Oversiktsdiagram Planområde</div>
+<div class="title">Figur 11. Oversiktsdiagram Planområde</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram KpOmråde.png"><img src="diagrammer/Hoveddiagram%20KpOmråde.png" alt="Diagram med navn  Hoveddiagram KpOmråde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 15. Hoveddiagram KpOmråde</div>
+<div class="title">Figur 12. Hoveddiagram KpOmråde</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering Planområde.png"><img src="diagrammer/Realisering%20Planområde.png" alt="Diagram med navn  Realisering Planområde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 16. Realisering Planområde</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring Planområde.png"><img src="diagrammer/Endring%20Planområde.png" alt="Diagram med navn  Endring Planområde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 17. Endring Planområde</div>
+<div class="title">Figur 13. Realisering Planområde</div>
 </div>
 <hr>
 <div class="sect4">
@@ -3404,7 +3384,7 @@ plantype = 20 OR plantype = 21 OR plantype = 22</pre></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpgrense">«FeatureType» KpGrense</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpgrense">«FeatureType» KpGrense</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sequenceNumber</p></td>
@@ -3440,7 +3420,7 @@ plantype = 20 OR plantype = 21 OR plantype = 22</pre></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpendringområde">«FeatureType» KpEndringOmråde</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpendringområde">«FeatureType» KpEndringOmråde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sequenceNumber</p></td>
@@ -4167,7 +4147,7 @@ Videre kan det i produktspesifikasjonene settes krav om at avgrensningsobjektene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -4337,7 +4317,7 @@ Videre kan det i produktspesifikasjonene settes krav om at avgrensningsobjektene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 </tbody>
 </table>
@@ -4382,7 +4362,7 @@ Videre kan det i produktspesifikasjonene settes krav om at avgrensningsobjektene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -4510,21 +4490,14 @@ Videre kan det i produktspesifikasjonene settes krav om at avgrensningsobjektene
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram KpArealFormål.png"><img src="diagrammer/Hoveddiagram%20KpArealFormål.png" alt="Diagram med navn  Hoveddiagram KpArealFormål  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 18. Hoveddiagram KpArealFormål</div>
+<div class="title">Figur 14. Hoveddiagram KpArealFormål</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering KpArealFormål.png"><img src="diagrammer/Realisering%20KpArealFormål.png" alt="Diagram med navn  Realisering KpArealFormål  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 19. Realisering KpArealFormål</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring KpArealFormål.png"><img src="diagrammer/Endring%20KpArealFormål.png" alt="Diagram med navn  Endring KpArealFormål  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 20. Endring KpArealFormål</div>
+<div class="title">Figur 15. Realisering KpArealFormål</div>
 </div>
 <hr>
 <div class="sect4">
@@ -4842,7 +4815,7 @@ Videre kan det i produktspesifikasjonene settes krav om at avgrensningsobjektene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -5188,7 +5161,7 @@ XOR
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -5299,7 +5272,7 @@ Dersom det også er angitt et 3D-rom som avgrenser tiltaket vertikalt, er dette 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -5370,7 +5343,7 @@ Konstruksjonen/tiltaket må holde seg innenfor handlingrommet, i henhold til de 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -5391,35 +5364,21 @@ Konstruksjonen/tiltaket må holde seg innenfor handlingrommet, i henhold til de 
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram KpHensynSone.png"><img src="diagrammer/Hoveddiagram%20KpHensynSone.png" alt="Diagram med navn  Hoveddiagram KpHensynSone  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 21. Hoveddiagram KpHensynSone</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring KpHensynSone.png"><img src="diagrammer/Endring%20KpHensynSone.png" alt="Diagram med navn  Endring KpHensynSone  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 22. Endring KpHensynSone</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring KpHensynSone Kodelister.png"><img src="diagrammer/Endring%20KpHensynSone%20Kodelister.png" alt="Diagram med navn  Endring KpHensynSone Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 23. Endring KpHensynSone Kodelister</div>
+<div class="title">Figur 16. Hoveddiagram KpHensynSone</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering KpHensynSone.png"><img src="diagrammer/Realisering%20KpHensynSone.png" alt="Diagram med navn  Realisering KpHensynSone  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 24. Realisering KpHensynSone</div>
+<div class="title">Figur 17. Realisering KpHensynSone</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering KpHensynSone Kodelister.png"><img src="diagrammer/Realisering%20KpHensynSone%20Kodelister.png" alt="Diagram med navn  Realisering KpHensynSone Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 25. Realisering KpHensynSone Kodelister</div>
+<div class="title">Figur 18. Realisering KpHensynSone Kodelister</div>
 </div>
 <hr>
 <div class="sect4">
@@ -5484,7 +5443,7 @@ KpGjennomføringSone.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -5618,7 +5577,7 @@ KpGjennomføringSone.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subtyper:</p></td>
@@ -6419,20 +6378,14 @@ Se støyforskriften: <a href="https://lovdata.no/dokument/LTI/forskrift/2002-10-
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram KpBestemmelse.png"><img src="diagrammer/Hoveddiagram%20KpBestemmelse.png" alt="Diagram med navn  Hoveddiagram KpBestemmelse  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 26. Hoveddiagram KpBestemmelse</div>
+<div class="title">Figur 19. Hoveddiagram KpBestemmelse</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering KpBestemmelse.png"><img src="diagrammer/Realisering%20KpBestemmelse.png" alt="Diagram med navn  Realisering KpBestemmelse  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 27. Realisering KpBestemmelse</div>
-</div>
-<hr>
-<div class="paragraph">
-<div class="title">Endring KpBestemmelse</div>
-<p>image::diagrammer\Endring KpBestemmelse.png[link=diagrammer\Endring KpBestemmelse.png, , alt="
-"]</p>
+<div class="title">Figur 20. Realisering KpBestemmelse</div>
 </div>
 <hr>
 <div class="sect4">
@@ -6563,7 +6516,7 @@ Se støyforskriften: <a href="https://lovdata.no/dokument/LTI/forskrift/2002-10-
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -6633,7 +6586,7 @@ Se støyforskriften: <a href="https://lovdata.no/dokument/LTI/forskrift/2002-10-
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -6691,21 +6644,14 @@ Se støyforskriften: <a href="https://lovdata.no/dokument/LTI/forskrift/2002-10-
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram høyde fra planbestemmelse.png"><img src="diagrammer/Hoveddiagram%20høyde%20fra%20planbestemmelse.png" alt="Diagram som viser høyde fra planbestemmelse"></a>
 </div>
-<div class="title">Figur 28. Hoveddiagram høyde fra planbestemmelse</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring høyde fra planbestemmelse.png"><img src="diagrammer/Endring%20høyde%20fra%20planbestemmelse.png" alt="Diagram som viser realisering av høyde fra planbestemmelse"></a>
-</div>
-<div class="title">Figur 29. Endring høyde fra planbestemmelse</div>
+<div class="title">Figur 21. Hoveddiagram høyde fra planbestemmelse</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering høyde fra planbestemmelse.png"><img src="diagrammer/Realisering%20høyde%20fra%20planbestemmelse.png" alt="Diagram som viser realisering av høyde fra planbestemmelse"></a>
 </div>
-<div class="title">Figur 30. Realisering høyde fra planbestemmelse</div>
+<div class="title">Figur 22. Realisering høyde fra planbestemmelse</div>
 </div>
 <hr>
 <div class="sect4">
@@ -6771,7 +6717,7 @@ Se støyforskriften: <a href="https://lovdata.no/dokument/LTI/forskrift/2002-10-
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -7119,28 +7065,21 @@ AND
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram Linjer og Punkt.png"><img src="diagrammer/Hoveddiagram%20Linjer%20og%20Punkt.png" alt="diagrammet viser alle klassene i pakka"></a>
 </div>
-<div class="title">Figur 31. Hoveddiagram Linjer og Punkt</div>
+<div class="title">Figur 23. Hoveddiagram Linjer og Punkt</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering Linjer.png"><img src="diagrammer/Realisering%20Linjer.png" alt="Diagram med navn  Realisering Linjer  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 32. Realisering Linjer</div>
+<div class="title">Figur 24. Realisering Linjer</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering Samferdsel.png"><img src="diagrammer/Realisering%20Samferdsel.png" alt="diagrammet viser alle klassene i pakka"></a>
 </div>
-<div class="title">Figur 33. Realisering Samferdsel</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring Linjer og punkt.png"><img src="diagrammer/Endring%20Linjer%20og%20punkt.png" alt="diagrammet viser alle klassene i pakka"></a>
-</div>
-<div class="title">Figur 34. Endring Linjer og punkt</div>
+<div class="title">Figur 25. Realisering Samferdsel</div>
 </div>
 <hr>
 <div class="sect4">
@@ -7290,7 +7229,7 @@ AND
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -7537,7 +7476,7 @@ AND
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -7703,7 +7642,7 @@ AND
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -7841,7 +7780,7 @@ AND
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -7976,21 +7915,14 @@ AND
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram KpPåskrift.png"><img src="diagrammer/Hoveddiagram%20KpPåskrift.png" alt="Diagram som viser objekttypen Påskrift"></a>
 </div>
-<div class="title">Figur 35. Hoveddiagram KpPåskrift</div>
+<div class="title">Figur 26. Hoveddiagram KpPåskrift</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realiseringsdiagram KpPåskrift.png"><img src="diagrammer/Realiseringsdiagram%20KpPåskrift.png" alt="Diagram som viser objekttypen Påskrift"></a>
 </div>
-<div class="title">Figur 36. Realiseringsdiagram KpPåskrift</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endringsdiagram KpPåskrift.png"><img src="diagrammer/Endringsdiagram%20KpPåskrift.png" alt="Diagram som viser objekttypen Påskrift"></a>
-</div>
-<div class="title">Figur 37. Endringsdiagram KpPåskrift</div>
+<div class="title">Figur 27. Realiseringsdiagram KpPåskrift</div>
 </div>
 <hr>
 <div class="sect4">
@@ -8153,7 +8085,7 @@ Når tekstplassering er utelatt, brukes objektposisjonen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpområde">«FeatureType» KpOmråde</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpområde">«FeatureType» KpOmråde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sequenceNumber</p></td>
@@ -8189,7 +8121,7 @@ Når tekstplassering er utelatt, brukes objektposisjonen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpendringområde">«FeatureType» KpEndringOmråde</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpendringområde">«FeatureType» KpEndringOmråde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sequenceNumber</p></td>
@@ -8909,7 +8841,7 @@ Når tekstplassering er utelatt, brukes objektposisjonen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse<em>:</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -8922,7 +8854,7 @@ Når tekstplassering er utelatt, brukes objektposisjonen.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -9073,28 +9005,21 @@ Når tekstplassering er utelatt, brukes objektposisjonen.</p></td>
 <div class="content">
 <a class="image" href="diagrammer\Oversiktsdiagram Kp1985.png"><img src="diagrammer/Oversiktsdiagram%20Kp1985.png" alt="Diagram med navn  Oversiktsdiagram Kp1985  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 38. Oversiktsdiagram Kp1985</div>
+<div class="title">Figur 28. Oversiktsdiagram Kp1985</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Hoveddiagram Kp1985.png"><img src="diagrammer/Hoveddiagram%20Kp1985.png" alt="Diagram med navn  Hoveddiagram Kp1985  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 39. Hoveddiagram Kp1985</div>
+<div class="title">Figur 29. Hoveddiagram Kp1985</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer\Realisering Kp1985.png"><img src="diagrammer/Realisering%20Kp1985.png" alt="Diagram som viser alle klassene i pakka."></a>
 </div>
-<div class="title">Figur 40. Realisering Kp1985</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer\Endring Kp1985.png"><img src="diagrammer/Endring%20Kp1985.png" alt="Diagram som viser alle klassene i pakka."></a>
-</div>
-<div class="title">Figur 41. Endring Kp1985</div>
+<div class="title">Figur 30. Realisering Kp1985</div>
 </div>
 <hr>
 <div class="sect4">
@@ -9339,7 +9264,7 @@ Videre kan det i produktspesifikasjonene settes krav om at avgrensningsobjektene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -9503,7 +9428,7 @@ Egenskapen arealbruksstatus trengs for arealbruksrestriksjon 400, 410, 411, 420 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -9617,7 +9542,7 @@ Egenskapen arealbruksstatus trengs for arealbruksrestriksjon 400, 410, 411, 420 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planområde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KpOmråde::<a href="#kpkpobjekt">«FeatureType» KpObjekt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisert fra:</p></td>
@@ -9662,6 +9587,96 @@ Egenskapen arealbruksstatus trengs for arealbruksrestriksjon 400, 410, 411, 420 
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pakke_endringer_fra_2019">5.1.12. Pakke: Endringer fra 2019</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> Modellpakke som inneholder digrammer som illustrerer endringer fra NPAD Kommuneplan 2029</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring Fellesegenskaper.png"><img src="diagrammer/Endring%20Fellesegenskaper.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figur 31. Endring Fellesegenskaper</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring NasjonalArealplanId.png"><img src="diagrammer/Endring%20NasjonalArealplanId.png" alt="Diagram som viser hvordan denne spesifikasjonen realiserer klasser fra fagområdestandarden"></a>
+</div>
+<div class="title">Figur 32. Endring NasjonalArealplanId</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring Arealplan.png"><img src="diagrammer/Endring%20Arealplan.png" alt="Diagram som viser hvordan denne spesifikasjonen realiserer klasser fra fagområdestandarden"></a>
+</div>
+<div class="title">Figur 33. Endring Arealplan</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring KpOLmråde.png"><img src="diagrammer/Endring%20KpOLmråde.png" alt="Diagram med navn  Endring KpOLmråde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 34. Endring KpOLmråde</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring KpArealFormål.png"><img src="diagrammer/Endring%20KpArealFormål.png" alt="Diagram med navn  Endring KpArealFormål  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 35. Endring KpArealFormål</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring KpHensynSone.png"><img src="diagrammer/Endring%20KpHensynSone.png" alt="Diagram med navn  Endring KpHensynSone  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 36. Endring KpHensynSone</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring KpHensynSone Kodelister.png"><img src="diagrammer/Endring%20KpHensynSone%20Kodelister.png" alt="Diagram med navn  Endring KpHensynSone Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 37. Endring KpHensynSone Kodelister</div>
+</div>
+<hr>
+<div class="paragraph">
+<div class="title">Endring KpBestemmelse</div>
+<p>image::diagrammer\Endring KpBestemmelse.png[link=diagrammer\Endring KpBestemmelse.png, , alt="
+"]</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring høyde fra planbestemmelse.png"><img src="diagrammer/Endring%20høyde%20fra%20planbestemmelse.png" alt="Diagram som viser realisering av høyde fra planbestemmelse"></a>
+</div>
+<div class="title">Figur 38. Endring høyde fra planbestemmelse</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring Linjer og punkt.png"><img src="diagrammer/Endring%20Linjer%20og%20punkt.png" alt="diagrammet viser alle klassene i pakka"></a>
+</div>
+<div class="title">Figur 39. Endring Linjer og punkt</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endringsdiagram KpPåskrift.png"><img src="diagrammer/Endringsdiagram%20KpPåskrift.png" alt="Diagram som viser objekttypen Påskrift"></a>
+</div>
+<div class="title">Figur 40. Endringsdiagram KpPåskrift</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer\Endring Kp1985.png"><img src="diagrammer/Endring%20Kp1985.png" alt="Diagram som viser alle klassene i pakka."></a>
+</div>
+<div class="title">Figur 41. Endring Kp1985</div>
 </div>
 </div>
 </div>
@@ -9976,7 +9991,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 <div class="sectionbody">
 <div class="paragraph">
 <p>Dataleveranser i GML-format, som skal være i henhold til<br>
-<span class="line-through"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/20240220/reguleringsplanforslag.xsd" class="bare">http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/20240220/reguleringsplanforslag.xsd</a></span></p>
+<span class="line-through"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/Kommuneplan/2024/kommuneplan_2024.xsd" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/Kommuneplan/2024/kommuneplan_2024.xsd</a></span></p>
 </div>
 <div class="sect2">
 <h3 id="_oversikt_over_realiserte_objekttyper">A.1. Oversikt over realiserte objekttyper</h3>
@@ -10188,7 +10203,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </tr>
 </tbody>
 </table>
-<h5 id="_planområdefeaturetype_kpområde" class="discrete">Planområde::«FeatureType» KpOmråde</h5>
+<h5 id="_kpområdefeaturetype_kpområde" class="discrete">KpOmråde::«FeatureType» KpOmråde</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -10408,7 +10423,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </tr>
 </tbody>
 </table>
-<h5 id="_planområdefeaturetype_planområde" class="discrete">Planområde::«FeatureType» Planområde</h5>
+<h5 id="_kpområdefeaturetype_planområde" class="discrete">KpOmråde::«FeatureType» Planområde</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -10503,7 +10518,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </tr>
 </tbody>
 </table>
-<h5 id="_planområdefeaturetype_kpendringområde" class="discrete">Planområde::«FeatureType» KpEndringOmråde</h5>
+<h5 id="_kpområdefeaturetype_kpendringområde" class="discrete">KpOmråde::«FeatureType» KpEndringOmråde</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -10628,7 +10643,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </tr>
 </tbody>
 </table>
-<h5 id="_planområdefeaturetype_kpgrense" class="discrete">Planområde::«FeatureType» KpGrense</h5>
+<h5 id="_kpområdefeaturetype_kpgrense" class="discrete">KpOmråde::«FeatureType» KpGrense</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 40%;">
@@ -14244,7 +14259,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </tr>
 </tbody>
 </table>
-<h4 id="_planområdefeaturetype_kpobjekt" class="discrete">Planområde::«FeatureType» KpObjekt</h4>
+<h4 id="_kpområdefeaturetype_kpobjekt" class="discrete">KpOmråde::«FeatureType» KpObjekt</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -14277,7 +14292,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </tr>
 </tbody>
 </table>
-<h4 id="_planområdefeaturetype_planområde_2" class="discrete">Planområde::«FeatureType» Planområde</h4>
+<h4 id="_kpområdefeaturetype_planområde_2" class="discrete">KpOmråde::«FeatureType» Planområde</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -14772,7 +14787,7 @@ Framstilling iht. «Nasjonal produktspesifikasjon for arealplan og digitalt plan
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-26 13:32:57 +0100
+Last updated 2024-02-28 14:42:08 +0100
 </div>
 </div>
 </body>
