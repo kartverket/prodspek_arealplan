@@ -1,0 +1,3234 @@
+ 
+=== «ApplicationSchema» Reguleringsplan-2026-Utkast
+**Definisjon:** arealplan som angir bruk, vern og utforming av arealer og fysiske omgivelser (pbl. § 12-1 - https://lovdata.no/lov/2008-06-27-71/§12-1); detaljplan som regulerer utnytting og vern i bestemte områder i en kommune (pbl. 1985 § 22 - https://lovdata.no/lov/1985-06-14-77/§22).
+
+Begrepet reguleringplan omfatter områderegulering (pbl. § 12-2) og detaljregulering (pbl. § 12-3), samt forenklet reguleringsplan (pbl. 1985 § 24) og bebyggelsesplan (pbl. 1985 § 28-2)
+
+ 
+[discrete]
+==== Profilparametre i tagged values
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|description: 
+|'Reguleringplan'@no 
+ 
+|designation: 
+|'Reguleringplan'@no 
+ 
+|language: 
+|no 
+ 
+|SOSI_kortnavn: 
+|Regplan 
+ 
+|SOSI_langnavn: 
+|Reguleringsplan 
+ 
+|SOSI_modellstatus: 
+|utkast 
+ 
+|SOSI_spesifikasjonstype: 
+|produktspesifikasjon 
+ 
+|targetNamespace: 
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/Reguleringsplan/2026 
+ 
+|version: 
+|2026-04-29 
+ 
+|xmlns: 
+|rp 
+ 
+|xsdDocument: 
+|reguleringsplan.xsd 
+ 
+|xsdEncodingRule: 
+|sosi50 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+==== Avhengigheter
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|Realisert fra 
+|SOSI Generell objektkatalog::Plan::[.underline]##«ApplicationSchema» Plan-5.0## +
+SOSI Generell objektkatalog::FKB Generell del::[.underline]##FKB Generell del-5.0## +
+SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 4.5## +
+SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 5.1## +
+SOSI Generell objektkatalog::Plan::[.underline]##«ApplicationSchema» Plan 4.5.2## 
+ 
+|Avhengig av 
+|SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::[.underline]##«ApplicationSchema» Planregister## 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkediagram Reguleringsplan
+image::Diagrammer\Pakkediagram Reguleringsplan.png[link=Diagrammer\Pakkediagram Reguleringsplan.png, , alt="Diagram med navn  Pakkediagram Reguleringsplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkeavhengigheter Reguleringsplan
+image::Diagrammer\Pakkeavhengigheter Reguleringsplan.png[link=Diagrammer\Pakkeavhengigheter Reguleringsplan.png, , alt="Diagram med navn  Pakkeavhengigheter Reguleringsplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkerealisering Reguleringsplan
+image::Diagrammer\Pakkerealisering Reguleringsplan.png[link=Diagrammer\Pakkerealisering Reguleringsplan.png, , alt="Diagram med navn  Pakkerealisering Reguleringsplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Rp  SOSI_Fellesegenskaper
+**Definisjon:** utvalgte generelle egenskaper og datatyper fra SOSI Del 1 
+
+Merknad: Egenskapene er organisert i abstrakte superklasser og overføres til de aktuelle objekttypene ved arv
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram  Rp SOSI_Fellesegenskaper
+image::Diagrammer\Hoveddiagram  Rp SOSI_Fellesegenskaper.png[link=Diagrammer\Hoveddiagram  Rp SOSI_Fellesegenskaper.png, , alt="Diagram med navn  Hoveddiagram  Rp SOSI_Fellesegenskaper  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kvalitet
+image::Diagrammer\Hoveddiagram Kvalitet.png[link=Diagrammer\Hoveddiagram Kvalitet.png, , alt="Diagram med navn  Hoveddiagram Kvalitet  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpsosi_fellesegenskaper_kartobjekt]]
+ 
+===== __«FeatureType» SOSI_Fellesegenskaper_Kartobjekt (abstrakt)__
+**Definisjon:** abstrakt objekttype med egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på objekttyper med stedfesting
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
+ 
+**Overfører egenskaper til: **
+<<rpf_rpobjekt, F_RpObjekt>>, <<rpf__rpområde, F__RpOmråde>>, <<rprpobjekt, RpObjekt>>, <<rpf_rpendringområde, F_RpEndringOmråde>>, <<rp__rphjelpeobjekt, __RpHjelpeobjekt>>, <<rprpavgrensingslinje, RpAvgrensingslinje>>, <<rprpromligobjekt, RpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|identifikasjon 
+|<<rpidentifikasjon, «dataType» Identifikasjon>> 
+|[1..1] 
+|unik identifikasjon av et dataobjekt.  
+ 
+|oppdateringsdato 
+|DateTime 
+|[1..1] 
+|tidspunkt for siste endring på dataobjektet.  
+ 
+|førsteDigitaliseringsdato 
+|DateTime 
+|[0..1] 
+|dato når en representasjon av objektet i digital form første gang ble etablert 
+ 
+|kvalitet 
+|<<rpposisjonskvalitet, «dataType» Posisjonskvalitet>> 
+|[0..1] 
+|beskrivelse av kvaliteten på stedfestingen 
+ 
+|opphav 
+|CharacterString 
+|[0..1] 
+|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpsosi_fellesegenskaper_planområde]]
+ 
+===== __«FeatureType» SOSI_Fellesegenskaper_Planområde (abstrakt)__
+**Definisjon:** abstrakt objekttype med egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på planområder
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
+ 
+**Overfører egenskaper til: **
+<<rprpområde, RpOmråde>>, <<rprputsattrettsvirkningområde, RpUtsattRettsvirkningOmråde>>, <<rprpendringområde, RpEndringOmråde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|identifikasjon 
+|<<rpidentifikasjon, «dataType» Identifikasjon>> 
+|[1..1] 
+|unik identifikasjon av et dataobjekt.  
+ 
+|oppdateringsdato 
+|DateTime 
+|[1..1] 
+|tidspunkt for siste endring på dataobjektet.  
+ 
+|førsteDigitaliseringsdato 
+|DateTime 
+|[0..1] 
+|dato når en representasjon av objektet i digital form første gang ble etablert 
+ 
+|kvalitet 
+|<<rpposisjonskvalitet, «dataType» Posisjonskvalitet>> 
+|[0..1] 
+|beskrivelse av kvaliteten på stedfestingen 
+ 
+|opphav 
+|CharacterString 
+|[0..1] 
+|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde 
+ 
+|prosesshistorie 
+|CharacterString 
+|[0..*] 
+|beskrivelse av de prosesser som dataene er gått gjennom som kan ha betydning for kvaliteten og bruken av dataene 
+ 
+|informasjon 
+|CharacterString 
+|[0..*] 
+|generell opplysning 
+ 
+|link 
+|CharacterString 
+|[0..*] 
+|referanse til et informasjonselement, enten lokalt eller globalt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpidentifikasjon]]
+ 
+===== «dataType» Identifikasjon
+**Definisjon:** Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.  Dette gjelder ikke versjonId, som kan brukes for å identifisere ulike instanser av objektet
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«dataType» Identifikasjon##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|lokalId 
+|CharacterString 
+|[1..1] 
+|lokal identifikator av et objekt 
+ 
+|navnerom 
+|CharacterString 
+|[1..1] 
+|navnerom som unikt identifiserer datakilden til et objekt.   
+ 
+|versjonId 
+|CharacterString 
+|[0..1] 
+|identifikasjon av en spesiell versjon av et geografisk objekt (instans) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|lokalId skal være en UUID 
+|Egenskapen lokalId skal være eller inneholde en UUID 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpposisjonskvalitet]]
+ 
+===== «dataType» Posisjonskvalitet
+**Definisjon:** beskrivelse av kvaliteten på stedfestingen.
+
+Merknad: Posisjonskvalitet er ikke konform med kvalitetsmodellen i ISO slik den er definert i ISO19157:2013, men er en videreføring av tidligere brukte kvalitetsegenskaper i SOSI.
+
+Datatypen Posisjonskvalitet er supplert med egenskapen målemetode, som et alternativ til datafangstmetode.
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«dataType» Posisjonskvalitet##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|datafangstmetode 
+|<<rpdatafangstmetode, «CodeList» Datafangstmetode>> 
+|[0..1] 
+|hvordan  grunnrisskoordinatene (x,y) er posisjonert fra et datagrunnlag 
+ 
+|målemetode 
+|<<rpmålemetode, «CodeList» Målemetode>> 
+|[0..1] 
+|metode som ligger til grunn for registrering av posisjon 
+ 
+|nøyaktighet 
+|Integer 
+|[0..1] 
+|punktstandardavviket i grunnriss, oppgitt i cm, for punkter, samt tverravvik for linjer 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpdatafangstmetode]]
+ 
+===== «CodeList» Datafangstmetode
+**Definisjon:** hvordan vektordataene er posisjonert fra et datagrunnlag
+
+ 
+**Realisert fra: **
+__FKB Generell del-5.0__: [.underline]##«CodeList» Datafangstmetode##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/datafangstmetode
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpmålemetode]]
+ 
+===== «CodeList» Målemetode
+**Definisjon:** metode som ligger til grunn for registrering av posisjon
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«CodeList» Målemetode##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/malemetode-kode
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Rp Planområder
+**Definisjon:** modellpakke for planområde til reguleringsplaner
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram RpOmråde
+image::Diagrammer\Hoveddiagram RpOmråde.png[link=Diagrammer\Hoveddiagram RpOmråde.png, , alt="Diagram med navn  Hoveddiagram RpOmråde  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp UtsattRettsvirkning
+image::Diagrammer\Hoveddiagram Rp UtsattRettsvirkning.png[link=Diagrammer\Hoveddiagram Rp UtsattRettsvirkning.png, , alt="Diagram med navn  Hoveddiagram Rp UtsattRettsvirkning  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp Endringsområde
+image::Diagrammer\Hoveddiagram Rp Endringsområde.png[link=Diagrammer\Hoveddiagram Rp Endringsområde.png, , alt="Diagram med navn  Hoveddiagram Rp Endringsområde  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Oversikt planområder for planer vedtatt ihht Plan 5.0
+image::Diagrammer\Oversikt planområder for planer vedtatt ihht Plan 5.0.png[link=Diagrammer\Oversikt planområder for planer vedtatt ihht Plan 5.0.png, , alt="Diagram med navn  Oversikt planområder for planer vedtatt ihht Plan 5.0  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere
+image::Diagrammer\Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere.png[link=Diagrammer\Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere.png, , alt="Diagram med navn  Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpområde]]
+ 
+===== «FeatureType» RpOmråde
+**Definisjon:** planområde for reguleringsplan
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpOmråde##
+ 
+**Arver egenskaper fra : **
+<<rpsosi_fellesegenskaper_planområde, SOSI_Fellesegenskaper_Planområde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som planområdet tilhører. 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|planområdets flategeometri 
+ 
+|vertikalnivå 
+|<<rpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[1..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|vertikallag 
+|<<rpvertikallag, «dataType» Vertikallag>> 
+|[0..1] 
+|identifikasjon og plassering av lag innen et vertikalnivå  
+ 
+|plantype 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Plantype## 
+|[0..1] 
+|type kommuneplan 
+ 
+|planstatus 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Planstatus## 
+|[0..1] 
+|planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6) 
+ 
+|plannavn 
+|CharacterString 
+|[0..1] 
+|planens offisielle navn (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|omPlanbestemmelser 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» OmPlanbestemmelser## 
+|[0..1] 
+|om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert 
+ 
+|lovreferanse 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Lovreferansetype## 
+|[0..1] 
+|hvilken lov planen er vedtatt etter 
+ 
+|lovreferanseBeskrivelse 
+|CharacterString 
+|[0..1] 
+|tekstlig beskrivelse av hvilken lov planen er vedtatt etter.  
+ 
+|forslagsstillerType 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» ForslagsstillerType## 
+|[0..1] 
+|om forslagsstiller er privat eller offentlig 
+ 
+|opprinneligPlanId 
+|CharacterString 
+|[0..1] 
+|opprinnelig planidentifikasjon (planid) 
+ 
+|opprinneligAdmEnhet 
+|CharacterString 
+|[0..1] 
+|opprinnelig administrativEnhet for arealplanen. 
+ 
+|vedtakEndeligPlanDato 
+|Date 
+|[0..1] 
+|dato for rettsvirkning av arealplanen med tilhørende bestemmelser gjennom statlig, regionalt eller kommunalt vedtak etter plan- og bygningsloven 
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato når endelig vedtatt arealplan ble kunngjort  
+ 
+|ikrafttredelsesdato 
+|Date 
+|[0..1] 
+|dato når arealplanen trådte ikraft 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|avgrensesAv 
+|<<rprpgrense, RpGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|rpObjekt 
+|<<rprpobjekt, RpObjekt>> 
+|[0..*] 
+|tilhørende kartobjekt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Bruk av vertikallag 
+|Overlappende flater innen et vertikalnivå skal skilles ved bruk av egenskapen vertikallag
+Når vertikallag brukes, skal den anvendes på alle planens planområder i vedkommende vertikalnivå.
+ 
+ 
+|Omslutter tilhørende kartobjekt 
+|Alle tilhørende kartobjekter (flate, linje, punkt) må i sin helhet ligge innenfor flategeometrien. 
+ 
+ 
+|Oppdeling i formål 
+|Flategeometrien skal falle sammen med unionen av alle tilhørende formålsflater 
+Det får ikke være overlapp mellom noen av disse formålsflatene
+ 
+ 
+|Samsvar mellom planinnhold og lovreferanse 
+|Planer vedtatt etter ny lov får ikke innholde planelementer som bare er tillatt etter gammel lov +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprputsattrettsvirkningområde]]
+ 
+===== «FeatureType» RpUtsattRettsvirkningOmråde
+**Definisjon:** planområde for reguleringsplan
+ 
+**Arver egenskaper fra : **
+<<rpsosi_fellesegenskaper_planområde, SOSI_Fellesegenskaper_Planområde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som planområdet tilhører.  
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|planområdets flategeometri 
+ 
+|vertikalnivå 
+|<<rpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[1..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|vertikallag 
+|<<rpvertikallag, «dataType» Vertikallag>> 
+|[0..1] 
+|identifikasjon og plassering av lag innen et vertikalnivå  
+ 
+|saksummer 
+|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|[1..1] 
+|entydig nummerering av en sak i et saksbehandlingsverktøy 
+ 
+|endeligVedtattDato 
+|Date 
+|[0..1] 
+|vedtaksdato for rettsvirkning for område med utsatt rettsvirkning  
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato for kunngjøring av endelig vedtatt arealplan eller planbestemmelse, pbl. § 6-3, 8-5 siste ledd, 11-15 andre ledd og 12-12 siste ledd 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rpObjekt 
+|<<rprpobjekt, RpObjekt>> 
+|[0..*] 
+|tilhørende kartobjekt 
+ 
+|avgrensesAv 
+|<<rprpgrense, RpGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Bruk av vertikallag 
+|Overlappende flater innen et vertikalnivå skal skilles ved bruk av egenskapen vertikallag
+Når vertikallag brukes, skal den anvendes på alle planens planområder i vedkommende vertikalnivå.
+ 
+ 
+|Omslutter tilhørende kartobjekt 
+|Alle tilhørende kartobjekter (flate, linje, punkt) må i sin helhet ligge innenfor flategeometrien. 
+ 
+ 
+|Oppdeling i formål 
+|Flategeometrien skal falle sammen med unionen av alle tilhørende formålsflater 
+Det får ikke være overlapp mellom noen av disse formålsflatene
+ 
+ 
+|Samsvar mellom planinnhold og lovreferanse 
+|Planer vedtatt etter ny lov får ikke innholde planelementer som bare er tillatt etter gammel lov +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpendringområde]]
+ 
+===== «FeatureType» RpEndringOmråde
+**Definisjon:** planområde for reguleringsplan
+ 
+**Arver egenskaper fra : **
+<<rpsosi_fellesegenskaper_planområde, SOSI_Fellesegenskaper_Planområde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som planområdet tilhører.  
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|planområdets flategeometri 
+ 
+|vertikalnivå 
+|<<rpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[1..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|vertikallag 
+|<<rpvertikallag, «dataType» Vertikallag>> 
+|[0..1] 
+|identifikasjon og plassering av lag innen et vertikalnivå  
+ 
+|endringstype 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Planendringstype## 
+|[1..1] 
+|om endringen er foretatt som en mindre endring eller en endring 
+ 
+|hjemmelsgrunnlag 
+|CharacterString 
+|[1..1] 
+|lovgrunnlag som ligger til grunn for avgjørelse 
+ 
+|saksnummer 
+|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|[1..1] 
+|entydig nummerering av en sak i et saksbehandlingsverktøy 
+ 
+|endringsnavn 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|endringVedtakDato 
+|Date 
+|[0..1] 
+|dato når endringen av arealplanen trådte ikraft 
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato for når en sak blir offentlig kunngjort 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rpObjekt 
+|<<rprpobjekt, RpObjekt>> 
+|[0..*] 
+|tilhørende kartobjekt 
+ 
+|avgrensesAv 
+|<<rprpgrense, RpGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Bruk av vertikallag 
+|Overlappende flater innen et vertikalnivå skal skilles ved bruk av egenskapen vertikallag
+Når vertikallag brukes, skal den anvendes på alle planens planområder i vedkommende vertikalnivå.
+ 
+ 
+|Omslutter tilhørende kartobjekt 
+|Alle tilhørende kartobjekter (flate, linje, punkt) må i sin helhet ligge innenfor flategeometrien. 
+ 
+ 
+|Oppdeling i formål 
+|Flategeometrien skal falle sammen med unionen av alle tilhørende formålsflater 
+Det får ikke være overlapp mellom noen av disse formålsflatene
+ 
+ 
+|Samsvar mellom planinnhold og lovreferanse 
+|Planer vedtatt etter ny lov får ikke innholde planelementer som bare er tillatt etter gammel lov +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpvertikalnivå]]
+ 
+===== «CodeList» Vertikalnivå
+**Definisjon:** beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Vertikalnivå##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/vertikalnivå
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpvertikallag]]
+ 
+===== «dataType» Vertikallag
+**Definisjon:** identifikasjon og plassering av lag innen et vertikalnivå (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» Vertikallag##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|lag 
+|CharacterString 
+|[1..1] 
+|identifikasjon av vertikallag innen et vertikalnivå.  
+ 
+|referansehøyde 
+|Real 
+|[0..1] 
+|nærmere spesifikasjon av høydenivået for et vertikallag  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpgrense]]
+ 
+===== «FeatureType» RpGrense
+**Definisjon:** avgrensingslinje for et planomåde (RpOmråde) i en reguleringplan.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpGrense##
+ 
+**Arver egenskaper fra : **
+<<rprpavgrensingslinje, RpAvgrensingslinje>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|grense 
+|GM_Curve 
+|[1..1] 
+|avgrensningslinje 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med flategeomtri 
+|Avgrensingslinja skal samsvare med geometrien til de flateobjektene som refererer til avgrensingslinja. 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Rp Abstrakte typer
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram RpObjekt
+image::Diagrammer\Hoveddiagram RpObjekt.png[link=Diagrammer\Hoveddiagram RpObjekt.png, , alt="Diagram med navn  Hoveddiagram RpObjekt  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp Hjelpegeometrier
+image::Diagrammer\Hoveddiagram Rp Hjelpegeometrier.png[link=Diagrammer\Hoveddiagram Rp Hjelpegeometrier.png, , alt="Diagram med navn  Hoveddiagram Rp Hjelpegeometrier  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpobjekt]]
+ 
+===== __«FeatureType» RpObjekt (abstrakt)__
+**Definisjon:** abstrakt supertype for kartobjekter som representer stedfestede planelementer, som formål, hensynssoner og bestemmelsesobjekter
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpObjekt##
+ 
+**Arver egenskaper fra : **
+<<rpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
+ 
+**Overfører egenskaper til: **
+<<rprpstøysone, RpStøySone>>, <<rprpsikringsone, RpSikringSone>>, <<rprpangitthensynsone, RpAngittHensynSone>>, <<rprpinfrastruktursone, RpInfrastrukturSone>>, <<rprpbåndleggingsone, RpBåndleggingSone>>, <<rprpfaresone, RpFareSone>>, <<rprpdetaljeringsone, RpDetaljeringSone>>, <<rprpgjennomføringsone, RpGjennomføringSone>>, <<rprpregulerthøyde, RpRegulertHøyde>>, <<rprbfornyelseområde, RbFornyelseOmråde>>, <<rprpjuridisklinje, RpJuridiskLinje>>, <<rprpbestemmelseområde, RpBestemmelseOmråde>>, <<rprparealformålområde, RpArealformålOmråde>>, <<rprbrekkefølgeområde, RbRekkefølgeOmråde>>, <<rprbfareområde, RbFareOmråde>>, <<rprpbestemmelseregterreng, RpBestemmelseRegTerreng>>, <<rprbrestriksjonområde, RbRestriksjonOmråde>>, <<rprbbevaringområde, RbBevaringOmråde>>, <<rprphandlingområde, RpHandlingOmråde>>, <<rprpjuridiskpunkt, RpJuridiskPunkt>>, <<rprbformålområde, RbFormålOmråde>>, <<rprpbestemmelsemidlbygganlegg, RpBestemmelseMidlByggAnlegg>>, <<rp___rpendringområde, ___RpEndringOmråde>>, <<rprphensynsone, RpHensynSone>>, <<rprppåskrift, RpPåskrift>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|identifikasjon av arealplanen som objektet tilhører.  
+ 
+|vertikalnivå 
+|<<rpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[1..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|vertikallag 
+|<<rpvertikallag, «dataType» Vertikallag>> 
+|[0..1] 
+|identifikasjon og plassering av lag innen et vertikalnivå  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|påskrift 
+|<<rprppåskrift, RpPåskrift>> 
+|[0..*] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpromligobjekt]]
+ 
+===== __«FeatureType» RpRomligObjekt (abstrakt)__
+**Definisjon:** abstrakt objekttype for romgeometier i en  reguleringsplan.
+Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalgtge obejkttyper med flategeometri
+
+
+
+ 
+**Arver egenskaper fra : **
+<<rpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
+ 
+**Overfører egenskaper til: **
+<<rprpbestemmelserom, RpBestemmelseRom>>, <<rprphensynrom, RpHensynRom>>, <<rprphandlingrom, RpHandlingRom>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|identifikasjon av arealplanen som objektet tilhører.  
+ 
+|vertikalnivå 
+|<<rpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|vertikallag 
+|<<rpvertikallag, «dataType» Vertikallag>> 
+|[0..1] 
+|identifikasjon og plassering av lag innen et vertikalnivå  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpavgrensingslinje]]
+ 
+===== __«FeatureType» RpAvgrensingslinje (abstrakt)__
+**Definisjon:** abstrakt objekttype for avgrensingslinjer i en reguleringsplan
+
+Brukes der det er behov for å ta vare på kvalitesinformasjon som ikke kan ligge på flateobjektene
+ 
+**Arver egenskaper fra : **
+<<rpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
+ 
+**Overfører egenskaper til: **
+<<rprpformålgrense, RpFormålGrense>>, <<rprpgrense, RpGrense>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[0..1] 
+|identifikasjon av arealplanen som objektet tilhører.  
+ 
+|vertikalnivå 
+|<<rpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|vertikallag 
+|<<rpvertikallag, «dataType» Vertikallag>> 
+|[0..1] 
+|identifikasjon og plassering av lag innen et vertikalnivå  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Formål
+**Definisjon:** informasjonsklasser for arealformål i reguleringsplan (pbl. § 12-5 - https://lovdata.no/lov/2008-06-27-71/§12-5)
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram RpArealformål
+image::Diagrammer\Hoveddiagram RpArealformål.png[link=Diagrammer\Hoveddiagram RpArealformål.png, , alt="Diagrammet viser alle klassene i pakka"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprparealformålområde]]
+ 
+===== «FeatureType» RpArealformålOmråde
+**Definisjon:** område med angitt arealformål i reguleringsplan  (pbl. § 12-5 - https://lovdata.no/lov/2008-06-27-71/§12-5)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpArealformålOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|flategeometri 
+ 
+|eierform 
+|<<rpeierformtype, «CodeList» EierformType>> 
+|[1..1] 
+|henvisning til planbestemmelse om arealet skal brukes av det offentlige, eller være fellesarealer for flere eiendommer  
+ 
+|arealformål 
+|<<rprparealformål, «CodeList» RpArealformål>> 
+|[1..1] 
+|kode for arealformål i reguleringsplan  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|detaljert beskrivelse av formål 
+ 
+|feltnavn 
+|CharacterString 
+|[1..1] 
+|entydig navn/betegnelse på formålsområde i reguleringsplan 
+ 
+|utnytting 
+|<<rputnytting, «dataType» Utnytting>> 
+|[0..*] 
+|grad av utnytting  
+ 
+|uteoppholdsareal 
+|Integer 
+|[0..1] 
+|minste uteoppholdsareal  
+ 
+|byggverkbestemmelse 
+|<<rpbyggverkbestemmelse, «CodeList» Byggverkbestemmelse>> 
+|[0..1] 
+|planbestemmelse om bygningers plassering, utforming mv.  
+ 
+|avkjørselsbestemmelse 
+|<<rpavkjørselsbestemmelse, «CodeList» Avkjørselsbestemmelse>> 
+|[0..1] 
+|planbestemmelse om avkjørsel  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|avgrensesAv 
+|<<rprpformålgrense, RpFormålGrense>> 
+|[0..*] 
+|referanse til avgrensingslinje 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Beskrivelse påkrevd for visse formål 
+|Beskrivelse er påkrevd for disse arealformålene: 1169, 1390, 1490, 1500, 1560, 1590, 1690, 1800, 1900, 2061, 2180, 2190, 2800, 2900, 3800, 3900, 4010, 4800, 4900, 5900, 6800, 6900 
+ 
+ 
+|Forutsetninger for å angi flere utnyttingsgrader 
+|Multippel bruk av utnytting tillatt kun under visse forutsetninger:
+
+Kun tillatt for formålene 1001-2001,  2018-2020, 2023-2030, 2032, 2034-2900 
+
+Utnyttingstype 10 og 11 er ikke tillatt
+
+Hver utnyttingstype kan forekomme kun en gang 
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprparealformål]]
+ 
+===== «CodeList» RpArealformål
+**Definisjon:** kodeliste for arealformål i reguleringsplan (kart- og planforskriften Vedlegg I - https://lovdata.no/forskrift/2025-01-20-52/§2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» RpArealformål##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/rparealformål
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpbyggverkbestemmelse]]
+ 
+===== «CodeList» Byggverkbestemmelse
+**Definisjon:** kodeliste for henvisning til planbestemmelse om bygningers plassering, utforming mv. ( pbl. § 12-7 nr. 1, samt pbl. 1985 § 26 første ledd og § 28-2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Byggverkbestemmelse##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/byggverkbestemmelse
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpavkjørselsbestemmelse]]
+ 
+===== «CodeList» Avkjørselsbestemmelse
+**Definisjon:** kodeliste for planbestemmelse om avkjørsel (pbl. § 11-10 nr. 4 og TEK § 8-8, samt pbl.85 §§ 25 og 26, 1. ledd)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Avkjørselsbestemmelse##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/avkjørselsbestemmelse
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpeierformtype]]
+ 
+===== «CodeList» EierformType
+**Definisjon:** henvisning til planbestemmelse om arealet skal brukes av det offentlige, eller være fellesarealer for flere eiendommer (pbl. § 12-7 nr. 14 - https://lovdata.no/lov/2008-06-27-71/§12-7)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»EierformType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/eierformtype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rputnytting]]
+ 
+===== «dataType» Utnytting
+**Definisjon:** grad av utnytting ( pbl. § 12-7 nr. 5 og TEK kap. 5 - https://lovdata.no/lov/2008-06-27-71/§12-7)
+
+Merknad: Benyttes for å regulere bygningers volum over terreng og bygningers totale areal, sett i forhold til behovet for uteoppholdsareal, belastning på infrastruktur og forholdet til omgivelsene 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» Utnytting##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|utnyttingstype 
+|<<rputnyttingstype, «CodeList» Utnyttingstype>> 
+|[1..1] 
+|type grad av utnytting  
+ 
+|utnyttingstall 
+|Integer 
+|[0..1] 
+|tallverdi for grad av utnytting  
+ 
+|utnyttingstall_minimum 
+|Integer 
+|[0..1] 
+|tallverdi for minste utnyttingsgrad  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Utnyttingstype for nyere planer 
+|For planer etter gjeldende pbl. er utnyttingstype begrensa til (10, 11, 15, 16, 17, 18) 
+ 
+|Bruk av utnyttingstall 
+|utnyttingstall og utnyttingstall_minimum skal ikke brukes for utnyttingstype 10 og 11, men er påkrevd for alle andre utnyttingstyper  +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rputnyttingstype]]
+ 
+===== «CodeList» Utnyttingstype
+**Definisjon:** type grad av utnytting (pbl. 1985 § 26 første ledd og forskrift TEK kap. III; pbl. § 12-7 nr 1 og TEK kap. 5)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Utnyttingstype##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/utnyttingstype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpformålgrense]]
+ 
+===== «FeatureType» RpFormålGrense
+**Definisjon:** grense for reguleringsformål i regulerings- og bebyggelsesplan (pbl. 1985 § 25 første ledd) / områderegulering og detaljregulering (pbl. § 12-5)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpFormålGrense##
+ 
+**Arver egenskaper fra : **
+<<rprpavgrensingslinje, RpAvgrensingslinje>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|grense 
+|GM_Curve 
+|[1..1] 
+|avgrensningslinje 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med flategeometri 
+|Avgrensingslinja skal samsvare med geometrien til de flateobjektene som refererer til avgrensingslinja.
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Hensyn
+**Definisjon:** informasjonsklasser for hensynssoner i reguleringsplan
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp Hensyn
+image::Diagrammer\Hoveddiagram Rp Hensyn.png[link=Diagrammer\Hoveddiagram Rp Hensyn.png, , alt="Diagram med navn  Hoveddiagram Rp Hensyn  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram RpHensyn Kodelister
+image::Diagrammer\Hoveddiagram RpHensyn Kodelister.png[link=Diagrammer\Hoveddiagram RpHensyn Kodelister.png, , alt="Diagram med navn  Hoveddiagram RpHensyn Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpsikringsone]]
+ 
+===== «FeatureType» RpSikringSone
+**Definisjon:** hensynssone for sikring i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav a)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpSikringSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|sikring 
+|<<rprpsikringsonetype, «CodeList» RpSikringSoneType>> 
+|[1..1] 
+|type sikring i hensynsone for sikring  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpsikringsonetype]]
+ 
+===== «CodeList» RpSikringSoneType
+**Definisjon:** type sikring i hensynsone for sikring i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav a)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RpSikringSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/sikringsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpstøysone]]
+ 
+===== «FeatureType» RpStøySone
+**Definisjon:** hensynssone for støy i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav a)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpStøySone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|støy 
+|<<rprpstøysonetype, «CodeList» RpStøySoneType>> 
+|[1..1] 
+|type støy i hensynsone for støy 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpstøysonetype]]
+ 
+===== «CodeList» RpStøySoneType
+**Definisjon:** type støy i hensynsone for støy (pbl. § 12-6, jf. § 11-8, tredje ledd bokstav a). 
+https://www.regjeringen.no/no/dokumenter/retningslinje-for-behandling-av-stoy-i-arealplanlegging/id2857574/
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»StøySoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/støysonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpfaresone]]
+ 
+===== «FeatureType» RpFareSone
+**Definisjon:** hensynssone for fare i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav a)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpFareSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|fare 
+|<<rprpfaresonetype, «CodeList» RpFareSoneType>> 
+|[1..1] 
+|type fare i hensynssone for fare  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpfaresonetype]]
+ 
+===== «CodeList» RpFareSoneType
+**Definisjon:** type fare i hensynssone for fare (pbl. § 12-6, jf. § 11-8, tredje ledd bokstav a)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»FareSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/faresonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpinfrastruktursone]]
+ 
+===== «FeatureType» RpInfrastrukturSone
+**Definisjon:** hensynssone for særlige krav til infrastruktur i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav b)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpInfrastrukturSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|infrastruktur 
+|<<rprpinfrastruktursonetype, «CodeList» RpInfrastrukturSoneType>> 
+|[1..1] 
+|type infrastrukturkrav i hensynsone for infrastruktur  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpinfrastruktursonetype]]
+ 
+===== «CodeList» RpInfrastrukturSoneType
+**Definisjon:** type infrastrukturkrav i hensynsone for infrastruktur (pbl. § 12-6, jf. § 11-8, tredje ledd bokstav b)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»InfrastrukturSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/infrastruktursonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpangitthensynsone]]
+ 
+===== «FeatureType» RpAngittHensynSone
+**Definisjon:** hensynssone for nærmere angitt hensyn i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav c)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpAngittHensynSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|angittHensyn 
+|<<rprpangitthensynsonetype, «CodeList» RpAngittHensynSoneType>> 
+|[1..1] 
+|type angitt hensyn i hensynssone for nærmere angitt særlig hensyn  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpangitthensynsonetype]]
+ 
+===== «CodeList» RpAngittHensynSoneType
+**Definisjon:** type angitt hensyn i hensynssone for nærmere angitt særlig hensyn (pbl. §12-6, jf. § 11-8 tredje ledd bokstav c)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»AngittHensynSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/angitthensynsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbåndleggingsone]]
+ 
+===== «FeatureType» RpBåndleggingSone
+**Definisjon:** hensynssone for båndlegging i reguleringsplan (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav d)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpBåndleggingSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|båndlegging 
+|<<rprpbåndleggingsonetype, «CodeList» RpBåndleggingSoneType>> 
+|[1..1] 
+|type båndlegging i hensynssone for båndlegging  
+ 
+|båndlagtFremTil 
+|Date 
+|[0..1] 
+|dato når båndleggingen opphører 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbåndleggingsonetype]]
+ 
+===== «CodeList» RpBåndleggingSoneType
+**Definisjon:** type båndlegging i hensynssone for båndlegging (§ 12-6, jf.  pbl. § 11-8 tredje ledd bokstav d)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»BåndleggingSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/båndleggingsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpgjennomføringsone]]
+ 
+===== «FeatureType» RpGjennomføringSone
+**Definisjon:** hensynssone for særskilte gjennomføringsvirkemidler i reguleringsplan (pbl. §§ 12-6, 12 A-1, 12 A-13, jf. § 11-8 tredje ledd bokstav e)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpGjennomføringSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|gjennomføring 
+|<<rprpgjennomføringsonetype, «CodeList» RpGjennomføringSoneType>> 
+|[1..1] 
+|type særskilte gjennomføringsvirkemidler i gjennomføringssone  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpgjennomføringsonetype]]
+ 
+===== «CodeList» RpGjennomføringSoneType
+**Definisjon:** type særskilte gjennomføringsvirkemidler i gjennomføringssone (pbl. §§ 12-6, 12 A-1, 12 A-13,  jf. § 11-8 tredje ledd bokstav e)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»GjennomføringSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/gjennomføringsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpdetaljeringsone]]
+ 
+===== «FeatureType» RpDetaljeringSone
+**Definisjon:** hensynssone for videreføring av reguleringsplan (pbl. § 12-6, jf. §11-8 tredje ledd bokstav f). 
+
+Merknad:
+Kan benyttes i områdeplan for videreføring av plan for detaljregulering
+Benyttes ikke i plan for detaljregulering
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpDetaljeringSone##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|detaljering 
+|<<rprpdetaljeringsonetype, «CodeList» RpDetaljeringSoneType>> 
+|[1..1] 
+|type detaljering i hensynsone for videreføring av gjeldende reguleringsplan  
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphensynrom, RpHensynRom>> 
+|[0..*] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpdetaljeringsonetype]]
+ 
+===== «CodeList» RpDetaljeringSoneType
+**Definisjon:** type detaljering i hensynsone for videreføring av gjeldende reguleringsplan (pbl. § 12-6, jf. §11-8 tredje ledd bokstav f)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»DetaljeringSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/detaljeringsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprphensynrom]]
+ 
+===== «FeatureType» RpHensynRom
+**Definisjon:** hensynsrom i 3D for RpHensynSone
+hensynsrom i 3D for en hensynssone i reguleringsplan
+
+Hensynsrommet tilhører alltid en hensynssone, som er en av subtypene til den abstrakte supertypen RpHensynSone, dvs. en av disse: RpStøySone, RpSikringSone, RpFareSone, RpBåndleggingSone, RpAngittHensynSone, RpInfrastrukturSone eller RpGjennomføringSone.
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpHensynSone##
+ 
+**Arver egenskaper fra : **
+<<rprpromligobjekt, RpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|GM_Solid 
+|[1..1] 
+|objektets utstrekning og avgrensning i 3D 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med 2D-geometri 
+|Fotavtrykket (grunnrissprojeksjonen) av 3D-geometrien skal samsvare med 2D-geometrien for det området det tilhører. 
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Bestemmelsesobjekter
+**Definisjon:** modellpakke for bestemmelser til plankartet,  som ivaretar stedfesting av bestemmelser som ikke knyttes til et formål eller en hensynssone. 
+
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp Bestemmelser i kartet
+image::Diagrammer\Hoveddiagram Rp Bestemmelser i kartet.png[link=Diagrammer\Hoveddiagram Rp Bestemmelser i kartet.png, , alt="Diagrammet viser alle klassene i pakka"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbestemmelseområde]]
+ 
+===== «FeatureType» RpBestemmelseOmråde
+**Definisjon:** område med bestemmelse illustrert på kart (pbl. § 12-7 nr. 1-14)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpBestemmelseOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning og avgrensing i grunnriss (2D) 
+ 
+|bestemmelseOmrådeNavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på bestemmelsesområde  
+ 
+|bestemmelseHjemmel 
+|<<rprpbestemmelsehjemmel, «CodeList» RpBestemmelseHjemmel>> 
+|[1..*] 
+|kode for hjemmel til planbestemmelse i reguleringsplan  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprpbestemmelserom, RpBestemmelseRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|regulertTerreng 
+|<<rprpbestemmelseregterreng, RpBestemmelseRegTerreng>> 
+|[0..*] 
+|referanse til regulert terrengflate ihht bestemmelse 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbestemmelsehjemmel]]
+ 
+===== «CodeList» RpBestemmelseHjemmel
+**Definisjon:** kodeliste for hjemmel til planbestemmelse i reguleringsplan (pbl. §12-7)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RpBestemmelseHjemmel##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/rpbestemmelsehjemmel
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbestemmelsemidlbygganlegg]]
+ 
+===== «FeatureType» RpBestemmelseMidlByggAnlegg
+**Definisjon:** bestemmelsesområde for midlertidig bygge- og anlegg, jfr. pbl. § 12-7 nr. 1.
+
+Merknad:
+Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekniske framstillingen av midlertidig bygge- og anleggsområde.
+ 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpBestemmelseMidlByggAnlegg##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets flategeometri 
+ 
+|bestemmelseOmrådeNavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse for bestemmelseområde  
+ 
+|gyldigTilDato 
+|Date 
+|[0..1] 
+|utløpsdato for bestemmelseområdet.  
+ 
+|avgjørelsesdato 
+|Date 
+|[0..1] 
+|vedtaksdato for etablering av området 
+ 
+|saksnummer 
+|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|[0..1] 
+|entydig nummerering av en sak i et saksbehandlingsverktøy 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprpbestemmelserom, RpBestemmelseRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbestemmelserom]]
+ 
+===== «FeatureType» RpBestemmelseRom
+**Definisjon:** bestemmelserom i 3D for RpBestemmelseOmråde
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpBestemmelseOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpromligobjekt, RpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|GM_Solid 
+|[1..1] 
+|lukket romgeometri i 3D 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med 2D-geometri 
+|Fotavtrykket (grunnrissprojeksjonen) av 3D-geometrien må samsvare med 2D-geometrien for det området det tilhører. 
+
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprphandlingområde]]
+ 
+===== «FeatureType» RpHandlingOmråde
+**Definisjon:** område som konstruksjonen/tiltaket må holde seg innenfor (kart- og planforskriften vedlegg - https://lovdata.no/forskrift/2025-01-20-52/§2). 
+
+Merknad: RpHandlingOmråde har samme betydning som byggegrense og anvendes ved fremstilling av planen i 2D. Dette kan suppleres med et RpHandlingRom for å avgrense tiltaket vertikalt.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpHandlingOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_Surface 
+|[1..1] 
+|områdets flategeometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<rprphandlingrom, RpHandlingRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprphandlingrom]]
+ 
+===== «FeatureType» RpHandlingRom
+**Definisjon:** handlingsrom i 3D for RpHandlingOmråde. 
+
+Konstruksjonen/tiltaket må holde seg innenfor handlingrommet, i henhold til de tilhørende planbestemmelsene 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpHandlingOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpromligobjekt, RpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|GM_Solid 
+|[1..1] 
+|lukket romgeometri i 3D 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med 2D-geometri 
+|Fotavtrykket (grunnrissprojeksjonen) av 3D-geometrien må samsvare med 2D-geometrien for det området det tilhører. 
+
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpjuridisklinje]]
+ 
+===== «FeatureType» RpJuridiskLinje
+**Definisjon:** bestemmelse stedfestet med linje i reguleringsplan 
+(pbl. §12-7, kart- og planforskriften Vedlegg IV - https://lovdata.no/forskrift/2025-01-20-52/§2; pbl. 1985 §§ 25, 26 og 28-2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpJuridiskLinje##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|linjeforløp 
+|GM_Curve 
+|[1..1] 
+|linje for stedfesting av bestemmeler 
+ 
+|juridiskLinjetype 
+|<<rprpjuridisklinjetype, «CodeList» RpJuridiskLinjeType>> 
+|[1..1] 
+|type bestemmelse stedfestet med  linje  
+ 
+|objektnavn 
+|CharacterString 
+|[0..1] 
+|entydig tekstlig betegnelse som identiserer kartobjektet,  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpjuridisklinjetype]]
+ 
+===== «CodeList» RpJuridiskLinjeType
+**Definisjon:** type bestemmelse stedfestet med linje i reguleringsplan (pbl. §12-7, kart- og planforskriften Vedlegg IV - https://lovdata.no/forskrift/2025-01-20-52/§2; 
+pbl. 1985 §§ 25, 26 og 28-2)
+
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RpJuridiskLinjeType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/rpjuridisklinjetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpjuridiskpunkt]]
+ 
+===== «FeatureType» RpJuridiskPunkt
+**Definisjon:** bestemmelse stedfestet med punkt i reguleringsplan (pbl. §12-7, kart- og planforskriften Vedlegg IV - https://lovdata.no/forskrift/2025-01-20-52/§2 ; pbl. 1985 §§ 25, 26 og 28-2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpJuridiskPunkt##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|posisjon 
+|GM_Point 
+|[1..1] 
+|punkt for stedfesting av bestemmelser 
+ 
+|juridiskPunkttype 
+|<<rprpjuridiskpunkttype, «CodeList» RpJuridiskPunktType>> 
+|[1..1] 
+|type bestemmelse stedfestet med punkt 
+ 
+|objektnavn 
+|CharacterString 
+|[0..1] 
+|entydig tekstlig betegnelse som identiserer kartobjektet,  
+ 
+|symbolretning 
+|Vector 
+|[0..1] 
+|retningsvektor i kartkoordinatsystemet som fastsetter retning av kartsymbol 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpjuridiskpunkttype]]
+ 
+===== «CodeList» RpJuridiskPunktType
+**Definisjon:** type bestemmelse stedfestet med punkt i reguleringsplan (pbl. §12-7, kart- og planforskriften Vedlegg IV - https://lovdata.no/forskrift/2025-01-20-52/§2; pbl. 1985 §§ 25, 26 og 28-2)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RpJuridiskPunktType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/rpjuridiskpunkttype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Regulert høyde
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp Regulert høyde og terreng
+image::Diagrammer\Hoveddiagram Rp Regulert høyde og terreng.png[link=Diagrammer\Hoveddiagram Rp Regulert høyde og terreng.png, , alt="Diagram som viser høyde fra planbestemmelse"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpregulerthøyde]]
+ 
+===== «FeatureType» RpRegulertHøyde
+**Definisjon:** linje med bestemmelse om regulert høyde (pbl. § 12-7 nr. 1,  kart- og planforskriften Vedlegg IV - https://lovdata.no/forskrift/2025-01-20-52/§2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpRegulertHøyde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|stedfesting 
+|GM_Primitive 
+|[1..1] 
+|punkt eller linje 
+ 
+|høydeFraPlanbestemmelse 
+|<<rphøydefraplanbestemmelse, «dataType» HøydeFraPlanbestemmelse>> 
+|[1..1] 
+|regulert høyde gitt i planbestemmelser  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rphøydefraplanbestemmelse]]
+ 
+===== «dataType» HøydeFraPlanbestemmelse
+**Definisjon:** regulert høyde gitt i planbestemmelser (bestemmelse om utforming illustrert på kart, pbl. § 12-7 nr. 1)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» HøydeFraPlanbestemmelse##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|regulertHøyde 
+|Real 
+|[1..1] 
+|tall for enten kotehøyde eller høyde over terreng 
+ 
+|typeHøyde 
+|<<rptypehøyde, «CodeList» TypeHøyde>> 
+|[0..1] 
+|hva en planbestemmelse om regulert høyde gjelder for 
+ 
+|høydereferansesystem 
+|<<rphøydereferansesystem, «CodeList» Høydereferansesystem>> 
+|[0..1] 
+|høydereferansesystem som ligger til grunn for bestemmelser om regulert høyde 
+ 
+|terrengreferanse 
+|<<rpterrengreferanse, «CodeList» Terrengreferanse>> 
+|[0..1] 
+|type terrengoverflate som danner utgangspunktet for å fastsette regulert høyde over terreng 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|bruk av terrengreferanse 
+|Terrengreferanse kan brukes i steden for høydereferansesystem dersom typeHøyde er gesims- eller mønehøyde. +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rphøydereferansesystem]]
+ 
+===== «CodeList» Høydereferansesystem
+**Definisjon:** høydereferansesystem som ligger til grunn for bestemmelser om regulert høyde
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/høydereferansesystem
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpterrengreferanse]]
+ 
+===== «CodeList» Terrengreferanse
+**Definisjon:** type terrengoverflate som danner utgangspunktet for å fastsette den regulerte høyden
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/terrengreferanse
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rptypehøyde]]
+ 
+===== «CodeList» TypeHøyde
+**Definisjon:** hva en planbestemmelse om regulert høyde gjelder for
+
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/typehøyde
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprpbestemmelseregterreng]]
+ 
+===== «FeatureType» RpBestemmelseRegTerreng
+**Definisjon:** regulert terrengoverflate slik det fremgår av planen 
+Terrenget angis enten slik det skal være når tiltaket er gjennomført eller slik det maksimalt/minimalt kan utnyttes.
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpBestemmelseRegTerreng##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|overflate 
+|GM_Surface 
+|[1..1] 
+|angivelse av den regulerte terrengoverflasten 
+ 
+|overflateType 
+|<<rpregulertoverflatetype, «CodeList» RegulertOverflateType>> 
+|[1..1] 
+|om bestemmelsen fastsetter endelig terrengoverflate eller om den gir rammer for tillatt endring 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregulertoverflatetype]]
+ 
+===== «CodeList» RegulertOverflateType
+**Definisjon:** om bestemmelsen fastsetter endelig terrengoverflate eller om den gir rammer for tillatt endring
+
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/reguleringsplan/regulertoverflatetype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Rp Påskrift
+**Definisjon:** modellpakke som definerer kartografisk påskrift
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram RpPåskrift
+image::Diagrammer\Hoveddiagram RpPåskrift.png[link=Diagrammer\Hoveddiagram RpPåskrift.png, , alt="Diagram som viser objekttypen Påskrift"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprppåskrift]]
+ 
+===== «FeatureType» RpPåskrift
+**Definisjon:** påskrift eller supplerende tekst på plankartet for regulerings- og bebyggelsesplan (pbl. 1985 §§ 25 og 26 og 28-2) / områderegulering og detaljregulering (pbl. §§ 12-2, 12-3, 12-5 og 12-7)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpPåskrift##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|objektposisjon 
+|GM_Point 
+|[1..1] 
+|representasjonspunkt som knytter påskriften geometrisk til et annet kartobjekt. 
+ 
+|tekstplassering 
+|GM_Primitive 
+|[0..1] 
+|plassering av påskriften, representert ved punkt eller linje 
+ 
+|generellTekststreng 
+|CharacterString 
+|[1..1] 
+|påskriftens tekstlige innhold 
+ 
+|påskriftType 
+|<<rppåskrifttype, «CodeList» PåskriftType>> 
+|[0..1] 
+|kategorisering av hva påskriften i plankartet omhandler 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rppåskrifttype]]
+ 
+===== «CodeList» PåskriftType
+**Definisjon:** 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»PåskriftType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/påskrifttype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Rp 1985
+**Definisjon:** modellelementer spesifikke for reguleringsplan (regulerings- og bebyggelsesplan/områderegulerin) i henhold til pbl. 1985, jf §§ 12-1, 12-2 og 12-3
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp1985
+image::Diagrammer\Hoveddiagram Rp1985.png[link=Diagrammer\Hoveddiagram Rp1985.png, , alt="Diagram som viser alle klassene i pakka."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp1985 Kodelister
+image::Diagrammer\Hoveddiagram Rp1985 Kodelister.png[link=Diagrammer\Hoveddiagram Rp1985 Kodelister.png, , alt="Diagram som viser alle klassene i pakka."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprbformålområde]]
+ 
+===== «FeatureType» RbFormålOmråde
+**Definisjon:** område for reguleringsformål i regulerings- og bebyggelsesplan (pbl. 1985 § 25, første ledd)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RbFormålOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|formålområdets flategeometri 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
+ 
+|reguleringsformål 
+|<<rpregformbrukformål, «CodeList» RegformBrukFormål>> 
+|[1..1] 
+|type reguleringsformål  
+ 
+|reguleringsformålsutdyping 
+|CharacterString 
+|[0..1] 
+|utdyping av reguleringsformål  
+ 
+|utnytting 
+|<<rputnytting, «dataType» Utnytting>> 
+|[0..1] 
+|grad av utnytting  
+ 
+|uteoppholdsareal 
+|Integer 
+|[0..1] 
+|minste uteoppholdsareal  
+ 
+|byggverkbestemmelse 
+|<<rpbyggverkbestemmelse, «CodeList» Byggverkbestemmelse>> 
+|[0..1] 
+|planbestemmelse om bygningers plassering, utforming mv.  
+ 
+|avkjørselsbestemmelse 
+|<<rpavkjørselsbestemmelse, «CodeList» Avkjørselsbestemmelse>> 
+|[0..1] 
+|planbestemmelse om avkjørsel  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|avgrensesAv 
+|<<rprpformålgrense, RpFormålGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Betinget krav om utdyping 
+|Utdyping skal brukes for disse formålene:  
+199, 299, 398, 399, 459, 469, 631, 699, 790, 990, 999         
+           
+
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregformbrukformål]]
+ 
+===== «CodeList» RegformBrukFormål
+**Definisjon:** type reguleringsformål (pbl. 1985 § 25 første ledd)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» RegformBrukFormål##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/reguleringsformål
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprbbevaringområde]]
+ 
+===== «FeatureType» RbBevaringOmråde
+**Definisjon:** område for bevaring i regulerings- og bebyggelsesplan (pbl. 1985 § 25 første ledd nr. 6)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RbBevaringOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
+ 
+|reguleringsformål 
+|<<rpregformbevaring, «CodeList» RegformBevaring>> 
+|[1..1] 
+|type bevaringsformål  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregformbevaring]]
+ 
+===== «CodeList» RegformBevaring
+**Definisjon:** type bevaringsformål 
+(pbl. 1985 § 25 første ledd)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RegformBevaring##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/regformbevaring
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprbfareområde]]
+ 
+===== «FeatureType» RbFareOmråde
+**Definisjon:** område med fare i regulerings- og bebyggelsesplan (pbl. 1985 § 25 første ledd, nr. 5)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RbFareOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
+ 
+|reguleringsformål 
+|<<rpregformfare, «CodeList» RegformFare>> 
+|[1..1] 
+|type reguleringsformål 
+ 
+|reguleringsformålsutdyping 
+|CharacterString 
+|[0..1] 
+|utdyping av reguleringsformål  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregformfare]]
+ 
+===== «CodeList» RegformFare
+**Definisjon:** type reguleringsformål (pbl. 1985 § 25 første ledd)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RegformFare##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/regformfare
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprbfornyelseområde]]
+ 
+===== «FeatureType» RbFornyelseOmråde
+**Definisjon:** område for fornyelse i regulerings- og bebyggelsesplan (pbl. § 25 første ledd nr. 8)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RbFornyelseOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan  
+ 
+|reguleringsformål 
+|<<rpregformfornyelse, «CodeList» RegformFornyelse>> 
+|[1..1] 
+|type reguleringsformål  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregformfornyelse]]
+ 
+===== «CodeList» RegformFornyelse
+**Definisjon:** type reguleringsformål (pbl. 1985 § 25 første ledd)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RegformFornyelse##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/regformfornyelse
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprbrekkefølgeområde]]
+ 
+===== «FeatureType» RbRekkefølgeOmråde
+**Definisjon:** område med formålsrekkefølge i regulerings- og bebyggelsesplan (pbl. 1985 § 25 andre ledd, § 26 og § 28-2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RbRekkefølgeOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
+ 
+|reguleringsformål 
+|<<rpregformrekkefølge, «CodeList» RegformRekkefølge>> 
+|[1..1] 
+|type reguleringsformål  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregformrekkefølge]]
+ 
+===== «CodeList» RegformRekkefølge
+**Definisjon:** type reguleringsformål (pbl. 1985 § 25 første ledd)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RegformRekkefølge##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/regformrekkefølge
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rprbrestriksjonområde]]
+ 
+===== «FeatureType» RbRestriksjonOmråde
+**Definisjon:** område med restriksjon i regulerings- og bebyggelsesplan (pbl. 1985 § 25 første ledd nr. 6, § 26 og § 28-2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RbRestriksjonOmråde##
+ 
+**Arver egenskaper fra : **
+<<rprpobjekt, RpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
+ 
+|reguleringsformål 
+|<<rpregformrestriksjon, «CodeList» RegformRestriksjon>> 
+|[1..1] 
+|type reguleringsformål  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpregformrestriksjon]]
+ 
+===== «CodeList» RegformRestriksjon
+**Definisjon:** type reguleringsformål (pbl. 1985 § 25 første ledd)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RegformRestriksjon##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/regformrestriksjon
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Ekstra diagrammer
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp Hensyn kopi
+image::Diagrammer\Hoveddiagram Rp Hensyn kopi.png[link=Diagrammer\Hoveddiagram Rp Hensyn kopi.png, , alt="Diagram med navn  Hoveddiagram Rp Hensyn kopi  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Rp SOSI-Objekt
+image::Diagrammer\Hoveddiagram Rp SOSI-Objekt.png[link=Diagrammer\Hoveddiagram Rp SOSI-Objekt.png, , alt="Diagram som viser Fellesegenskaper"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Diagram Rp UtsattRettsvirkning 
+image::Diagrammer\Diagram Rp UtsattRettsvirkning .png[link=Diagrammer\Diagram Rp UtsattRettsvirkning .png, , alt="Diagram med navn  Diagram Rp UtsattRettsvirkning   som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram RpHensyn 2
+image::Diagrammer\Hoveddiagram RpHensyn 2.png[link=Diagrammer\Hoveddiagram RpHensyn 2.png, , alt="Diagram med navn  Hoveddiagram RpHensyn 2  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Kodelister og datatyper RpFormål
+image::Diagrammer\Kodelister og datatyper RpFormål.png[link=Diagrammer\Kodelister og datatyper RpFormål.png, , alt="Diagram med navn  Kodelister og datatyper RpFormål  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Realisering Rp fra Generelle Typer
+image::Diagrammer\Realisering Rp fra Generelle Typer.png[link=Diagrammer\Realisering Rp fra Generelle Typer.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Realisering Rp Kvalitet
+image::Diagrammer\Realisering Rp Kvalitet.png[link=Diagrammer\Realisering Rp Kvalitet.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+ 
