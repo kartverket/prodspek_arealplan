@@ -1,0 +1,2882 @@
+ 
+=== «ApplicationSchema» Kommuneplan-2026-utkast
+**Definisjon:** arealplan for hele eller deler av en kommune (kommuneplanens arealdel), som angir hovedtrekkene i arealdisponeringen og rammer og betingelser for hvilke nye tiltak og ny arealbruk som kan settes i verk, samt hvilke viktige hensyn som må ivaretas ved disponeringen av arealene 
+(pbl. § 11-5 - https://lovdata.no/lov/2008-06-27-71/§11-5; 
+pbl. 1985 § 20-4 første ledd - https://lovdata.no/lov/1985-06-14-77/§20-4)
+
+ 
+[discrete]
+==== Profilparametre i tagged values
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|designation: 
+|'Kommuneplanens arealdel'@no 
+ 
+|language: 
+|no 
+ 
+|SOSI_kortnavn: 
+|Kommuneplan 
+ 
+|SOSI_langnavn: 
+|Kommuneplanens arealdel 
+ 
+|SOSI_modellstatus: 
+|utkast 
+ 
+|SOSI_spesifikasjonstype: 
+|produktspesifikasjon 
+ 
+|targetNamespace: 
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/Kommuneplan/2026 
+ 
+|version: 
+|2026-04-29 
+ 
+|xmlns: 
+|kp 
+ 
+|xsdDocument: 
+|kommuneplan.xsd 
+ 
+|xsdEncodingRule: 
+|sosi50 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+==== Avhengigheter
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|Realisert fra 
+|SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 5.1## +
+SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 4.5## +
+SOSI Generell objektkatalog::Plan::[.underline]##«ApplicationSchema» Plan-5.0## +
+SOSI Generell objektkatalog::FKB Generell del::[.underline]##FKB Generell del-5.0## +
+SOSI Generell objektkatalog::Plan::[.underline]##«ApplicationSchema» Plan 4.5.2## 
+ 
+|Avhengig av 
+|SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::[.underline]##«ApplicationSchema» Planregister## 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkediagram Kommuneplan
+image::Diagrammer\Pakkediagram Kommuneplan.png[link=Diagrammer\Pakkediagram Kommuneplan.png, , alt="Diagram med navn  Pakkediagram Kommuneplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkeavhengigheter Kommuneplan
+image::Diagrammer\Pakkeavhengigheter Kommuneplan.png[link=Diagrammer\Pakkeavhengigheter Kommuneplan.png, , alt="Diagram med navn  Pakkeavhengigheter Kommuneplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkerealisering Kommuneplan
+image::Diagrammer\Pakkerealisering Kommuneplan.png[link=Diagrammer\Pakkerealisering Kommuneplan.png, , alt="Diagram med navn  Pakkerealisering Kommuneplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Kp SOSI_Fellesegenskaper
+**Definisjon:** utvalgte generelle egenskaper og datatyper fra SOSI Del 1 
+
+Merknad: Egenskapene er organisert i abstrakte superklasser og overføres til de aktuelle objekttypene ved arv 
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp SOSI_Fellesegenskaper
+image::Diagrammer\Hoveddiagram Kp SOSI_Fellesegenskaper.png[link=Diagrammer\Hoveddiagram Kp SOSI_Fellesegenskaper.png, , alt="Diagram med navn  Hoveddiagram Kp SOSI_Fellesegenskaper  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kvalitet
+image::Diagrammer\Hoveddiagram Kvalitet.png[link=Diagrammer\Hoveddiagram Kvalitet.png, , alt="Diagram med navn  Hoveddiagram Kvalitet  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpsosi_fellesegenskaper_kartobjekt]]
+ 
+===== __«FeatureType» SOSI_Fellesegenskaper_Kartobjekt (abstrakt)__
+**Definisjon:** abstrakt objekttype med egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på objekttyper med stedfesting
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
+ 
+**Overfører egenskaper til: **
+<<kp___kpområdeabstract, ___KpOmrådeAbstract>>, <<kpkpobjekt, KpObjekt>>, <<kpkpavgrensingslinje, KpAvgrensingslinje>>, <<kpkpromligobjekt, KpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|identifikasjon 
+|<<kpidentifikasjon, «dataType» Identifikasjon>> 
+|[1..1] 
+|unik identifikasjon av et dataobjekt.  
+ 
+|oppdateringsdato 
+|DateTime 
+|[1..1] 
+|tidspunkt for siste endring på dataobjektet.  
+ 
+|førsteDigitaliseringsdato 
+|DateTime 
+|[0..1] 
+|dato når en representasjon av objektet i digital form første gang ble etablert 
+ 
+|kvalitet 
+|<<kpposisjonskvalitet, «dataType» Posisjonskvalitet>> 
+|[0..1] 
+|beskrivelse av kvaliteten på stedfestingen 
+ 
+|opphav 
+|CharacterString 
+|[0..1] 
+|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpsosi_fellesegenskaper_planområde]]
+ 
+===== __«FeatureType» SOSI_Fellesegenskaper_Planområde (abstrakt)__
+**Definisjon:** abstrakt objekttype med egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på planområder
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
+ 
+**Overfører egenskaper til: **
+<<kpkpområde, KpOmråde>>, <<kpkputsattrettsvirkningområde, KpUtsattRettsvirkningOmråde>>, <<kpkpendringområde, KpEndringOmråde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|identifikasjon 
+|Reguleringsplan-2026-Utkast::Rp  SOSI_Fellesegenskaper::[.underline]##«dataType» Identifikasjon## 
+|[1..1] 
+|unik identifikasjon av et dataobjekt.  
+ 
+|oppdateringsdato 
+|DateTime 
+|[1..1] 
+|tidspunkt for siste endring på dataobjektet.  
+ 
+|førsteDigitaliseringsdato 
+|DateTime 
+|[0..1] 
+|dato når en representasjon av objektet i digital form første gang ble etablert 
+ 
+|kvalitet 
+|Reguleringsplan-2026-Utkast::Rp  SOSI_Fellesegenskaper::[.underline]##«dataType» Posisjonskvalitet## 
+|[0..1] 
+|beskrivelse av kvaliteten på stedfestingen 
+ 
+|opphav 
+|CharacterString 
+|[0..1] 
+|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde 
+ 
+|prosesshistorie 
+|CharacterString 
+|[0..*] 
+|beskrivelse av de prosesser som dataene er gått gjennom som kan ha betydning for kvaliteten og bruken av dataene 
+ 
+|informasjon 
+|CharacterString 
+|[0..*] 
+|generell opplysning 
+ 
+|link 
+|CharacterString 
+|[0..*] 
+|referanse til et informasjonselement, enten lokalt eller globalt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpidentifikasjon]]
+ 
+===== «dataType» Identifikasjon
+**Definisjon:** Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.  Dette gjelder ikke versjonId, som kan brukes for å identifisere ulike instanser av objektet
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«dataType» Identifikasjon##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|lokalId 
+|CharacterString 
+|[1..1] 
+|lokal identifikator av et objekt 
+ 
+|navnerom 
+|CharacterString 
+|[1..1] 
+|navnerom som unikt identifiserer datakilden til et objekt.   
+ 
+|versjonId 
+|CharacterString 
+|[0..1] 
+|identifikasjon av en spesiell versjon av et geografisk objekt (instans) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|lokalId skal være en UUID 
+|Egenskapen lokalId skal være eller inneholde en UUID 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpposisjonskvalitet]]
+ 
+===== «dataType» Posisjonskvalitet
+**Definisjon:** beskrivelse av kvaliteten på stedfestingen.
+
+Merknad: Posisjonskvalitet er ikke konform med kvalitetsmodellen i ISO slik den er definert i ISO19157:2013, men er en videreføring av tidligere brukte kvalitetsegenskaper i SOSI.
+
+Datatypen Posisjonskvalitet er supplert med egenskapen målemetode, som et alternativ til datafangstmetode.
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«dataType» Posisjonskvalitet##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|datafangstmetode 
+|<<kpdatafangstmetode, «CodeList» Datafangstmetode>> 
+|[0..1] 
+|hvordan  grunnrisskoordinatene (x,y) er posisjonert fra et datagrunnlag 
+ 
+|målemetode 
+|<<kpmålemetode, «CodeList» Målemetode>> 
+|[0..1] 
+|metode som ligger til grunn for registrering av posisjon 
+ 
+|nøyaktighet 
+|Integer 
+|[0..1] 
+|punktstandardavviket i grunnriss, oppgitt i cm, for punkter, samt tverravvik for linjer 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpdatafangstmetode]]
+ 
+===== «CodeList» Datafangstmetode
+**Definisjon:** hvordan vektordataene er posisjonert fra et datagrunnlag
+
+ 
+**Realisert fra: **
+__FKB Generell del-5.0__: [.underline]##«CodeList» Datafangstmetode##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/datafangstmetode
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpmålemetode]]
+ 
+===== «CodeList» Målemetode
+**Definisjon:** metode som ligger til grunn for registrering av posisjon
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«CodeList» Målemetode##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/malemetode-kode
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Kp Planområder
+**Definisjon:** modellpakke for planområde til kommuneplan
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpOmråde
+image::Diagrammer\Hoveddiagram KpOmråde.png[link=Diagrammer\Hoveddiagram KpOmråde.png, , alt="Diagram med navn  Hoveddiagram KpOmråde  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp UtsattRettsvirkning
+image::Diagrammer\Hoveddiagram Kp UtsattRettsvirkning.png[link=Diagrammer\Hoveddiagram Kp UtsattRettsvirkning.png, , alt="Diagram med navn  Hoveddiagram Kp UtsattRettsvirkning  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp Endringsområde
+image::Diagrammer\Hoveddiagram Kp Endringsområde.png[link=Diagrammer\Hoveddiagram Kp Endringsområde.png, , alt="Diagram med navn  Hoveddiagram Kp Endringsområde  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Oversikt planområder for planer vedtatt ihht Plan 5.0
+image::Diagrammer\Oversikt planområder for planer vedtatt ihht Plan 5.0.png[link=Diagrammer\Oversikt planområder for planer vedtatt ihht Plan 5.0.png, , alt="Diagram med navn  Oversikt planområder for planer vedtatt ihht Plan 5.0  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Eksisterende bruk av KpOmråde, iht.  Plan 4.5.2 og tidligere
+image::Diagrammer\Eksisterende bruk av KpOmråde, iht.  Plan 4.5.2 og tidligere.png[link=Diagrammer\Eksisterende bruk av KpOmråde, iht.  Plan 4.5.2 og tidligere.png, , alt="Diagram med navn  Eksisterende bruk av KpOmråde, iht.  Plan 4.5.2 og tidligere  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpområde]]
+ 
+===== «FeatureType» KpOmråde
+**Definisjon:** planområde i kommuneplan, med attributter fra gammelt forvaltningssystem
+ 
+**Arver egenskaper fra : **
+<<kpsosi_fellesegenskaper_planområde, SOSI_Fellesegenskaper_Planområde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som planområdet tilhører. 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|planområdets flategeometri 
+ 
+|vertikalnivå 
+|<<kpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9) 
+ 
+|omPlanbestemmelser 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» OmPlanbestemmelser## 
+|[0..1] 
+|om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert 
+ 
+|plannavn 
+|CharacterString 
+|[0..1] 
+|planens offisielle navn (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|plantype 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Plantype## 
+|[0..1] 
+|type kommuneplan 
+ 
+|lovreferanse 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Lovreferansetype## 
+|[0..1] 
+|hvilken lov planen er vedtatt etter 
+ 
+|planstatus 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Planstatus## 
+|[0..1] 
+|planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6) 
+ 
+|lovreferanseBeskrivelse 
+|CharacterString 
+|[0..1] 
+|tekstlig beskrivelse av hvilken lov planen er vedtatt etter.  
+ 
+|opprinneligPlanId 
+|CharacterString 
+|[0..1] 
+|opprinnelig planidentifikasjon (planid) 
+ 
+|opprinneligAdmEnhet 
+|CharacterString 
+|[0..1] 
+|opprinnelig administrativEnhet for arealplanen. 
+ 
+|vedtakEndeligPlanDato 
+|Date 
+|[0..1] 
+|dato for rettsvirkning av arealplanen med tilhørende bestemmelser gjennom statlig, regionalt eller kommunalt vedtak etter plan- og bygningsloven 
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato når endelig vedtatt arealplan ble kunngjort  
+ 
+|ikrafttredelsesdato 
+|Date 
+|[0..1] 
+|dato når arealplanen trådte ikraft 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|avgrensesAv 
+|<<kpkpgrense, KpGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|kpObjekt 
+|<<kpkpobjekt, KpObjekt>> 
+|[0..*] 
+|tilhørende kartobjekt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkputsattrettsvirkningområde]]
+ 
+===== «FeatureType» KpUtsattRettsvirkningOmråde
+**Definisjon:** 
+ 
+**Arver egenskaper fra : **
+<<kpsosi_fellesegenskaper_planområde, SOSI_Fellesegenskaper_Planområde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som planområdet tilhører. 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|planområdets flategeometri 
+ 
+|vertikalnivå 
+|<<kpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9) 
+ 
+|saksummer 
+|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|[1..1] 
+|entydig nummerering av en sak i et saksbehandlingsverktøy 
+ 
+|endeligVedtakDato 
+|Date 
+|[0..1] 
+|vedtaksdato for rettsvirkning for område med utsatt rettsvirkning  
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato for kunngjøring av endelig vedtatt arealplan eller planbestemmelse, pbl. § 6-3, 8-5 siste ledd, 11-15 andre ledd og 12-12 siste ledd 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|kpObjekt 
+|<<kpkpobjekt, KpObjekt>> 
+|[0..*] 
+|tilhørende kartobjekt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpendringområde]]
+ 
+===== «FeatureType» KpEndringOmråde
+**Definisjon:** planområde for vedtatt endring av  kommuneplan
+
+ 
+**Arver egenskaper fra : **
+<<kpsosi_fellesegenskaper_planområde, SOSI_Fellesegenskaper_Planområde>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som planområdet tilhører. 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|planområdets flategeometri 
+ 
+|vertikalnivå 
+|<<kpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9) 
+ 
+|endringstype 
+|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Planendringstype## 
+|[1..1] 
+|om endringen er foretatt som en mindre endring eller en endring 
+ 
+|hjemmelsgrunnlag 
+|CharacterString 
+|[1..1] 
+|lovgrunnlag som ligger til grunn for avgjørelse 
+ 
+|saksnummer 
+|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|[1..1] 
+|entydig nummerering av en sak i et saksbehandlingsverktøy 
+ 
+|endringsnavn 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|endringVedtakDato 
+|Date 
+|[0..1] 
+|dato når endringen av arealplanen trådte ikraft 
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato for når en sak blir offentlig kunngjort 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|kpObjekt 
+|<<kpkpobjekt, KpObjekt>> 
+|[0..*] 
+|tilhørende kartobjekt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpvertikalnivå]]
+ 
+===== «CodeList» Vertikalnivå
+**Definisjon:** beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Vertikalnivå##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/vertikalnivå
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpgrense]]
+ 
+===== «FeatureType» KpGrense
+**Definisjon:** plangrense for planområde i kommune (-del) plan (pbl. 1985 § 20-4 første ledd, eller pbl. § 11-5)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpGrense##
+ 
+**Arver egenskaper fra : **
+<<kpkpavgrensingslinje, KpAvgrensingslinje>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|grense 
+|GM_Curve 
+|[1..1] 
+|avgrensningslinje 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med flategeometri 
+|Avgrensingslinja skal samsvare med geometrien til de flateobjektene som refererer til avgrensingslinja.
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Kp Abstrakte typer
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpObjekt
+image::Diagrammer\Hoveddiagram KpObjekt.png[link=Diagrammer\Hoveddiagram KpObjekt.png, , alt="Diagram med navn  Hoveddiagram KpObjekt  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp Hjelpegeometrier
+image::Diagrammer\Hoveddiagram Kp Hjelpegeometrier.png[link=Diagrammer\Hoveddiagram Kp Hjelpegeometrier.png, , alt="Diagram med navn  Hoveddiagram Kp Hjelpegeometrier  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpobjekt]]
+ 
+===== __«FeatureType» KpObjekt (abstrakt)__
+**Definisjon:** abstrakt supertype som omfatter alle type kartobjekter i en  kommuneplan.
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpObjekt##
+ 
+**Arver egenskaper fra : **
+<<kpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
+ 
+**Overfører egenskaper til: **
+<<kpkpfaresone, KpFareSone>>, <<kpkpsikringsone, KpSikringSone>>, <<kpkpinfrastruktursone, KpInfrastrukturSone>>, <<kpkpgjennomføringsone, KpGjennomføringSone>>, <<kpkpangitthensynsone, KpAngittHensynSone>>, <<kpkpstøysone, KpStøySone>>, <<kpkpdetaljeringsone, KpDetaljeringSone>>, <<kpkpbåndleggingsone, KpBåndleggingSone>>, <<kpkparealformålområde, KpArealformålOmråde>>, <<kpkpinfrastrukturlinje, KpInfrastrukturLinje>>, <<kpkpbestemmelseområde, KpBestemmelseOmråde>>, <<kpkphandlingområde, KpHandlingOmråde>>, <<kpkpretningslinjeområde, KpRetningslinjeOmråde>>, <<kpkpregulerthøyde, KpRegulertHøyde>>, <<kpkppåskrift, KpPåskrift>>, <<kpkpjuridisklinje, KpJuridiskLinje>>, <<kpkpsamferdselpunkt, KpSamferdselPunkt>>, <<kpkprestriksjonområde, KpRestriksjonOmråde>>, <<kpkpsamferdsellinje, KpSamferdselLinje>>, <<kpkparealbrukområde, KpArealbrukOmråde>>, <<kp___kpendringsområde, ___KpEndringsområde>>, <<kpkphensynsone, KpHensynSone>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[1..1] 
+|referanse til arealplanen som kartobjektet tilhører. 
+ 
+|vertikalnivå 
+|<<kpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|påskrift 
+|<<kpkppåskrift, KpPåskrift>> 
+|[0..*] 
+|påskrift til kartobjekt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpromligobjekt]]
+ 
+===== __«FeatureType» KpRomligObjekt (abstrakt)__
+**Definisjon:** abstrakt objekttype for romgeometier i en  kommuneplan.
+Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalgtge obejkttyper med flategeometri
+
+ 
+**Arver egenskaper fra : **
+<<kpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
+ 
+**Overfører egenskaper til: **
+<<kpkphensynrom, KpHensynRom>>, <<kpkpbestemmelserom, KpBestemmelseRom>>, <<kpkphandlingrom, KpHandlingRom>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» AdministrativEnhetskode## 
+|[1..1] 
+|identifikasjon av arealplanen som objektet tilhører.  
+ 
+|vertikalnivå 
+|<<kpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpavgrensingslinje]]
+ 
+===== __«FeatureType» KpAvgrensingslinje (abstrakt)__
+**Definisjon:** abstrakt objekttype for avgrensingslinjer  i en  kommuneplan.
+Brukes der det er behov for å ta vare på kvalitesinformasjon som ikke kan ligge på flateobjektene
+
+ 
+**Arver egenskaper fra : **
+<<kpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
+ 
+**Overfører egenskaper til: **
+<<kpkparealgrense, KpArealGrense>>, <<kpkpgrense, KpGrense>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|[0..1] 
+|referanse til arealplanen som kartobjektet tilhører. 
+ 
+|vertikalnivå 
+|<<kpvertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+|beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§9) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Formål
+**Definisjon:** informasjonsklasser for arealformål i kommuneplan (pbl. §11-7 - https://lovdata.no/lov/2008-06-27-71/§11-7)
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpFormål
+image::Diagrammer\Hoveddiagram KpFormål.png[link=Diagrammer\Hoveddiagram KpFormål.png, , alt="Diagram med navn  Hoveddiagram KpFormål  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Kodelister og datatyper KpFormål
+image::Diagrammer\Kodelister og datatyper KpFormål.png[link=Diagrammer\Kodelister og datatyper KpFormål.png, , alt="Diagram med navn  Kodelister og datatyper KpFormål  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkparealformålområde]]
+ 
+===== «FeatureType» KpArealformålOmråde
+**Definisjon:** område med oppgitt arealformål i kommune(-del)plan (pbl. § 11-7 - https://lovdata.no/lov/2008-06-27-71/§11-7)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpArealformålOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|flategeometri 
+ 
+|arealformål 
+|<<kpkparealformål, «CodeList» KpArealformål>> 
+|[1..1] 
+|kode for arealformål i kommuneplan  (kart- og planforskriften Vedlegg II - https://lovdata.no/dokument/SF/forskrift/2025-01-20-52) 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[1..1] 
+|status for arealbruk i oversiktsplan (pbl. 1985 § 20-4, første ledd) og kommuneplan (pbl. § 11-7). 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|detaljert beskrivelse av formål 
+ 
+|områdenavn 
+|CharacterString 
+|[0..1] 
+|entydig navn/feltbetegnelse på formålsområde i kommune(-del)plan 
+ 
+|utnytting 
+|<<kputnytting, «dataType» Utnytting>> 
+|[0..1] 
+|grad av utnytting (pbl. § 11-9 nr. 5 og TEK kap. 5) 
+ 
+|uteoppholdsareal 
+|Integer 
+|[0..1] 
+|minste uteoppholdsareal (TEK § 5-6) 
+ 
+|eierform 
+|<<kpeierformtype, «CodeList» Eierformtype>> 
+|[1..1] 
+|henvisning til planbestemmelse om arealet skal brukes av det offentlige, eller være fellesarealer for flere eiendommer (pbl. § 11-10 nr. 3 - https://lovdata.no/lov/2008-06-27-71/§11-10) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|avgrensesAv 
+|<<kpkparealgrense, KpArealGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkparealformål]]
+ 
+===== «CodeList» KpArealformål
+**Definisjon:** kodeliste for arealformål i kommuneplan  (kart- og planforskriften Vedlegg II - https://lovdata.no/forskrift/2025-01-20-52/§2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» KpArealformål##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/kparealformål
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kparealbrukstatus]]
+ 
+===== «CodeList» Arealbrukstatus
+**Definisjon:** status for arealbruk i oversiktsplan (pbl. 1985 § 20-4, første ledd) og kommuneplan (pbl. § 11-7).
+
+Merknad: Arealbruksstatus 3 skal ikke benyttes på planer etter pbl. 2008.
+
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Arealbruksstatus##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/arealbrukstatus
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpeierformtype]]
+ 
+===== «CodeList» Eierformtype
+**Definisjon:** henvisning til planbestemmelse om arealet skal brukes av det offentlige, eller være fellesarealer for flere eiendommer (pbl. § 11-10 nr. 3 - https://lovdata.no/lov/2008-06-27-71/§11-10)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»EierformType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/eierformtype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kputnytting]]
+ 
+===== «dataType» Utnytting
+**Definisjon:** grad av utnytting (pbl. 1985 § 20-4 andre ledd bokstav b; pbl. § 11-9 nr. 5 og TEK kap. 5)
+
+Merknad: Benyttes for å regulere bygningers volum over terreng og bygningers totale areal, sett i forhold til behovet for uteoppholdsareal, belastning på infrastruktur og forholdet til omgivelsene 
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» Utnytting##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|utnyttingstype 
+|<<kputnyttingstype, «CodeList» Utnyttingstype>> 
+|[1..1] 
+|type grad av utnytting (pbl. 1985 § 20-4 annet ledd bokstav b; pbl. § 11-9 nr. 5  og TEK kap. 5) 
+ 
+|utnyttingstall 
+|Integer 
+|[0..1] 
+|tallverdi for grad av utnytting (pbl. 1985 § 20-4 annet ledd bokstav b; pbl. § 11-9 nr. 5  og TEK kap. 5) 
+ 
+|utnyttingstall_minimum 
+|Integer 
+|[0..1] 
+|tallverdi for minste utnyttingsgrad  (pbl. § 11-9 nr. 5  og TEK kap. 5) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Utnyttingstype for nyere planer 
+|For planer etter gjeldende pbl. er utnyttingstype begrensa til (10, 11, 15, 16, 17, 18) 
+ 
+|Bruk av utnyttingstall 
+|utnyttingstall og utnyttingstall_minimum skal ikke brukes for utnyttingstype 10 og 11, men er påkrevd for alle andre utnyttingstyper  +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kputnyttingstype]]
+ 
+===== «CodeList» Utnyttingstype
+**Definisjon:** type grad av utnytting (pbl. 1985 § 20-4 annet ledd bokstav b; pbl. § 11-9 nr. 5  og TEK kap. 5)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Utnyttingstype##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/utnyttingstype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkparealgrense]]
+ 
+===== «FeatureType» KpArealGrense
+**Definisjon:** grense for arealbruk/ -formål i kommune (-del) plan (pbl. 1985 § 20-4 første ledd, eller pbl. § 11-5)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpArealGrense##
+ 
+**Arver egenskaper fra : **
+<<kpkpavgrensingslinje, KpAvgrensingslinje>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|grense 
+|GM_Curve 
+|[1..1] 
+|linje som avgrenser et arealbruk eller arealformål 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med flategeometri 
+|Avgrensingslinja skal samsvare med geometrien til de flateobjektene som refererer til avgrensingslinja.
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpsamferdselpunkt]]
+ 
+===== «FeatureType» KpSamferdselPunkt
+**Definisjon:** samferdselsformål angitt ved punkt som viser viktig ledd i kommunikasjonssystemet i kommuneplan eller -delplan (pbl. 1985 § 20-4 første ledd nr. 6, eller pbl. § 11-7 andre ledd nr. 2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpSamferdselPunkt##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|posisjon 
+|GM_Point 
+|[1..1] 
+|punkt for stedfesting 
+ 
+|typeSamferdselspunkt 
+|<<kpsamferdselspunkttype, «CodeList» SamferdselspunktType>> 
+|[1..1] 
+|type samferdselsformål angitt ved punkt i kommuneplanens arealdel (kart- og planforskriften Vedlegg II, 2 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[1..1] 
+|status for arealbruk i oversiktsplan (pbl. 1985 § 20-4, første ledd) og kommuneplan (pbl. § 11-7). 
+ 
+|viktighet 
+|<<kpviktighet, «CodeList» Viktighet>> 
+|[0..1] 
+|grad av viktighet for punkt i kommunikasjonssystemet i  kommuneplan eller-delplan (pbl. 1985 § 20-4, første ledd nr. 6) 
+ 
+|objektnavn 
+|CharacterString 
+|[0..1] 
+|navn til punktobjekt, unikt innen samme plan 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpsamferdselspunkttype]]
+ 
+===== «CodeList» SamferdselspunktType
+**Definisjon:** type samferdselsformål angitt ved punkt i kommuneplanens arealdel (kart- og planforskriften Vedlegg II, 2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»SamferdselspunktType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/samferdselspunkttype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpviktighet]]
+ 
+===== «CodeList» Viktighet
+**Definisjon:** grad av viktighet for punkter/linjer i kommunikasjonssystemet i kommuneplan eller-delplan (pbl. 1985 § 20-4, første ledd nr. 6)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Viktighet##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/viktighet
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpsamferdsellinje]]
+ 
+===== «FeatureType» KpSamferdselLinje
+**Definisjon:** samferdselsformål angitt ved linje som viser som viser viktige ledd i kommunikasjonssystemet i kommune (-del) plan (pbl. 1985 § 20-4 første ledd nr. 6, eller pbl. § 11-7 andre ledd nr. 2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpSamferdselLinje##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|senterlinje 
+|GM_Curve 
+|[1..1] 
+|stedfesting av senterlinje 
+ 
+|typeSamferdselslinje 
+|<<kpsamferdselslinjetype, «CodeList» SamferdselslinjeType>> 
+|[1..1] 
+|type samferdselsformål angitt ved linje i kommuneplanens arealdel (kart- og planforskriften Vedlegg II, 2 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[1..1] 
+|status for arealbruk i oversiktsplan (pbl. 1985 § 20-4, første ledd) og kommuneplan (pbl. § 11-7). 
+ 
+|holdningsklasse 
+|<<kpholdningsklassetype, «CodeList» HoldningsklasseType>> 
+|[0..1] 
+|strenghetsklasse for avkjørsler til veg (pbl. § 11-10 nr. 4) 
+ 
+|viktighet 
+|<<kpviktighet, «CodeList» Viktighet>> 
+|[0..1] 
+|grad av viktighet for linjer i kommunikasjonssystemet i  kommuneplan eller-delplan (pbl. 1985 § 20-4, første ledd nr. 6) 
+ 
+|objektnavn 
+|CharacterString 
+|[0..1] 
+|navn til linjeobjekt, unikt innen samme plan 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Vertikalnivå er påkrevd 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpsamferdselslinjetype]]
+ 
+===== «CodeList» SamferdselslinjeType
+**Definisjon:** type samferdselsformål angitt ved linje i kommuneplanens arealdel (kart- og planforskriften Vedlegg II, 2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»SamferdselslinjeType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/samferdselslinjetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpholdningsklassetype]]
+ 
+===== «CodeList» HoldningsklasseType
+**Definisjon:** strenghetsklasser for avkjørsler til veg (pbl. § 11-10 nr. 4)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»HoldningsklasseType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/holdningsklasse
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpinfrastrukturlinje]]
+ 
+===== «FeatureType» KpInfrastrukturLinje
+**Definisjon:** infrastrukturformål angitt ved linje i kommune(-del)plan (pbl. § 11-7 andre ledd nr. 2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpInfrastrukturLinje##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|senterlinje 
+|GM_Curve 
+|[1..1] 
+|linje for stedfesting av infrastruktur 
+ 
+|infrastrukturType 
+|<<kpinfrastrukturlinjetype, «CodeList» InfrastrukturLinjeType>> 
+|[1..1] 
+|type formål for infrastrukturlinje i kommuneplanens arealdel (kart- og planforskriften Vedlegg II, 2 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[1..1] 
+|status for arealbruk i oversiktsplan (pbl. 1985 § 20-4, første ledd) og kommuneplan (pbl. § 11-7). 
+ 
+|objektnavn 
+|CharacterString 
+|[0..1] 
+|navn til planobjekt som har punkt- eller linjegeometri. Objektnavnet identifiserer planobjektet unikt innen samme plan. 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpinfrastrukturlinjetype]]
+ 
+===== «CodeList» InfrastrukturLinjeType
+**Definisjon:** type formål for infrastrukturlinje i kommuneplanens arealdel (kart- og planforskriften Vedlegg II, 2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»InfrastrukturLinjeType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/infrastrukturlinjetype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Hensyn
+**Definisjon:** informasjonsklasser for hensynssoner i kommiuneplan
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpHensyn
+image::Diagrammer\Hoveddiagram KpHensyn.png[link=Diagrammer\Hoveddiagram KpHensyn.png, , alt="Diagram med navn  Hoveddiagram KpHensyn  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpHensyn Kodelister
+image::Diagrammer\Hoveddiagram KpHensyn Kodelister.png[link=Diagrammer\Hoveddiagram KpHensyn Kodelister.png, , alt="Diagram med navn  Hoveddiagram KpHensyn Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpsikringsone]]
+ 
+===== «FeatureType» KpSikringSone
+**Definisjon:** hensynssone for sikring i kommune(-del)plan (pbl. § 11-8 tredje ledd bokstav a)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpSikringSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|sikring 
+|<<kpkpsikringsonetype, «CodeList» KpSikringSoneType>> 
+|[1..1] 
+|type sikring i hensynsone for sikring (pbl. § 11-8 tredje ledd bokstav a) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpsikringsonetype]]
+ 
+===== «CodeList» KpSikringSoneType
+**Definisjon:** type sikring i hensynsone for sikring i kommuneplan (pbl. § 11-8 tredje ledd bokstav a)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»KpSikringSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/sikringsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpstøysone]]
+ 
+===== «FeatureType» KpStøySone
+**Definisjon:** hensynssone for støy i kommune(-del)plan (pbl. § 11-8 tredje ledd bokstav a)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpStøySone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|støy 
+|<<kpkpstøysonetype, «CodeList» KpStøySoneType>> 
+|[1..1] 
+|type støy i hensynssone for støy (pbl. § 11-8, tredje ledd bokstav a) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpstøysonetype]]
+ 
+===== «CodeList» KpStøySoneType
+**Definisjon:** type støy i hensynsone for støy (pbl. § 11-8, tredje ledd bokstav a). 
+
+Merknad: 
+Se UTGÅTT støyforskriften: https://lovdata.no/dokument/LTI/forskrift/2002-10-04-1089, og veiledning til forskriften (T-1442): https://www.regjeringen.no/no/dokumenter/retningslinje-for-behandling-av-stoy-i-arealplanlegging/id2857574/
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»StøySoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/støysonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpfaresone]]
+ 
+===== «FeatureType» KpFareSone
+**Definisjon:** hensynssone for fare i kommune(-del)plan (pbl. § 11-8 tredje ledd bokstav a)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpFareSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|fare 
+|<<kpkpfaresonetype, «CodeList» KpFareSoneType>> 
+|[1..1] 
+|type fare i hensynssone for fare (pbl. § 11-8, tredje ledd bokstav a) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpfaresonetype]]
+ 
+===== «CodeList» KpFareSoneType
+**Definisjon:** type fare i hensynssone for fare (pbl. § 11-8, tredje ledd bokstav a)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»FareSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/faresonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpinfrastruktursone]]
+ 
+===== «FeatureType» KpInfrastrukturSone
+**Definisjon:** hensynssone for særlige krav til infrastruktur i kommune(-del)plan (pbl. § 11-8 tredje ledd bokstav b)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpInfrastrukturSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|infrastruktur 
+|<<kpkpinfrastruktursonetype, «CodeList» KpInfrastrukturSoneType>> 
+|[1..1] 
+|type infrastrukturkrav i hensynsone for infrastruktur (pbl. § 11-8, tredje ledd bokstav b) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpinfrastruktursonetype]]
+ 
+===== «CodeList» KpInfrastrukturSoneType
+**Definisjon:** type infrastrukturkrav i hensynsone for infrastruktur (pbl. § 11-8, tredje ledd bokstav b)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»InfrastrukturSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/infrastruktursonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpangitthensynsone]]
+ 
+===== «FeatureType» KpAngittHensynSone
+**Definisjon:** sone med angitt særlig hensyn til landbruk, reindrift, mineralressurser, friluftsliv, grønnstruktur, landskap eller bevaring av naturmiljø eller kulturmiljø (pbl. § 11-8 bokstav c).
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpAngittHensynSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|angittHensyn 
+|<<kpkpangitthensynsonetype, «CodeList» KpAngittHensynSoneType>> 
+|[1..1] 
+|type angitt hensyn i hensynssone for nærmere angitt særlig hensyn (pbl. § 11-8 tredje ledd bokstav c) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpangitthensynsonetype]]
+ 
+===== «CodeList» KpAngittHensynSoneType
+**Definisjon:** type angitt hensyn i hensynssone for nærmere angitt særlig hensyn (pbl. § 11-8 tredje ledd bokstav c)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»AngittHensynSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/angitthensynsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpbåndleggingsone]]
+ 
+===== «FeatureType» KpBåndleggingSone
+**Definisjon:** hensynssone for båndlegging  i kommune(-del)plan (pbl. § 11-8 tredje ledd bokstav d)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpBåndleggingSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|båndlegging 
+|<<kpkpbåndleggingsonetype, «CodeList» KpBåndleggingSoneType>> 
+|[1..1] 
+|type båndlegging i hensynssone for båndlegging (pbl. § 11-8 tredje ledd bokstav d) 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[1..1] 
+|status for arealbruk innen oversiktsplan (pbl. 1985 § 20-4, 1. ledd og § 25) 
+ 
+|båndlagtFremTil 
+|Date 
+|[0..1] 
+|dato når båndleggingen opphører 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpbåndleggingsonetype]]
+ 
+===== «CodeList» KpBåndleggingSoneType
+**Definisjon:** type båndlegging i hensynssone for båndlegging (pbl. § 11-8 tredje ledd bokstav d)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»BåndleggingSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/båndleggingsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpgjennomføringsone]]
+ 
+===== «FeatureType» KpGjennomføringSone
+**Definisjon:** hensynssone for særskilte gjennomføringsvirkemidler i kommune(-del)plan (pbl. §§ 11-8 tredje ledd bokstav e, 12 A-1, 12 A-13)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpGjennomføringSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|gjennomføring 
+|<<kpkpgjennomføringsonetype, «CodeList» KpGjennomføringSoneType>> 
+|[1..1] 
+|type særskilte gjennomføringsvirkemidler  (pbl. §§ 11-8e, 12 A-1, 12 A-13) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpgjennomføringsonetype]]
+ 
+===== «CodeList» KpGjennomføringSoneType
+**Definisjon:** type særskilte gjennomføringsvirkemidler i gjennomføringssone (pbl. §§ 11-8 tredje ledd bokstav e, 12 A-1, 12 A-13)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»GjennomføringSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/gjennomføringsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpdetaljeringsone]]
+ 
+===== «FeatureType» KpDetaljeringSone
+**Definisjon:** hensynssone for videreføring av reguleringsplan i kommune(-del)plan (pbl. § 11-8 tredje ledd bokstav f)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpDetaljeringSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning i grunnriss 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone (pbl. § 11-8, § Kapittel 12 A nr 13) 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
+ 
+|detaljering 
+|<<kpkpdetaljeringsonetype, «CodeList» KpDetaljeringSoneType>> 
+|[1..1] 
+|type detaljering i hensynsone for videreføring av gjeldende reguleringsplan (pbl. § 11-8 tredje ledd bokstav f) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphensynrom, KpHensynRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpdetaljeringsonetype]]
+ 
+===== «CodeList» KpDetaljeringSoneType
+**Definisjon:** type detaljering i hensynsone for videreføring av gjeldende reguleringsplan (pbl. § 11-8 tredje ledd bokstav f)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»DetaljeringSoneType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/hensyn/detaljeringsonetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkphensynrom]]
+ 
+===== «FeatureType» KpHensynRom
+**Definisjon:** hensynsrom i 3D for en hensynssone i kommuneplan
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpHensynSone##
+ 
+**Arver egenskaper fra : **
+<<kpkpromligobjekt, KpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|GM_Solid 
+|[1..1] 
+|lukket romgeometri i 3D 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med 2D-geometri 
+|Fotavtrykket (grunnrissprojeksjonen) av 3D-geometrien skal samsvare med 2D-geometrien for det området det tilhører. 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Bestemmelsesobjekter
+**Definisjon:** modellpakke for bestemmelser til plankartet,  som ivaretar stedfesting av bestemmelser som ikke knyttes til et formål eller en hensynssone. 
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp Bestemmelser i kartet
+image::Diagrammer\Hoveddiagram Kp Bestemmelser i kartet.png[link=Diagrammer\Hoveddiagram Kp Bestemmelser i kartet.png, , alt="Diagram med navn  Hoveddiagram Kp Bestemmelser i kartet  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpbestemmelseområde]]
+ 
+===== «FeatureType» KpBestemmelseOmråde
+**Definisjon:** område med bestemmelser til kommune(-del)plan (pbl. §§ 11-9, 11-10 og 11-11)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpBestemmelseOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning 
+ 
+|bestemmelseOmrådeNavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på bestemmelsesområde (pbl. §§ 11-9, 11-10 og 11-11) 
+ 
+|bestemmelseHjemmel 
+|<<kpkpbestemmelsehjemmel, «CodeList» KpBestemmelseHjemmel>> 
+|[1..*] 
+|kode for hjemmel til planbestemmelse i kommuneplan (pbl. §§ 11-9, 11-10 og 11-11) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkpbestemmelserom, KpBestemmelseRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpbestemmelsehjemmel]]
+ 
+===== «CodeList» KpBestemmelseHjemmel
+**Definisjon:** kodeliste for hjemmel til planbestemmelse  i kommuneplan (pbl. §§ 11-9, 11-10 og 11-11)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»KpBestemmelseHjemmel##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/kpbestemmelsehjemmel
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpbestemmelserom]]
+ 
+===== «FeatureType» KpBestemmelseRom
+**Definisjon:** bestemmelserom i 3D for KpBestemmelseOmråde
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpBestemmelseOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpromligobjekt, KpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|GM_Solid 
+|[1..1] 
+|lukket romgeometri i 3D 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med 2D-geometri 
+|Fotavtrykket (grunnrissprojeksjonen) av 3D-geometrien skal samsvare med 2D-geometrien for det området det tilhører. 
+
+
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkphandlingområde]]
+ 
+===== «FeatureType» KpHandlingOmråde
+**Definisjon:** område som konstruksjonen/tiltaket må holde seg innenfor (kart- og planforskriften vedlegg V – Stedfesting av bestemmelser i plankart til kommuneplanens arealdel - https://lovdata.no/forskrift/2025-01-20-52/§2). 
+
+Merknad: KpHandlingOmråde har samme betydning som byggegrense og anvendes ved fremstilling av planen i 2D. Dette kan suppleres med et KpHandlingRom for å avgrense tiltaket vertikalt
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpHandlingOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_Surface 
+|[1..1] 
+|områdets flategeometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|<<kpkphandlingrom, KpHandlingRom>> 
+|[0..1] 
+|referanse til 3D-geometri 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkphandlingrom]]
+ 
+===== «FeatureType» KpHandlingRom
+**Definisjon:** handlingsrom i 3D for KpHandlingOmråde. 
+Konstruksjonen/tiltaket må holde seg innenfor handlingrommet, i henhold til de tilhørende planbestemmelsene 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» RpHandlingOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpromligobjekt, KpRomligObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rom 
+|GM_Solid 
+|[1..1] 
+|lukket romgeometri i 3D 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar med 2D-geometri 
+|Fotavtrykket (grunnrissprojeksjonen) av 3D-geometrien skal samsvare med 2D-geometrien for det området det tilhører. 
+
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpjuridisklinje]]
+ 
+===== «FeatureType» KpJuridiskLinje
+**Definisjon:** bestemmelse stedfestet med linje i kommune(-del)plan (pbl. §§ 11-9, 11-10 og 11-11, kart- og planforskriften Vedlegg V)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpJuridiskLinje##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|linjeforløp 
+|GM_Curve 
+|[1..1] 
+|linje for stedfesting av juridsk tilleggsinformasjon 
+ 
+|juridisklinjeType 
+|<<kpkpjuridisklinjetype, «CodeList» KpJuridiskLinjeType>> 
+|[1..1] 
+|type linje for stedfesting av planens, arealformålets, bygnings m.v. juridiske virkning (pbl. kap. 11) 
+ 
+|objektnavn 
+|CharacterString 
+|[0..1] 
+|navn til planobjekt som har punkt- eller linjegeometri. Objektnavnet identifiserer planobjektet unikt innen samme plan. 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpjuridisklinjetype]]
+ 
+===== «CodeList» KpJuridiskLinjeType
+**Definisjon:** type bestemmelse stedfestet med linje i kommune(-del)plan (pbl. §§ 11-9, 11-10 og 11-11, kart- og planforskriften Vedlegg V - https://lovdata.no/forskrift/2025-01-20-52/§2)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»KpJuridiskLinjeType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/kommuneplan/kpjuridisklinjetype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Regulert høyde
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp Regulert høyde
+image::Diagrammer\Hoveddiagram Kp Regulert høyde.png[link=Diagrammer\Hoveddiagram Kp Regulert høyde.png, , alt="Diagram som viser høyde fra planbestemmelse"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpregulerthøyde]]
+ 
+===== «FeatureType» KpRegulertHøyde
+**Definisjon:** linje med bestemmelse om regulert høyde (pbl. §§ 11-9, 11-10 og 11-11, kart- og planforskriften Vedlegg V - https://lovdata.no/forskrift/2025-01-20-52/§2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpRegulertHøyde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|stedfesting 
+|GM_Primitive 
+|[1..1] 
+|stedfesting (punkt eller linje) av regulert høyde 
+ 
+|høydefraplanbestemmelse 
+|<<kphøydefraplanbestemmelse, «dataType» HøydeFraPlanbestemmelse>> 
+|[1..1] 
+|regulert høyde gitt i planbestemmelse (pbl. §§ 11-9, 11-10 og 11-11, kart- og planforskriften Vedlegg V) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kphøydefraplanbestemmelse]]
+ 
+===== «dataType» HøydeFraPlanbestemmelse
+**Definisjon:** regulert høyde gitt i planbestemmelse (pbl. §§ 11-9, 11-10 og 11-11, kart- og planforskriften Vedlegg V - https://lovdata.no/forskrift/2025-01-20-52/§2)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» HøydeFraPlanbestemmelse##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|regulertHøyde 
+|Real 
+|[1..1] 
+|tall for kotehøyde eller høyde over terreng ved bestemmelse om regulert høyde 
+ 
+|typeHøyde 
+|<<kptypehøyde, «CodeList» TypeHøyde>> 
+|[0..1] 
+|egenskap som angir hva planbestemmelsen regulerer høyden av 
+ 
+|høydereferansesystem 
+|<<kphøydereferansesystem, «CodeList» Høydereferansesystem>> 
+|[0..1] 
+|referansesystem som høydeverdiene refererer til.  
+ 
+|terrengreferanse 
+|<<kpterrengreferanse, «CodeList» Terrengreferanse>> 
+|[0..1] 
+|referanseflate som er utgangspunktet for å angi høyde over terreng.  
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|bruk av terrengreferanse 
+|Terrengreferanse kan brukes i steden for høydereferansesystem dersom typeHøyde er gesims- eller mønehøyde. +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kphøydereferansesystem]]
+ 
+===== «CodeList» Høydereferansesystem
+**Definisjon:** høydereferansesystem som ligger til grunn for bestemmelser om regulert høyde
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/høydereferansesystem
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpterrengreferanse]]
+ 
+===== «CodeList» Terrengreferanse
+**Definisjon:** type terrengoverflate som danner utgangspunktet for å fastsette den regulerte høyden
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/terrengreferanse
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kptypehøyde]]
+ 
+===== «CodeList» TypeHøyde
+**Definisjon:** hva en planbestemmelse om regulert høyde gjelder for
+
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/typehøyde
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Påskrift
+**Definisjon:** modellpakke som definerer kartografisk påskrift
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpPåskrift
+image::Diagrammer\Hoveddiagram KpPåskrift.png[link=Diagrammer\Hoveddiagram KpPåskrift.png, , alt="Diagram som viser objekttypen Påskrift"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkppåskrift]]
+ 
+===== «FeatureType» KpPåskrift
+**Definisjon:** påskrift eller supplerende tekst til plankartet for kommune (-del) plan (pbl. 1985 § 20-4 første ledd, eller pbl. § 11-7 andre ledd)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpPåskrift##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|objektposisjon 
+|GM_Point 
+|[1..1] 
+|representasjonspunkt som knytter påskriften geometrisk til et annet kartobjekt. 
+ 
+|tekstplassering 
+|GM_Primitive 
+|[0..1] 
+|plassering av påskriften, representert ved punkt eller linje 
+ 
+|generellTekststreng 
+|CharacterString 
+|[1..1] 
+|påskriftens tekstlige innhold 
+ 
+|påskriftType 
+|<<kppåskrifttype, «CodeList» PåskriftType>> 
+|[0..1] 
+|kategorisering av hva påskriften i plankartet omhandler 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kppåskrifttype]]
+ 
+===== «CodeList» PåskriftType
+**Definisjon:** 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»PåskriftType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/påskrifttype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Kp 1985
+**Definisjon:** modell med objekttyper etter pbl. 1985
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp1985
+image::Diagrammer\Hoveddiagram Kp1985.png[link=Diagrammer\Hoveddiagram Kp1985.png, , alt="Diagram med navn  Hoveddiagram Kp1985  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkparealbrukområde]]
+ 
+===== «FeatureType» KpArealbrukOmråde
+**Definisjon:** område for arealbruk i kommune (-del) plan (pbl. 1985 § 20-4 første ledd)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpArealbrukOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|flategeometri 
+ 
+|arealbruk 
+|<<kparealbruk, «CodeList» Arealbruk>> 
+|[1..1] 
+|kode for arealbrukskategori  i kommuneplan (pbl. 1985 § 20-4 første ledd) 
+ 
+|områdenavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på arealformålsområde i kommuneplan (pbl. 1985 § 20-4 første ledd) 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[0..1] 
+|status for arealbruk innen oversiktsplan (pbl. 1985 § 20-4 første ledd og § 25) 
+ 
+|arealbruksutdyping 
+|CharacterString 
+|[0..1] 
+|utdyping av arealbrukskategori (pbl. 1985 § 20-4 første ledd og § 25) 
+ 
+|utnytting 
+|<<kputnytting, «dataType» Utnytting>> 
+|[0..1] 
+|grad av utnytting (pbl. 1985 § 20-4 andre ledd bokstav b og § 26 førsteledd og forskrift TEK kap. III) 
+ 
+|uteoppholdsareal 
+|Integer 
+|[0..1] 
+|minste uteoppholdsareal 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|avgrensesAv 
+|<<kpkparealgrense, KpArealGrense>> 
+|[0..*] 
+|avgrensningslinje for området 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kparealbruk]]
+ 
+===== «CodeList» Arealbruk
+**Definisjon:** kodeliste for arealbrukskategori  i kommuneplan (pbl. 1985 § 20-4 første ledd)
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» Arealbruk##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/arealbruk
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkprestriksjonområde]]
+ 
+===== «FeatureType» KpRestriksjonOmråde
+**Definisjon:** område med restriksjon i kommune (-del) plan (pbl. 1985 § 20-4)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpRestriksjonOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets utstrekning 
+ 
+|arealbruksstatus 
+|<<kparealbrukstatus, «CodeList» Arealbrukstatus>> 
+|[0..1] 
+|status for arealbruk i oversiktsplan (pbl. 1985 § 20-4, første ledd og § 25). 
+ 
+|arealbruksrestriksjoner 
+|<<kparealbruksrestriksjoner, «CodeList» Arealbruksrestriksjoner>> 
+|[1..1] 
+|type restriksjon med utfyllende bestemmelser (pbl. §§ 20-4 andre ledd bokstav a til h og 20-6 tredje ledd) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|betinget krav om arealbruksstatus 
+|--arealbruksstatus trengs for arealbruksrestriksjon 400, 410, 411, 420 og 499 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kparealbruksrestriksjoner]]
+ 
+===== «CodeList» Arealbruksrestriksjoner
+**Definisjon:** kodeliste for type restriksjon med utfyllende bestemmelser (pbl. §§ 20-4 andre ledd bokstav a til h og 20-6 tredje ledd)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Arealbruksrestriksjoner##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/arealbruksrestriksjoner
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kpkpretningslinjeområde]]
+ 
+===== «FeatureType» KpRetningslinjeOmråde
+**Definisjon:** område med retningslinje i kommune (-del) plan (pbl. 1985 § 20-4)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KpRetningslinjeOmråde##
+ 
+**Arver egenskaper fra : **
+<<kpkpobjekt, KpObjekt>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|område 
+|GM_MultiSurface 
+|[1..1] 
+|objektets flategeometri 
+ 
+|arealbruksretningslinjer 
+|<<kparealbruksretningslinjer, «CodeList» Arealbruksretningslinjer>> 
+|[1..1] 
+|type retningslinjer knyttet til arealbruksområder i oversiktsplan (pbl. 1985  § 20-4 første ledd) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kparealbruksretningslinjer]]
+ 
+===== «CodeList» Arealbruksretningslinjer
+**Definisjon:** kodeliste for type retningslinjer knyttet til arealbruksområder i oversiktsplan (pbl. 1985 § 19-1 sjette ledd og § 20-4 første ledd)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Arealbruksretningslinjer##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/pbl-1985/arealbruksretninglinjer
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Ekstra diagrammer
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpFormål 2
+image::Diagrammer\Hoveddiagram KpFormål 2.png[link=Diagrammer\Hoveddiagram KpFormål 2.png, , alt="Diagram med navn  Hoveddiagram KpFormål 2  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpHensyn cp
+image::Diagrammer\Hoveddiagram KpHensyn cp.png[link=Diagrammer\Hoveddiagram KpHensyn cp.png, , alt="Diagram med navn  Hoveddiagram KpHensyn cp  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp Bestemmelser i kartet kopi
+image::Diagrammer\Hoveddiagram Kp Bestemmelser i kartet kopi.png[link=Diagrammer\Hoveddiagram Kp Bestemmelser i kartet kopi.png, , alt="Diagram med navn  Hoveddiagram Kp Bestemmelser i kartet kopi  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KpHensyn2
+image::Diagrammer\Hoveddiagram KpHensyn2.png[link=Diagrammer\Hoveddiagram KpHensyn2.png, , alt="Diagram med navn  Hoveddiagram KpHensyn2  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp Formålsområde
+image::Diagrammer\Hoveddiagram Kp Formålsområde.png[link=Diagrammer\Hoveddiagram Kp Formålsområde.png, , alt="Diagram med navn  Hoveddiagram Kp Formålsområde  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Kp SOSI-Objekt
+image::Diagrammer\Hoveddiagram Kp SOSI-Objekt.png[link=Diagrammer\Hoveddiagram Kp SOSI-Objekt.png, , alt="Diagram med navn  Hoveddiagram Kp SOSI-Objekt  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Realisering Kp Kvalitet
+image::Diagrammer\Realisering Kp Kvalitet.png[link=Diagrammer\Realisering Kp Kvalitet.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram KP Formål Linjer og punkt 
+image::Diagrammer\Hoveddiagram KP Formål Linjer og punkt .png[link=Diagrammer\Hoveddiagram KP Formål Linjer og punkt .png, , alt="diagrammet viser alle klassene i pakka"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Realisering Kp fra Generelle Typer
+image::Diagrammer\Realisering Kp fra Generelle Typer.png[link=Diagrammer\Realisering Kp fra Generelle Typer.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+ 
