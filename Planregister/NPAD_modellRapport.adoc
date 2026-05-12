@@ -1,0 +1,1087 @@
+ 
+=== «ApplicationSchema» Planregister
+**Definisjon:** 
+ 
+[discrete]
+==== Profilparametre i tagged values
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|SOSI_kortnavn: 
+|Arealplan 
+ 
+|SOSI_modellstatus: 
+|utkast 
+ 
+|targetNamespace: 
+|pr 
+ 
+|version: 
+|2026-04-29 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+==== Avhengigheter
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|Avhengig av 
+|SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Reguleringsplan::[.underline]##«ApplicationSchema» Reguleringsplan-2026-Utkast## +
+SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Kommuneplan::[.underline]##«ApplicationSchema» Kommuneplan-2026-utkast## +
+SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::[.underline]##«ApplicationSchema» Planbestemmelser-Regplan## 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkeavhengigheter Planregister
+image::Diagrammer\Pakkeavhengigheter Planregister.png[link=Diagrammer\Pakkeavhengigheter Planregister.png, , alt="Diagram med navn  Pakkeavhengigheter Planregister  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Felles datatyper
+**Definisjon:** modellpakke som definerer datatyper som brukes gjennomgående i flere deler av registeret, og som skal sikre interaksjon mellom systemene
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Felles datatyper
+image::Diagrammer\Hoveddiagram Felles datatyper.png[link=Diagrammer\Hoveddiagram Felles datatyper.png, , alt="Diagram med navn  Hoveddiagram Felles datatyper  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram NasjonalArealplanID
+image::Diagrammer\Hoveddiagram NasjonalArealplanID.png[link=Diagrammer\Hoveddiagram NasjonalArealplanID.png, , alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[saksnummer]]
+ 
+===== «dataType» Saksnummer
+**Definisjon:** en generell datatype for å referere til og identifisere en sak i en organisasjon. Det kan knyttes saksnummer til hver planbehandling, men vanligvis vil alle planbehandlinger frem til planens ikrafttredelse være knyttet til samme saksnummer.
+
+Merknad:
+Saksnummer er også definert i NOARK 4, som 
+- SaksID (SA.ID, integer, 10 siffer)
+- Saksår (SA.AAR, integer, 4 siffer)
+- Sekvensnummer sak (SA.SEKNR, integer, 6 siffer)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» Saksnummer##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|saksår 
+|Integer 
+|[1..1] 
+|Årstallet saken ble initiert 
+ 
+|sakssekvensnummer 
+|Integer 
+|[1..1] 
+|løpenummer for saken innenfor året.  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[nasjonalarealplanid]]
+ 
+===== «dataType» NasjonalArealplanId
+**Definisjon:** landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften § 2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» NasjonalArealplanId##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|administrativEnhet 
+|<<administrativenhetskode, «dataType» AdministrativEnhetskode>> 
+|[1..1] 
+|entydig identifikasjon av administrativ enhet som vedtar planen (vedtaksmyndighet) 
+ 
+|planId 
+|CharacterString 
+|[1..1] 
+|entydig identifikasjon for en plan innen den administrative enheten 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|inntil16 tegn for planid 
+|Det kan anvendes inntil 16 tegn for planid
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[administrativenhetskode]]
+ 
+===== «dataType» AdministrativEnhetskode
+**Definisjon:** entydig identifikasjon av administrativ enhet
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Union» AdministrativEnhetskode##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|kommunenummer 
+|<<kommunenummer, «CodeList» Kommunenummer>> 
+|[0..1] 
+|offisiell nummerering av kommuner 
+ 
+|fylkesnummer 
+|<<fylkesnummer, «CodeList» Fylkesnummer>> 
+|[0..1] 
+|offisiell nummerering av fylker 
+ 
+|landkode 
+|<<landkode, «Enumeration»Landkode>> 
+|[0..1] 
+|kode med verdien 'NO', som angir at administrativ enhet er staten Norge, ihht. ISO 3166 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|bare én administrativ enhet 
+|Det skal angis én administrativ kode +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kommunenummer]]
+ 
+===== «CodeList» Kommunenummer
+**Definisjon:** kodeliste for kommunenummer.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» Kommunenummer##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer
+ 
+//  ----------- Skillelinje -----------
+'''
+[[fylkesnummer]]
+ 
+===== «CodeList» Fylkesnummer
+**Definisjon:** kodeliste for fylkesnummer.
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer
+ 
+//  ----------- Skillelinje -----------
+'''
+[[landkode]]
+ 
+===== «Enumeration»Landkode
+**Definisjon:** alfanumerisk kode for nasjonalt nivå / Norge.
+
+Avledet fra "ISO 3166 Codes for the representation of names of countries and their subdivisions"
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Landkode##
+ 
+ 
+[discrete]
+====== Koder
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|**Kodenavn:** 
+|**Definisjon:** 
+ 
+|NO 
+|Norge 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: SOSI Fellesegenskaper
+**Definisjon:** utvalgte generelle egenskaper og datatyper fra SOSI Del 1 
+
+Merknad: Egenskapene er organisert i abstrakte superklasser og overføres til de aktuelle objekttypene ved arv 
+
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram PR Fellesegenskaper
+image::Diagrammer\Hoveddiagram PR Fellesegenskaper.png[link=Diagrammer\Hoveddiagram PR Fellesegenskaper.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[sosi_fellesegenskaper]]
+ 
+===== __«FeatureType» SOSI_Fellesegenskaper (abstrakt)__
+**Definisjon:** abstrakt objekttype mec egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på objekttypen Arealplan 
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
+ 
+**Overfører egenskaper til: **
+<<arealplan, Arealplan>>, <<planbehandling, Planbehandling>>, <<plandokument, Plandokument>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|identifikasjon 
+|<<identifikasjon, «dataType» Identifikasjon>> 
+|[1..1] 
+|unik identifikasjon av et dataobjekt. 
+ 
+|oppdateringsdato 
+|DateTime 
+|[1..1] 
+|tidspunkt for siste endring av dataobjektet.  
+ 
+|prosesshistorie 
+|CharacterString 
+|[0..*] 
+|beskrivelse av de prosesser som dataene er gått gjennom som kan ha betydning for kvaliteten og bruken av dataene 
+ 
+|informasjon 
+|CharacterString 
+|[0..*] 
+|generell opplysning 
+ 
+|link 
+|CharacterString 
+|[0..*] 
+|referanse til et informasjonselement, enten lokalt eller globalt 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[identifikasjon]]
+ 
+===== «dataType» Identifikasjon
+**Definisjon:** Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.  Dette gjelder ikke versjonId, som kan brukes for å identifisere ulike instanser av objektet
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«dataType» Identifikasjon##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|lokalId 
+|CharacterString 
+|[1..1] 
+|lokal identifikator av et objekt 
+ 
+|navnerom 
+|CharacterString 
+|[1..1] 
+|navnerom som unikt identifiserer datakilden til et objekt.   
+ 
+|versjonId 
+|CharacterString 
+|[0..1] 
+|identifikasjon av en spesiell versjon av et geografisk objekt (instans) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|lokalId skal være en UUID 
+|Egenskapen lokalId skal være eller inneholde en UUID 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Arealplan i Planreg
+**Definisjon:** objekttyper og egenskaper for informasjon om en arealplan (kommuneplan) som helhet
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Arealplan
+image::Diagrammer\Hoveddiagram Arealplan.png[link=Diagrammer\Hoveddiagram Arealplan.png, , alt="Diagram med navn  Hoveddiagram Arealplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Relasjon til annen plan
+image::Diagrammer\Relasjon til annen plan.png[link=Diagrammer\Relasjon til annen plan.png, , alt="Diagram med navn  Relasjon til annen plan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Arealplan Kodelister
+image::Diagrammer\Hoveddiagram Arealplan Kodelister.png[link=Diagrammer\Hoveddiagram Arealplan Kodelister.png, , alt="Diagram med navn  Hoveddiagram Arealplan Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[arealplan]]
+ 
+===== «FeatureType» Arealplan
+**Definisjon:** objekttype for informasjon om en arealplan som helhet
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» Arealplan##
+ 
+**Arver egenskaper fra : **
+<<sosi_fellesegenskaper, SOSI_Fellesegenskaper>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|<<nasjonalarealplanid, «dataType» NasjonalArealplanId>> 
+|[1..1] 
+|landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften §§ 2 og 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|plannavn 
+|CharacterString 
+|[1..1] 
+|planens offisielle navn (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|plantype 
+|<<plantype, «CodeList» Plantype>> 
+|[1..1] 
+|type arealplan 
+ 
+|planstatus 
+|<<planstatus, «CodeList» Planstatus>> 
+|[1..1] 
+|planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6) 
+ 
+|lovreferanse 
+|<<lovreferansetype, «CodeList» Lovreferansetype>> 
+|[1..1] 
+|hvilken lov planen er vedtatt etter 
+ 
+|lovreferanseBeskrivelse 
+|CharacterString 
+|[0..1] 
+|tekstlig beskrivelse av hvilken lov planen er vedtatt etter.  
+ 
+|omPlanbestemmelser 
+|<<omplanbestemmelser, «CodeList» OmPlanbestemmelser>> 
+|[0..1] 
+|om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert 
+ 
+|opprinneligPlanId 
+|CharacterString 
+|[0..1] 
+|opprinnelig planidentifikasjon (planid) 
+ 
+|opprinneligAdmEnhet 
+|CharacterString 
+|[0..1] 
+|opprinnelig administrativEnhet for arealplanen. 
+ 
+|forslagsstillerType 
+|<<forslagsstillertype, «CodeList» ForslagsstillerType>> 
+|[0..1] 
+|om forslagsstiller er privat eller offentlig 
+ 
+|plandokumentasjonOppdatert 
+|Boolean 
+|[0..1] 
+|om plandokument er oppdatert i henhold til endelig planvedtak 
+ 
+|ubehandletKlage 
+|Boolean 
+|[0..1] 
+|om det foreligger klage med oppsettende virkning 
+ 
+|ubehandletInnsigelse 
+|Boolean 
+|[0..1] 
+|om det foreligger innsigelse som ikke er behandlet av departementet. 
+ 
+|vedtakEndeligPlanDato 
+|Date 
+|[0..1] 
+|dato for rettsvirkning av arealplanen med tilhørende bestemmelser 
+ 
+|kunngjøringsdato 
+|Date 
+|[0..1] 
+|dato når endelig vedtatt arealplan ble kunngjort  
+ 
+|ikrafttredelsesdato 
+|Date 
+|[0..1] 
+|dato når arealplanen trådte ikraft 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rpOmråde 
+|<<rpområde, RpOmråde>> 
+|[0..*] 
+|planområde til reguleringsplan 
+ 
+|rpEndringOmråde 
+|<<rpendringområde, RpEndringOmråde>> 
+|[0..*] 
+|referanse til område i en reguleringsplan der det er foretatt en endring av planen 
+ 
+|kpOmråde 
+|<<kpområde, KpOmråde>> 
+|[0..*] 
+|planområde til kommuneplan 
+ 
+|kpEndringOmråde 
+|<<kpendringområde, KpEndringOmråde>> 
+|[0..*] 
+|referanse til område i en kommuneplan der det er foretatt en endring av planen 
+ 
+|samlingAvPlanbestemmelser 
+|<<reguleringsplanbestemmelser, Reguleringsplanbestemmelser>> 
+|[0..1] 
+|samling av alle planens bestemmelser 
+ 
+|planleggingIgangsatt 
+|<<planområde, Planområde>> 
+|[0..*] 
+| 
+ 
+|planbehandling 
+|<<planbehandling, Planbehandling>> 
+|[0..*] 
+| 
+ 
+|plandokument 
+|<<plandokument, Plandokument>> 
+|[0..*] 
+| 
+ 
+|nyerePlan 
+|<<arealplan, Arealplan>> 
+|[0..*] 
+|nyere, overliggende plan 
+ 
+|eldrePlan 
+|<<arealplan, Arealplan>> 
+|[0..*] 
+|eldre, underliggende plan 
+ 
+|kpUtsattRettsvirkningOmråde 
+|<<kputsattrettsvirkningområde, KpUtsattRettsvirkningOmråde>> 
+|[0..*] 
+| 
+ 
+|rpUtsattRettsvirkningOmråde 
+|<<rputsattrettsvirkningområde, RpUtsattRettsvirkningOmråde>> 
+|[0..*] 
+| 
+ 
+|rpBestemmelser 
+|<<reguleringsplanbestemmelser, Reguleringsplanbestemmelser>> 
+|[0..1] 
+|bestemmelsessamling for Reguleringplan 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Samsvar mellom plantype og type planområde 
+|Plantype skal vise til riktig type planomåde +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[plantype]]
+ 
+===== «CodeList» Plantype
+**Definisjon:** type arealplan
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Union» Plantype##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/plantype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[planstatus]]
+ 
+===== «CodeList» Planstatus
+**Definisjon:** planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6)
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Planstatus##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/planstatus
+ 
+//  ----------- Skillelinje -----------
+'''
+[[omplanbestemmelser]]
+ 
+===== «CodeList» OmPlanbestemmelser
+**Definisjon:** om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»OmPlanbestemmelser##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/omplanbestemmelser
+ 
+//  ----------- Skillelinje -----------
+'''
+[[planendringstype]]
+ 
+===== «CodeList» Planendringstype
+**Definisjon:** hvilke prosessregler endringen har fulgt
+
+ 
+ 
+[discrete]
+====== Koder
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|**Kodenavn:** 
+|**Definisjon:** 
+ 
+|fullEndring 
+|planendring med full prosess 
+ 
+|mindreEndring 
+|mindre endring av gammel reguleringplan (pbl 85 eller tidligere) 
+ 
+|forenkletEndring 
+|forenklet endring 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[lovreferansetype]]
+ 
+===== «CodeList» Lovreferansetype
+**Definisjon:** hvilken lov planen er vedtatt etter
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»LovreferanseType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/lovreferansetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[forslagsstillertype]]
+ 
+===== «CodeList» ForslagsstillerType
+**Definisjon:** om forslagsstiller er privat eller offentlig 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»ForslagsstillerType##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/forslagsstillertype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[planforholdstype]]
+ 
+===== «CodeList» Planforholdstype
+**Definisjon:** koder for  hvordan en nyere plan innvirker på en eldre plan / hvordan en eldre plan blir påvirket av en nyere plan
+
+ 
+ 
+[discrete]
+====== Koder
+// Topp av tabell _______________
+[cols="30,60,10"]
+|===
+|**Kodenavn:** 
+|**Definisjon:** 
+|**Utvekslingsalias:** 
+ 
+|endrer / blir endret av 
+|Ny plan endrer en eldre plan 
+|1 
+ 
+|overstyrer / overstyres av 
+|Ny plan overstyrer en eldre plan 
+|2 
+ 
+|arver bestemmelser fra / overfører bestemmelser til 
+|Ny plan arver bestemmelser fra en eldre plan 
+|3 
+ 
+|erstatter / blir erstattet av 
+|Benyttes når en nyere reguleringsplan i sin helhet overlapper eldre reguleringsplan eller bebyggelsesplan, uten at det er fattes eget opphevingsvedtak. 
+|4 
+ 
+|erstatter delvis / blir delvis erstattet av  
+|Benyttes når en nyere reguleringsplan delvis overlapper en eldre reguleringsplan eller bebyggelsesplan
+ 
+|5 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Planbehandling og plandokuiment
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Oversiktsdiagram Planbehandling og Plandokument
+image::Diagrammer\Oversiktsdiagram Planbehandling og Plandokument.png[link=Diagrammer\Oversiktsdiagram Planbehandling og Plandokument.png, , alt="Diagram med navn  Oversiktsdiagram Planbehandling og Plandokument  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Datatyper Planbehandling
+image::Diagrammer\Datatyper Planbehandling.png[link=Diagrammer\Datatyper Planbehandling.png, , alt="Diagram med navn  Datatyper Planbehandling  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Plandokument
+image::Diagrammer\Hoveddiagram Plandokument.png[link=Diagrammer\Hoveddiagram Plandokument.png, , alt="Diagram med navn  Hoveddiagram Plandokument  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[planbehandling]]
+ 
+===== «FeatureType» Planbehandling
+**Definisjon:** representasjon av tidfestet behandling av en arealplan, både fram til planen trer i kraft, og etter ikrafttredelse, gjennom eventuelle klager, endringer og/eller opphevelse, saksbehandling av en plan i sakssystemet med referanse til saksnummer og planbehandlingstype
+ 
+**Arver egenskaper fra : **
+<<sosi_fellesegenskaper, SOSI_Fellesegenskaper>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|posisjon 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point] 
+|[0..1] 
+|stedfesting av endringen 
+ 
+|vertikalnivå 
+|<<vertikalnivå, «CodeList» Vertikalnivå>> 
+|[0..1] 
+| 
+ 
+|planbehandlingsdato 
+|Date 
+|[1..1] 
+|milepæl i sakssystemet 
+ 
+|planbehandlingstype 
+|<<planbehandlingtype, «CodeList» Planbehandlingtype>> 
+|[0..1] 
+| 
+ 
+|navn 
+|CharacterString 
+|[1..1] 
+|saksnavn, gjerne i samsvar med definert saksgang 
+ 
+|saksnummer 
+|<<saksnummer, «dataType» Saksnummer>> 
+|[1..1] 
+| 
+ 
+|forslagsstiller 
+|<<organisasjonperson, «dataType» OrganisasjonPerson>> 
+|[0..*] 
+| 
+ 
+|utarbeidetAv 
+|<<organisasjonperson, «dataType» OrganisasjonPerson>> 
+|[0..*] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|plandokument 
+|<<plandokument, Plandokument>> 
+|[0..*] 
+|dokument med bestemmelser som inngår i planbehandlingen 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[planbehandlingtype]]
+ 
+===== «CodeList» Planbehandlingtype
+**Definisjon:** 
+ 
+**Realisert fra: **
+__Plan-5.1-Utkast__: [.underline]##«codeList» Planbehandlingtype__Koder##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/planbehandlingtype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[vertikalnivå]]
+ 
+===== «CodeList» Vertikalnivå
+**Definisjon:** kodeliste for planområdets beliggenhet i forhold til jordoverflaten (pbl. § 19-1 sjette ledd, § 20-1 andre og femte ledd og § 22 og § 28-2)
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/plan-felles/vertikalnivå
+ 
+//  ----------- Skillelinje -----------
+'''
+[[organisasjonperson]]
+ 
+===== «dataType» OrganisasjonPerson
+**Definisjon:** opplysning om organisasjon samt i noen tilfeller  kontaktperson, som har en rolle i planarbeidet
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|navn 
+|CharacterString 
+|[1..1] 
+| 
+ 
+|postadresse 
+|<<enkeladresse, «dataType» EnkelAdresse>> 
+|[0..1] 
+| 
+ 
+|kontaktinformasjon 
+|<<kontaktinformasjon, «dataType» Kontaktinformasjon>> 
+|[0..1] 
+| 
+ 
+|kontaktperson 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[enkeladresse]]
+ 
+===== «dataType» EnkelAdresse
+**Definisjon:** 
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|adresselinje1 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|adresselinje2 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|adresselinje3 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|postnr 
+| 
+|[0..1] 
+| 
+ 
+|poststed 
+|CharacterString 
+|[1..1] 
+| 
+ 
+|landkode 
+| 
+|[0..1] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[kontaktinformasjon]]
+ 
+===== «dataType» Kontaktinformasjon
+**Definisjon:** 
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|epostadresse 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|telefonnummer 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[plandokument]]
+ 
+===== «FeatureType» Plandokument
+**Definisjon:** referanse til dokument som er knyttet til arealplanen (kart- og planforskriften § 9 første ledd). Et plandokument kan knyttes til den aktuelle planbehandlingen som det gjelder for.
+ 
+**Arver egenskaper fra : **
+<<sosi_fellesegenskaper, SOSI_Fellesegenskaper>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|dokumenttype 
+|<<plandokumenttype, «CodeList» Plandokumenttype>> 
+|[1..1] 
+|Dokumenttyper for plansaker 
+ 
+|arkivreferanse 
+|CharacterString 
+|[1..1] 
+| 
+ 
+|dokumentdato 
+|Date 
+|[0..1] 
+| 
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|arkivnavn 
+|CharacterString 
+|[0..1] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[plandokumenttype]]
+ 
+===== «CodeList» Plandokumenttype
+**Definisjon:** plandokument må tilhøre en gyldig dokumentkategori
+
+Dokumenttyper for plansaker
+ 
+**Realisert fra: **
+__Plan-5.1-Utkast__: [.underline]##«CodeList» Plandokumenttype__Koder##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/plandokumenttype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Ekstra diagrammer
+**Definisjon:** 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram PR Fellesegenskaper 
+image::Diagrammer\Hoveddiagram PR Fellesegenskaper .png[link=Diagrammer\Hoveddiagram PR Fellesegenskaper .png, , alt="Diagram med navn  Hoveddiagram PR Fellesegenskaper   som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Planbehandling
+image::Diagrammer\Hoveddiagram Planbehandling.png[link=Diagrammer\Hoveddiagram Planbehandling.png, , alt="Diagram med navn  Hoveddiagram Planbehandling  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Realisering PR Fellesegenskaper
+image::Diagrammer\Realisering PR Fellesegenskaper.png[link=Diagrammer\Realisering PR Fellesegenskaper.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Diskusjonsdiagram Arealplan 2026
+image::Diagrammer\Diskusjonsdiagram Arealplan 2026.png[link=Diagrammer\Diskusjonsdiagram Arealplan 2026.png, , alt="Skal noen av egenskpene være opsjonelle ?"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.___Endriing fra Plan 4.5  Arealplan
+image::Diagrammer\___Endriing fra Plan 4.5  Arealplan.png[link=Diagrammer\___Endriing fra Plan 4.5  Arealplan.png, , alt="Diagram med navn  ___Endriing fra Plan 4.5  Arealplan  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
