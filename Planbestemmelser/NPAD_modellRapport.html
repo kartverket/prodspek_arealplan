@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<title>«ApplicationSchema» Planbestemmelser-Regplan</title>
+<title>«ApplicationSchema» Planbestemmelser</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,7 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect2">
-<h3 id="_applicationschema_planbestemmelser_regplan">«ApplicationSchema» Planbestemmelser-Regplan</h3>
+<h3 id="_applicationschema_planbestemmelser">«ApplicationSchema» Planbestemmelser</h3>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> UML-modell for planbestemmelser med tilhørende referanse til plankartet, som gjelder ved innsending av planforslag. Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
 </div>
@@ -494,7 +494,7 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Avhengig av</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::<span class="underline">«ApplicationSchema» Planregister</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Reguleringsplan::<span class="underline">«ApplicationSchema» Reguleringsplan-2026-Utkast</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -514,7 +514,7 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
-<h4 id="_pakke_fellesegenskaper">Pakke: Fellesegenskaper</h4>
+<h4 id="_pakke_sosi_fellesegenskaper">Pakke: SOSI Fellesegenskaper</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> pakke med utvalgte generelle egenskaper og datatyper fra SOSI Del 1 Generelle typer</p>
 </div>
@@ -622,31 +622,26 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_bestemmelser">Pakke: Bestemmelser</h4>
+<h4 id="_pakke_felles_datatyper">Pakke: Felles datatyper</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> samling av planbestemmelser
-Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
+<p><strong>Definisjon:</strong> modellpakke som definerer datatyper som brukes gjennomgående i flere deler av registeret, og som skal sikre interaksjon mellom systemene</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Bestemmelser.png"><img src="Diagrammer/Hoveddiagram%20Bestemmelser.png" alt="Diagram med navn  Hoveddiagram Bestemmelser  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Hoveddiagram NasjonalArealplanID.png"><img src="Diagrammer/Hoveddiagram%20NasjonalArealplanID.png" alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."></a>
 </div>
-<div class="title">Figure 4. Hoveddiagram Bestemmelser</div>
+<div class="title">Figure 4. Hoveddiagram NasjonalArealplanID</div>
 </div>
 <hr>
 <div class="sect4">
-<h5 id="pbreguleringsplanbestemmelser">«FeatureType» Reguleringsplanbestemmelser</h5>
+<h5 id="pbnasjonalarealplanid">«dataType» NasjonalArealplanId</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> bestemmelser til en reguleringsplan (pbl. §§ 12-1, 12-2 og 12-3).</p>
+<p><strong>Definisjon:</strong> landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften § 2 - <a href="https://lovdata.no/forskrift/2025-01-20-52/§2" class="bare">https://lovdata.no/forskrift/2025-01-20-52/§2</a>)</p>
 </div>
 <div class="paragraph">
 <p><strong>Realisert fra: </strong>
-<em>Plan-5.0</em>: <span class="underline">«FeatureType» Reguleringsplanbestemmelser</span></p>
-</div>
-<div class="paragraph">
-<p><strong>Arver egenskaper fra : </strong>
-<a href="#pbsosi_fellesegenskaper">SOSI_Fellesegenskaper</a></p>
+<em>Plan-5.0</em>: <span class="underline">«dataType» NasjonalArealplanId</span></p>
 </div>
 <h6 id="_attributter_3" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
@@ -664,8 +659,203 @@ Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">administrativEnhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbadministrativenhetskode">«dataType» AdministrativEnhetskode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entydig identifikasjon av administrativ enhet som vedtar planen (vedtaksmyndighet)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">planId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entydig identifikasjon for en plan innen den administrative enheten</p></td>
+</tr>
+</tbody>
+</table>
+<h6 id="_restriksjoner" class="discrete">Restriksjoner</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inntil16 tegn for planid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Det kan anvendes inntil 16 tegn for planid</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="pbadministrativenhetskode">«dataType» AdministrativEnhetskode</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> entydig identifikasjon av administrativ enhet</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«Union» AdministrativEnhetskode</span></p>
+</div>
+<h6 id="_attributter_4" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbkommunenummer">«CodeList» Kommunenummer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offisiell nummerering av kommuner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fylkesnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbfylkesnummer">«CodeList» Fylkesnummer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offisiell nummerering av fylker</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">landkode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pblandkode">«Enumeration»Landkode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kode med verdien 'NO', som angir at administrativ enhet er staten Norge, ihht. ISO 3166</p></td>
+</tr>
+</tbody>
+</table>
+<h6 id="_restriksjoner_2" class="discrete">Restriksjoner</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bare én administrativ enhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Det skal angis én administrativ kode<br>
+<br></p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="pbkommunenummer">«CodeList» Kommunenummer</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> kodeliste for kommunenummer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«CodeList» Kommunenummer</span></p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer" class="bare">https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="pbfylkesnummer">«CodeList» Fylkesnummer</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> kodeliste for fylkesnummer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer" class="bare">https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="pblandkode">«Enumeration»Landkode</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> alfanumerisk kode for nasjonalt nivå / Norge.</p>
+</div>
+<div class="paragraph">
+<p>Avledet fra "ISO 3166 Codes for the representation of names of countries and their subdivisions"</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«Enumeration»Landkode</span></p>
+</div>
+<h6 id="_koder" class="discrete">Koder</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norge</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pakke_bestemmelser">Pakke: Bestemmelser</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> samling av planbestemmelser
+Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram Bestemmelser.png"><img src="Diagrammer/Hoveddiagram%20Bestemmelser.png" alt="Diagram med navn  Hoveddiagram Bestemmelser  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 5. Hoveddiagram Bestemmelser</div>
+</div>
+<hr>
+<div class="sect4">
+<h5 id="pbreguleringsplanbestemmelser">«FeatureType» Reguleringsplanbestemmelser</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> bestemmelser til en reguleringsplan (pbl. §§ 12-1, 12-2 og 12-3).</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«FeatureType» Reguleringsplanbestemmelser</span></p>
+</div>
+<div class="paragraph">
+<p><strong>Arver egenskaper fra : </strong>
+<a href="#pbsosi_fellesegenskaper">SOSI_Fellesegenskaper</a></p>
+</div>
+<h6 id="_attributter_5" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften §§ 2 og 9 - <a href="https://lovdata.no/forskrift/2025-01-20-52/§2" class="bare">https://lovdata.no/forskrift/2025-01-20-52/§2</a>)</p></td>
 </tr>
@@ -746,44 +936,11 @@ Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">referanse til rekkefølgebestemmelse</p></td>
 </tr>
-</tbody>
-</table>
-<hr>
-<div class="paragraph">
-<p>[[pbreguleringsplanbestemmelser - copy]]</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_featuretype_reguleringsplanbestemmelser_copy">«FeatureType» Reguleringsplanbestemmelser - Copy</h5>
-<div class="paragraph">
-<p><strong>Definisjon:</strong> bestemmelser til en reguleringsplan (pbl. §§ 12-1, 12-2 og 12-3).</p>
-</div>
-<h6 id="_attributter_4" class="discrete">Attributter</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">versjonsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datoen for denne versjonen av planforslaget</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">versjonsnummer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">viser det innsendte planforslagets versjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arealplan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbarealplan">Arealplan</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til arealpkanen i planregisteret</p></td>
 </tr>
 </tbody>
 </table>
@@ -809,7 +966,7 @@ Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
 <p><strong>Overfører egenskaper til: </strong>
 <a href="#pbkravomdetaljregulering">KravOmDetaljregulering</a>, <a href="#pbfellesbestemmelse">Fellesbestemmelse</a>, <a href="#pbbestemmelseomrekkefølge">BestemmelseOmRekkefølge</a>, <a href="#pbplanenshensikt">PlanensHensikt</a>, <a href="#pbbestemmelsetilbestområde">BestemmelseTilBestOmråde</a>, <a href="#pbbestemmelsetilarealformål">BestemmelseTilArealformål</a>, <a href="#pbbestemmelsetilhensynssone">BestemmelseTilHensynssone</a></p>
 </div>
-<h6 id="_attributter_5" class="discrete">Attributter</h6>
+<h6 id="_attributter_6" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -826,7 +983,7 @@ Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften §§ 2 og 9 - <a href="https://lovdata.no/forskrift/2025-01-20-52/§2" class="bare">https://lovdata.no/forskrift/2025-01-20-52/§2</a>)</p></td>
 </tr>
@@ -879,7 +1036,7 @@ Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser</p>
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«dataType» FormatertTekst</span></p>
 </div>
-<h6 id="_attributter_6" class="discrete">Attributter</h6>
+<h6 id="_attributter_7" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -934,7 +1091,7 @@ Eksempler: illustrasjonsplan,geoteknisk rapport.</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#pbsosi_fellesegenskaper">SOSI_Fellesegenskaper</a></p>
 </div>
-<h6 id="_attributter_7" class="discrete">Attributter</h6>
+<h6 id="_attributter_8" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -996,7 +1153,7 @@ For hver type planbestemmelse er det angitt hvilken type kartobjekt i plankartet
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Bestemmelsestyper.png"><img src="Diagrammer/Hoveddiagram%20Bestemmelsestyper.png" alt="Diagram med navn  Hoveddiagram Bestemmelsestyper  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 5. Hoveddiagram Bestemmelsestyper</div>
+<div class="title">Figure 6. Hoveddiagram Bestemmelsestyper</div>
 </div>
 <hr>
 <div class="sect4">
@@ -1046,7 +1203,7 @@ Bestemmelsen plasseres i kap 3 iht. gjeldende mal.</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#pbplanbestemmelse">Planbestemmelse</a></p>
 </div>
-<h6 id="_attributter_8" class="discrete">Attributter</h6>
+<h6 id="_attributter_9" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1075,7 +1232,7 @@ Bestemmelsen plasseres i kap 3 iht. gjeldende mal.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_3" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1108,7 +1265,7 @@ Bestemmelsen plasseres i kap 4 iht gjeldende mal</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#pbplanbestemmelse">Planbestemmelse</a></p>
 </div>
-<h6 id="_attributter_9" class="discrete">Attributter</h6>
+<h6 id="_attributter_10" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1126,7 +1283,7 @@ Bestemmelsen plasseres i kap 4 iht gjeldende mal</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">gjelderHovedformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#pbhovedformål">«CodeList» Hovedformål</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hvilket hovedformål denne bestemmelsen gjelder for</p></td>
 </tr>
 <tr>
@@ -1149,7 +1306,7 @@ Bestemmelsen plasseres i kap 4 iht gjeldende mal</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_2" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_4" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1161,12 +1318,8 @@ Bestemmelsen plasseres i kap 4 iht gjeldende mal</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gjelder formålsområde og/eller juridisk punkt/linje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Skal kobles til formålsområde og/eller juridisk punkt/linje<br></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kan gjelde et helt hovedformål</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kan gjelde et hovedfomål dersom referanser mangler<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kan gjelde et eller flere hovedfomål dersom referanser mangler<br>
 <br></p></td>
 </tr>
 </tbody>
@@ -1201,7 +1354,7 @@ Bestemmelsen plasseres i kap 5 ihht. gjeldende mal</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#pbplanbestemmelse">Planbestemmelse</a></p>
 </div>
-<h6 id="_attributter_10" class="discrete">Attributter</h6>
+<h6 id="_attributter_11" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1227,20 +1380,6 @@ Bestemmelsen plasseres i kap 5 ihht. gjeldende mal</p>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="pbhensynsonetype">«CodeList» HensynsoneType</h5>
-<div class="paragraph">
-<p><strong>Definisjon:</strong> kodeliste for hensynsonekategori (pbl. § 12-6, jf. § 11-8 tredje ledd bokstav c)</p>
-</div>
-<div class="paragraph">
-<p><strong>Realisert fra: </strong>
-<em>Plan-5.0</em>: <span class="underline">«Enumeration»Hensynskategori</span></p>
-</div>
-<div class="paragraph">
-<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/hensynsonetype" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/hensynsonetype</a></p>
-</div>
-<hr>
-</div>
-<div class="sect4">
 <h5 id="pbbestemmelsetilbestområde">«FeatureType» BestemmelseTilBestOmråde</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> bestemmelser og eller retningslinjer særskilt knyttet til et avgrenset område innenfor eller på tvers av flere arealformål (§12-7 nr 1-14).
@@ -1254,7 +1393,7 @@ Bestemmelsen plasseres i kap 6 ihht. gjeldende mal</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#pbplanbestemmelse">Planbestemmelse</a></p>
 </div>
-<h6 id="_attributter_11" class="discrete">Attributter</h6>
+<h6 id="_attributter_12" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1283,7 +1422,7 @@ Bestemmelsen plasseres i kap 6 ihht. gjeldende mal</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_3" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_5" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1296,9 +1435,7 @@ Bestemmelsen plasseres i kap 6 ihht. gjeldende mal</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gjelder bestemmelsesområde og eller juridisk punkt/linje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;Skal kobles til bestemmelsesområde og/eller juridisk punkt/linje
-inv:
-objektnavn- notEmpty() or bestemmelseområdenavn- notEmpty()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skal kobles til bestemmelsesområde og/eller juridisk punkt/linje<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1317,7 +1454,7 @@ objektnavn- notEmpty() or bestemmelseområdenavn- notEmpty()</p></td>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#pbplanbestemmelse">Planbestemmelse</a></p>
 </div>
-<h6 id="_attributter_12" class="discrete">Attributter</h6>
+<h6 id="_attributter_13" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1352,7 +1489,7 @@ objektnavn- notEmpty() or bestemmelseområdenavn- notEmpty()</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_4" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_6" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1365,9 +1502,7 @@ objektnavn- notEmpty() or bestemmelseområdenavn- notEmpty()</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gjelder formålsområder og/eller juridisk punkt/linje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;Skal kobles til formålsområde og/eller juridisk punkt/linje
-inv:
-objektnavn- notEmpty() or feltnavn- notEmpty()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skal kobles til formålsområde og/eller juridisk punkt/linje<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1385,41 +1520,13 @@ objektnavn- notEmpty() or feltnavn- notEmpty()</p></td>
 <div class="paragraph">
 <p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/rekkefølgeangivelse" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/rekkefølgeangivelse</a></p>
 </div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_pakke_ekstra_diagrammer">Pakke: Ekstra diagrammer</h4>
-<div class="paragraph">
-<p><strong>Definisjon:</strong></p>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\___Hoveddiagram Bestemmelsestype.png"><img src="Diagrammer/___Hoveddiagram%20Bestemmelsestype.png" alt="Diagram som viser klassene i denne pakka, Enkeltbestemmelser"></a>
-</div>
-<div class="title">Figure 6. ___Hoveddiagram Bestemmelsestype</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Oversiktsdiagram Bestemmelsessamling.png"><img src="Diagrammer/Oversiktsdiagram%20Bestemmelsessamling.png" alt="Diagram med navn  Oversiktsdiagram Bestemmelsessamling  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figure 7. Oversiktsdiagram Bestemmelsessamling</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\___Sammenheng med plankartmodellen.png"><img src="Diagrammer/___Sammenheng%20med%20plankartmodellen.png" alt="Diagram som viser sammenhengen mellom denne modellen og plankartmodellen"></a>
-</div>
-<div class="title">Figure 8. ___Sammenheng med plankartmodellen</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-11 17:52:54 +0200
+Last updated 2026-05-20 13:44:29 +0200
 </div>
 </div>
 </body>
