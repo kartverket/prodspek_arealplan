@@ -479,7 +479,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Avhengig av</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Reguleringsplan::<span class="underline">«ApplicationSchema» Reguleringsplan-2026-Utkast</span><br>
 SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Kommuneplan::<span class="underline">«ApplicationSchema» Kommuneplan-2026-utkast</span><br>
-SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::<span class="underline">«ApplicationSchema» Planbestemmelser-Regplan</span></p></td>
+SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::<span class="underline">«ApplicationSchema» Planbestemmelser</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -492,6 +492,154 @@ SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Are
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
+<h4 id="_pakke_sosi_fellesegenskaper">Pakke: SOSI Fellesegenskaper</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> utvalgte generelle egenskaper og datatyper fra SOSI Del 1</p>
+</div>
+<div class="paragraph">
+<p>Merknad: Egenskapene er organisert i abstrakte superklasser og overføres til de aktuelle objekttypene ved arv</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram Fellesegenskaper.png"><img src="Diagrammer/Hoveddiagram%20Fellesegenskaper.png" alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"></a>
+</div>
+<div class="title">Figure 2. Hoveddiagram Fellesegenskaper</div>
+</div>
+<hr>
+<div class="sect4">
+<h5 id="sosi_fellesegenskaper"><em>«FeatureType» SOSI_Fellesegenskaper (abstrakt)</em></h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> abstrakt objekttype mec egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på objekttypen Arealplan</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Generelle typer 5.1</em>: <span class="underline">«FeatureType» SOSI_Objekt</span></p>
+</div>
+<div class="paragraph">
+<p><strong>Overfører egenskaper til: </strong>
+<a href="#arealplan">Arealplan</a>, <a href="#planbehandling">Planbehandling</a>, <a href="#plandokument">Plandokument</a></p>
+</div>
+<h6 id="_attributter" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#identifikasjon">«dataType» Identifikasjon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et dataobjekt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring av dataobjektet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prosesshistorie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av de prosesser som dataene er gått gjennom som kan ha betydning for kvaliteten og bruken av dataene</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til et informasjonselement, enten lokalt eller globalt</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="identifikasjon">«dataType» Identifikasjon</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
+</div>
+<div class="paragraph">
+<p>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.</p>
+</div>
+<div class="paragraph">
+<p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.  Dette gjelder ikke versjonId, som kan brukes for å identifisere ulike instanser av objektet</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Generelle typer 5.1</em>: <span class="underline">«dataType» Identifikasjon</span></p>
+</div>
+<h6 id="_attributter_2" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom som unikt identifiserer datakilden til et objekt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av en spesiell versjon av et geografisk objekt (instans)</p></td>
+</tr>
+</tbody>
+</table>
+<h6 id="_restriksjoner" class="discrete">Restriksjoner</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lokalId skal være en UUID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskapen lokalId skal være eller inneholde en UUID</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_pakke_felles_datatyper">Pakke: Felles datatyper</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> modellpakke som definerer datatyper som brukes gjennomgående i flere deler av registeret, og som skal sikre interaksjon mellom systemene</p>
@@ -501,14 +649,7 @@ SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Are
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Felles datatyper.png"><img src="Diagrammer/Hoveddiagram%20Felles%20datatyper.png" alt="Diagram med navn  Hoveddiagram Felles datatyper  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 2. Hoveddiagram Felles datatyper</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram NasjonalArealplanID.png"><img src="Diagrammer/Hoveddiagram%20NasjonalArealplanID.png" alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."></a>
-</div>
-<div class="title">Figure 3. Hoveddiagram NasjonalArealplanID</div>
+<div class="title">Figure 3. Hoveddiagram Felles datatyper</div>
 </div>
 <hr>
 <div class="sect4">
@@ -527,7 +668,7 @@ Saksnummer er også definert i NOARK 4, som
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«dataType» Saksnummer</span></p>
 </div>
-<h6 id="_attributter" class="discrete">Attributter</h6>
+<h6 id="_attributter_3" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -567,7 +708,7 @@ Saksnummer er også definert i NOARK 4, som
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«dataType» NasjonalArealplanId</span></p>
 </div>
-<h6 id="_attributter_2" class="discrete">Attributter</h6>
+<h6 id="_attributter_4" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -596,7 +737,7 @@ Saksnummer er også definert i NOARK 4, som
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_2" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -624,7 +765,7 @@ Saksnummer er også definert i NOARK 4, som
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«Union» AdministrativEnhetskode</span></p>
 </div>
-<h6 id="_attributter_3" class="discrete">Attributter</h6>
+<h6 id="_attributter_5" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -659,7 +800,7 @@ Saksnummer er også definert i NOARK 4, som
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_2" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_3" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -736,178 +877,30 @@ Saksnummer er også definert i NOARK 4, som
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_sosi_fellesegenskaper">Pakke: SOSI Fellesegenskaper</h4>
-<div class="paragraph">
-<p><strong>Definisjon:</strong> utvalgte generelle egenskaper og datatyper fra SOSI Del 1</p>
-</div>
-<div class="paragraph">
-<p>Merknad: Egenskapene er organisert i abstrakte superklasser og overføres til de aktuelle objekttypene ved arv</p>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram PR Fellesegenskaper.png"><img src="Diagrammer/Hoveddiagram%20PR%20Fellesegenskaper.png" alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"></a>
-</div>
-<div class="title">Figure 4. Hoveddiagram PR Fellesegenskaper</div>
-</div>
-<hr>
-<div class="sect4">
-<h5 id="sosi_fellesegenskaper"><em>«FeatureType» SOSI_Fellesegenskaper (abstrakt)</em></h5>
-<div class="paragraph">
-<p><strong>Definisjon:</strong> abstrakt objekttype mec egenskaper fra SOSI_Objekt i SOSI Del 1 som er anvendt på objekttypen Arealplan</p>
-</div>
-<div class="paragraph">
-<p><strong>Realisert fra: </strong>
-<em>Generelle typer 5.1</em>: <span class="underline">«FeatureType» SOSI_Objekt</span></p>
-</div>
-<div class="paragraph">
-<p><strong>Overfører egenskaper til: </strong>
-<a href="#arealplan">Arealplan</a>, <a href="#planbehandling">Planbehandling</a>, <a href="#plandokument">Plandokument</a></p>
-</div>
-<h6 id="_attributter_4" class="discrete">Attributter</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#identifikasjon">«dataType» Identifikasjon</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et dataobjekt.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring av dataobjektet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prosesshistorie</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av de prosesser som dataene er gått gjennom som kan ha betydning for kvaliteten og bruken av dataene</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">link</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til et informasjonselement, enten lokalt eller globalt</p></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-<div class="sect4">
-<h5 id="identifikasjon">«dataType» Identifikasjon</h5>
-<div class="paragraph">
-<p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
-</div>
-<div class="paragraph">
-<p>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.</p>
-</div>
-<div class="paragraph">
-<p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.  Dette gjelder ikke versjonId, som kan brukes for å identifisere ulike instanser av objektet</p>
-</div>
-<div class="paragraph">
-<p><strong>Realisert fra: </strong>
-<em>Generelle typer 5.1</em>: <span class="underline">«dataType» Identifikasjon</span></p>
-</div>
-<h6 id="_attributter_5" class="discrete">Attributter</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom som unikt identifiserer datakilden til et objekt.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av en spesiell versjon av et geografisk objekt (instans)</p></td>
-</tr>
-</tbody>
-</table>
-<h6 id="_restriksjoner_3" class="discrete">Restriksjoner</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lokalId skal være en UUID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskapen lokalId skal være eller inneholde en UUID</p></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_pakke_arealplan_i_planreg">Pakke: Arealplan i Planreg</h4>
+<h4 id="_pakke_arealplan">Pakke: Arealplan</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> objekttyper og egenskaper for informasjon om en arealplan (kommuneplan) som helhet</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
+<a class="image" href="Diagrammer\Oversiktsdiagram Arealplan.png"><img src="Diagrammer/Oversiktsdiagram%20Arealplan.png" alt="Diagram med navn  Oversiktsdiagram Arealplan  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 4. Oversiktsdiagram Arealplan</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Oversiktsdiagram Arealplan test.png"><img src="Diagrammer/Oversiktsdiagram%20Arealplan%20test.png" alt="Diagram med navn  Oversiktsdiagram Arealplan test  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 5. Oversiktsdiagram Arealplan test</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Arealplan.png"><img src="Diagrammer/Hoveddiagram%20Arealplan.png" alt="Diagram med navn  Hoveddiagram Arealplan  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 5. Hoveddiagram Arealplan</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Relasjon til annen plan.png"><img src="Diagrammer/Relasjon%20til%20annen%20plan.png" alt="Diagram med navn  Relasjon til annen plan  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figure 6. Relasjon til annen plan</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Arealplan Kodelister.png"><img src="Diagrammer/Hoveddiagram%20Arealplan%20Kodelister.png" alt="Diagram med navn  Hoveddiagram Arealplan Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figure 7. Hoveddiagram Arealplan Kodelister</div>
+<div class="title">Figure 6. Hoveddiagram Arealplan</div>
 </div>
 <hr>
 <div class="sect4">
@@ -1001,7 +994,7 @@ Saksnummer er også definert i NOARK 4, som
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plandokumentasjonOppdatert</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">om plandokument er oppdatert i henhold til endelig planvedtak</p></td>
 </tr>
 <tr>
@@ -1015,18 +1008,6 @@ Saksnummer er også definert i NOARK 4, som
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">om det foreligger innsigelse som ikke er behandlet av departementet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vedtakEndeligPlanDato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato for rettsvirkning av arealplanen med tilhørende bestemmelser</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kunngjøringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato når endelig vedtatt arealplan ble kunngjort</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ikrafttredelsesdato</p></td>
@@ -1143,8 +1124,16 @@ Saksnummer er også definert i NOARK 4, som
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Samsvar mellom plantype og type planområde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plantype skal vise til riktig type planomåde<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Planområder for kommuneplan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;Planer som innholder planområder for kommuneplan skal være en kommuneplan
+inv:
+(kpOmåde- count() + kpEndringOmåde- count() + kpUtsattRettsvirkningOmåde- count() )   0
+IMPLIES
+( plantype = '20' OR plantype = '21' OR plantype = '22' )</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Planområder for reguleringsplan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Planer som innholder planområder for reguleringsplan skal være en reguleringsplan <br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1193,38 +1182,6 @@ Saksnummer er også definert i NOARK 4, som
 <hr>
 </div>
 <div class="sect4">
-<h5 id="planendringstype">«CodeList» Planendringstype</h5>
-<div class="paragraph">
-<p><strong>Definisjon:</strong> hvilke prosessregler endringen har fulgt</p>
-</div>
-<h6 id="_koder_2" class="discrete">Koder</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fullEndring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">planendring med full prosess</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mindreEndring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mindre endring av gammel reguleringplan (pbl 85 eller tidligere)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">forenkletEndring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">forenklet endring</p></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-<div class="sect4">
 <h5 id="lovreferansetype">«CodeList» Lovreferansetype</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> hvilken lov planen er vedtatt etter</p>
@@ -1257,80 +1214,43 @@ Saksnummer er også definert i NOARK 4, som
 <div class="paragraph">
 <p><strong>Definisjon:</strong> koder for  hvordan en nyere plan innvirker på en eldre plan / hvordan en eldre plan blir påvirket av en nyere plan</p>
 </div>
-<h6 id="_koder_3" class="discrete">Koder</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 60%;">
-<col style="width: 10%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endrer / blir endret av</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ny plan endrer en eldre plan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">overstyrer / overstyres av</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ny plan overstyrer en eldre plan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">arver bestemmelser fra / overfører bestemmelser til</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ny plan arver bestemmelser fra en eldre plan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">erstatter / blir erstattet av</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes når en nyere reguleringsplan i sin helhet overlapper eldre reguleringsplan eller bebyggelsesplan, uten at det er fattes eget opphevingsvedtak.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">erstatter delvis / blir delvis erstattet av</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes når en nyere reguleringsplan delvis overlapper en eldre reguleringsplan eller bebyggelsesplan</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/planforholdstype" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/planforholdstype</a></p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_planbehandling_og_plandokuiment">Pakke: Planbehandling og plandokuiment</h4>
+<h4 id="_pakke_planbehandling_og_plandokument">Pakke: Planbehandling og plandokument</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong></p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Oversiktsdiagram Planbehandling og Plandokument.png"><img src="Diagrammer/Oversiktsdiagram%20Planbehandling%20og%20Plandokument.png" alt="Diagram med navn  Oversiktsdiagram Planbehandling og Plandokument  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Oversiktsdiagram Planbehandling og plandokuiment.png"><img src="Diagrammer/Oversiktsdiagram%20Planbehandling%20og%20plandokuiment.png" alt="Diagram med navn  Oversiktsdiagram Planbehandling og plandokuiment  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 8. Oversiktsdiagram Planbehandling og Plandokument</div>
+<div class="title">Figure 7. Oversiktsdiagram Planbehandling og plandokuiment</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Datatyper Planbehandling.png"><img src="Diagrammer/Datatyper%20Planbehandling.png" alt="Diagram med navn  Datatyper Planbehandling  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Hoveddiagram Planbehandling.png"><img src="Diagrammer/Hoveddiagram%20Planbehandling.png" alt="Diagram med navn  Hoveddiagram Planbehandling  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 9. Datatyper Planbehandling</div>
+<div class="title">Figure 8. Hoveddiagram Planbehandling</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Plandokument.png"><img src="Diagrammer/Hoveddiagram%20Plandokument.png" alt="Diagram med navn  Hoveddiagram Plandokument  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 10. Hoveddiagram Plandokument</div>
+<div class="title">Figure 9. Hoveddiagram Plandokument</div>
 </div>
 <hr>
 <div class="sect4">
 <h5 id="planbehandling">«FeatureType» Planbehandling</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> representasjon av tidfestet behandling av en arealplan, både fram til planen trer i kraft, og etter ikrafttredelse, gjennom eventuelle klager, endringer og/eller opphevelse, saksbehandling av en plan i sakssystemet med referanse til saksnummer og planbehandlingstype</p>
+<p><strong>Definisjon:</strong> tidfestet behandling av en arealplan, både fram til planen trer i kraft, og etterpå</p>
 </div>
 <div class="paragraph">
 <p><strong>Arver egenskaper fra : </strong>
@@ -1372,7 +1292,7 @@ Saksnummer er også definert i NOARK 4, som
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">planbehandlingstype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#planbehandlingtype">«CodeList» Planbehandlingtype</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1678,6 +1598,13 @@ Saksnummer er også definert i NOARK 4, som
 <hr>
 <div class="imageblock">
 <div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram NasjonalArealplanID.png"><img src="Diagrammer/Hoveddiagram%20NasjonalArealplanID.png" alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."></a>
+</div>
+<div class="title">Figure 10. Hoveddiagram NasjonalArealplanID</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram PR Fellesegenskaper .png"><img src="Diagrammer/Hoveddiagram%20PR%20Fellesegenskaper%20.png" alt="Diagram med navn  Hoveddiagram PR Fellesegenskaper   som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
 <div class="title">Figure 11. Hoveddiagram PR Fellesegenskaper</div>
@@ -1685,9 +1612,9 @@ Saksnummer er også definert i NOARK 4, som
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Planbehandling.png"><img src="Diagrammer/Hoveddiagram%20Planbehandling.png" alt="Diagram med navn  Hoveddiagram Planbehandling  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Hoveddiagram Planbehandling x.png"><img src="Diagrammer/Hoveddiagram%20Planbehandling%20x.png" alt="Diagram med navn  Hoveddiagram Planbehandling x  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 12. Hoveddiagram Planbehandling</div>
+<div class="title">Figure 12. Hoveddiagram Planbehandling x</div>
 </div>
 <hr>
 <div class="imageblock">
@@ -1699,23 +1626,124 @@ Saksnummer er også definert i NOARK 4, som
 <hr>
 <div class="imageblock">
 <div class="content">
+<a class="image" href="Diagrammer\Datatyper Planbehandling.png"><img src="Diagrammer/Datatyper%20Planbehandling.png" alt="Diagram med navn  Datatyper Planbehandling  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 14. Datatyper Planbehandling</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Relasjon til annen plan.png"><img src="Diagrammer/Relasjon%20til%20annen%20plan.png" alt="Diagram med navn  Relasjon til annen plan  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 15. Relasjon til annen plan</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
 <a class="image" href="Diagrammer\Diskusjonsdiagram Arealplan 2026.png"><img src="Diagrammer/Diskusjonsdiagram%20Arealplan%202026.png" alt="Skal noen av egenskpene være opsjonelle ?"></a>
 </div>
-<div class="title">Figure 14. Diskusjonsdiagram Arealplan 2026</div>
+<div class="title">Figure 16. Diskusjonsdiagram Arealplan 2026</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram Arealplan Kodelister.png"><img src="Diagrammer/Hoveddiagram%20Arealplan%20Kodelister.png" alt="Diagram med navn  Hoveddiagram Arealplan Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 17. Hoveddiagram Arealplan Kodelister</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="Diagrammer\___Endriing fra Plan 4.5  Arealplan.png"><img src="Diagrammer/___Endriing%20fra%20Plan%204.5%20%20Arealplan.png" alt="Diagram med navn  ___Endriing fra Plan 4.5  Arealplan  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 15. ___Endriing fra Plan 4.5  Arealplan</div>
+<div class="title">Figure 18. ___Endriing fra Plan 4.5  Arealplan</div>
+</div>
+<hr>
+<div class="paragraph">
+<p>[[planbehandlingtype - 2018]]</p>
+</div>
+<div class="sect4">
+<h5 id="_codelist_planbehandlingtype_2018">«codeList» Planbehandlingtype - 2018</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong></p>
+</div>
+<h6 id="_koder_2" class="discrete">Koder</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">planforslag tatt til behandling</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">besluttet offentlig ettersyn</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mottatt varsel om innsigelse</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan vedtatt med innsigelse</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan endelig vedtatt</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ikraftsatt</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kunngjøring endelig vedtatt plan</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mottatt klage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vedtatt opphevelse</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registrert kommentar</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vedtatt mindre endring</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-11 17:52:40 +0200
+Last updated 2026-05-20 09:39:52 +0200
 </div>
 </div>
 </body>
