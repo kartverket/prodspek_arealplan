@@ -19,6 +19,9 @@
 |SOSI_spesifikasjonstype: 
 |produktspesifikasjon 
  
+|SOSI_versjon: 
+|2026-05-21 
+ 
 |xmlns: 
 |pb 
  
@@ -80,9 +83,6 @@ image::Diagrammer\Fellesegenskaper fra SOSI_Objekt.png[link=Diagrammer\Fellesege
  
 **Realisert fra: **
 __Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Fellesegenskaper##
- 
-**Overfører egenskaper til: **
-<<pbreguleringsplanbestemmelser, Reguleringsplanbestemmelser>>, <<pbjuridiskbindendedokument, JuridiskBindendeDokument>>, <<pbplanbestemmelse, Planbestemmelse>>
  
  
 [discrete]
@@ -445,9 +445,6 @@ __Plan-5.0__: [.underline]##«FeatureType» Planbestemmelse##
  
 **Arver egenskaper fra : **
 <<pbsosi_fellesegenskaper, SOSI_Fellesegenskaper>>
- 
-**Overfører egenskaper til: **
-<<pbkravomdetaljregulering, KravOmDetaljregulering>>, <<pbfellesbestemmelse, Fellesbestemmelse>>, <<pbbestemmelseomrekkefølge, BestemmelseOmRekkefølge>>, <<pbplanenshensikt, PlanensHensikt>>, <<pbbestemmelsetilbestområde, BestemmelseTilBestOmråde>>, <<pbbestemmelsetilarealformål, BestemmelseTilArealformål>>, <<pbbestemmelsetilhensynssone, BestemmelseTilHensynssone>>
  
  
 [discrete]

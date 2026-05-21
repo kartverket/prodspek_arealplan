@@ -35,7 +35,7 @@ Begrepet reguleringplan omfatter områderegulering (pbl. § 12-2) og detaljregul
 |http://skjema.geonorge.no/SOSI/produktspesifikasjon/Reguleringsplan/2026 
  
 |version: 
-|2026-04-29 
+|2026-05-21 
  
 |xmlns: 
 |rp 
@@ -60,9 +60,6 @@ SOSI Generell objektkatalog::FKB Generell del::[.underline]##FKB Generell del-5.
 SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 4.5## +
 SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 5.1## +
 SOSI Generell objektkatalog::Plan::[.underline]##«ApplicationSchema» Plan 4.5.2## 
- 
-|Avhengig av 
-|SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::[.underline]##«ApplicationSchema» Planregister## 
  
 |===
 // Slutt på tabell _______________
@@ -116,9 +113,6 @@ image::Diagrammer\Hoveddiagram Kvalitet.png[link=Diagrammer\Hoveddiagram Kvalite
 **Realisert fra: **
 __Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
  
-**Overfører egenskaper til: **
-<<rpf_rpobjekt, F_RpObjekt>>, <<rpf__rpområde, F__RpOmråde>>, <<rprpobjekt, RpObjekt>>, <<rpf_rpendringområde, F_RpEndringOmråde>>, <<rp__rphjelpeobjekt, __RpHjelpeobjekt>>, <<rprpavgrensingslinje, RpAvgrensingslinje>>, <<rprpromligobjekt, RpRomligObjekt>>
- 
  
 [discrete]
 ====== Attributter
@@ -150,11 +144,6 @@ __Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
 |[0..1] 
 |beskrivelse av kvaliteten på stedfestingen 
  
-|opphav 
-|CharacterString 
-|[0..1] 
-|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde 
- 
 |===
 // Slutt på tabell _______________
  
@@ -168,9 +157,6 @@ __Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
  
 **Realisert fra: **
 __Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Objekt##
- 
-**Overfører egenskaper til: **
-<<rprpområde, RpOmråde>>, <<rprputsattrettsvirkningområde, RpUtsattRettsvirkningOmråde>>, <<rprpendringområde, RpEndringOmråde>>
  
  
 [discrete]
@@ -356,6 +342,216 @@ __Generelle typer 5.1__: [.underline]##«CodeList» Målemetode##
 //  *********** Sideskift *********** 
 <<<
  
+==== Pakke: Rp  Felles datatyper
+**Definisjon:** modellpakke som definerer datatyper som brukes gjennomgående i flere deler av registeret, og som skal sikre interaksjon mellom systemene
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Felles datatyper
+image::Diagrammer\Hoveddiagram Felles datatyper.png[link=Diagrammer\Hoveddiagram Felles datatyper.png, , alt="Diagram med navn  Hoveddiagram Felles datatyper  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram NasjonalArealplanID
+image::Diagrammer\Hoveddiagram NasjonalArealplanID.png[link=Diagrammer\Hoveddiagram NasjonalArealplanID.png, , alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpsaksnummer]]
+ 
+===== «dataType» Saksnummer
+**Definisjon:** en generell datatype for å referere til og identifisere en sak i en organisasjon. Det kan knyttes saksnummer til hver planbehandling, men vanligvis vil alle planbehandlinger frem til planens ikrafttredelse være knyttet til samme saksnummer.
+
+Merknad:
+Saksnummer er også definert i NOARK 4, som 
+- SaksID (SA.ID, integer, 10 siffer)
+- Saksår (SA.AAR, integer, 4 siffer)
+- Sekvensnummer sak (SA.SEKNR, integer, 6 siffer)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» Saksnummer##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|saksår 
+|Integer 
+|[1..1] 
+|Årstallet saken ble initiert 
+ 
+|sakssekvensnummer 
+|Integer 
+|[1..1] 
+|løpenummer for saken innenfor året.  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpnasjonalarealplanid]]
+ 
+===== «dataType» NasjonalArealplanId
+**Definisjon:** landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften § 2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» NasjonalArealplanId##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|administrativEnhet 
+|<<rpadministrativenhetskode, «dataType» AdministrativEnhetskode>> 
+|[1..1] 
+|entydig identifikasjon av administrativ enhet som vedtar planen (vedtaksmyndighet) 
+ 
+|planId 
+|CharacterString 
+|[1..1] 
+|entydig identifikasjon for en plan innen den administrative enheten 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|inntil16 tegn for planid 
+|Det kan anvendes inntil 16 tegn for planid
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpadministrativenhetskode]]
+ 
+===== «dataType» AdministrativEnhetskode
+**Definisjon:** entydig identifikasjon av administrativ enhet
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Union» AdministrativEnhetskode##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|kommunenummer 
+|<<rpkommunenummer, «CodeList» Kommunenummer>> 
+|[0..1] 
+|offisiell nummerering av kommuner 
+ 
+|fylkesnummer 
+|<<rpfylkesnummer, «CodeList» Fylkesnummer>> 
+|[0..1] 
+|offisiell nummerering av fylker 
+ 
+|landkode 
+|<<rplandkode, «Enumeration»Landkode>> 
+|[0..1] 
+|kode med verdien 'NO', som angir at administrativ enhet er staten Norge, ihht. ISO 3166 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|bare én administrativ enhet 
+|Det skal angis én administrativ kode +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpkommunenummer]]
+ 
+===== «CodeList» Kommunenummer
+**Definisjon:** kodeliste for kommunenummer.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» Kommunenummer##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpfylkesnummer]]
+ 
+===== «CodeList» Fylkesnummer
+**Definisjon:** kodeliste for fylkesnummer.
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rplandkode]]
+ 
+===== «Enumeration»Landkode
+**Definisjon:** alfanumerisk kode for nasjonalt nivå / Norge.
+
+Avledet fra "ISO 3166 Codes for the representation of names of countries and their subdivisions"
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Landkode##
+ 
+ 
+[discrete]
+====== Koder
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|**Kodenavn:** 
+|**Definisjon:** 
+ 
+|NO 
+|Norge 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
 ==== Pakke: Rp Planområder
 **Definisjon:** modellpakke for planområde til reguleringsplaner
  
@@ -414,7 +610,7 @@ __Plan-5.0__: [.underline]##«FeatureType» RpOmråde##
 |**Definisjon** 
  
 |nasjonalArealplanId 
-|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|<<rpnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
 |[1..1] 
 |referanse til arealplanen som planområdet tilhører. 
  
@@ -434,12 +630,12 @@ __Plan-5.0__: [.underline]##«FeatureType» RpOmråde##
 |identifikasjon og plassering av lag innen et vertikalnivå  
  
 |plantype 
-|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Plantype## 
+|<<rpplantype, «CodeList» Plantype>> 
 |[0..1] 
 |type kommuneplan 
  
 |planstatus 
-|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Planstatus## 
+|<<rpplanstatus, «CodeList» Planstatus>> 
 |[0..1] 
 |planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6) 
  
@@ -449,12 +645,12 @@ __Plan-5.0__: [.underline]##«FeatureType» RpOmråde##
 |planens offisielle navn (kart- og planforskriften § 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
  
 |omPlanbestemmelser 
-|Planregister::Arealplan i Planreg::[.underline]##«CodeList» OmPlanbestemmelser## 
+|<<rpomplanbestemmelser, «CodeList» OmPlanbestemmelser>> 
 |[0..1] 
 |om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert 
  
 |lovreferanse 
-|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Lovreferansetype## 
+|<<rplovreferansetype, «CodeList» Lovreferansetype>> 
 |[0..1] 
 |hvilken lov planen er vedtatt etter 
  
@@ -464,7 +660,7 @@ __Plan-5.0__: [.underline]##«FeatureType» RpOmråde##
 |tekstlig beskrivelse av hvilken lov planen er vedtatt etter.  
  
 |forslagsstillerType 
-|Planregister::Arealplan i Planreg::[.underline]##«CodeList» ForslagsstillerType## 
+|<<rpforslagsstillertype, «CodeList» ForslagsstillerType>> 
 |[0..1] 
 |om forslagsstiller er privat eller offentlig 
  
@@ -571,7 +767,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |**Definisjon** 
  
 |nasjonalArealplanId 
-|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|<<rpnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
 |[1..1] 
 |referanse til arealplanen som planområdet tilhører.  
  
@@ -591,19 +787,14 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |identifikasjon og plassering av lag innen et vertikalnivå  
  
 |saksummer 
-|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|<<rpsaksnummer, «dataType» Saksnummer>> 
 |[1..1] 
 |entydig nummerering av en sak i et saksbehandlingsverktøy 
  
-|endeligVedtattDato 
+|endeligVedtakDato 
 |Date 
 |[0..1] 
 |vedtaksdato for rettsvirkning for område med utsatt rettsvirkning  
- 
-|kunngjøringsdato 
-|Date 
-|[0..1] 
-|dato for kunngjøring av endelig vedtatt arealplan eller planbestemmelse, pbl. § 6-3, 8-5 siste ledd, 11-15 andre ledd og 12-12 siste ledd 
  
 |===
 // Slutt på tabell _______________
@@ -683,7 +874,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |**Definisjon** 
  
 |nasjonalArealplanId 
-|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|<<rpnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
 |[1..1] 
 |referanse til arealplanen som planområdet tilhører.  
  
@@ -703,7 +894,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |identifikasjon og plassering av lag innen et vertikalnivå  
  
 |endringstype 
-|Planregister::Arealplan i Planreg::[.underline]##«CodeList» Planendringstype## 
+|<<rpplanendringstype, «CodeList» Planendringstype>> 
 |[1..1] 
 |om endringen er foretatt som en mindre endring eller en endring 
  
@@ -713,7 +904,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |lovgrunnlag som ligger til grunn for avgjørelse 
  
 |saksnummer 
-|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
+|<<rpsaksnummer, «dataType» Saksnummer>> 
 |[1..1] 
 |entydig nummerering av en sak i et saksbehandlingsverktøy 
  
@@ -726,11 +917,6 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |Date 
 |[0..1] 
 |dato når endringen av arealplanen trådte ikraft 
- 
-|kunngjøringsdato 
-|Date 
-|[0..1] 
-|dato for når en sak blir offentlig kunngjort 
  
 |===
 // Slutt på tabell _______________
@@ -749,11 +935,6 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
 |<<rprpobjekt, RpObjekt>> 
 |[0..*] 
 |tilhørende kartobjekt 
- 
-|avgrensesAv 
-|<<rprpgrense, RpGrense>> 
-|[0..*] 
-|avgrensningslinje for området 
  
 |===
 // Slutt på tabell _______________
@@ -787,6 +968,15 @@ Det får ikke være overlapp mellom noen av disse formålsflatene
  
 |===
 // Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpplanendringstype]]
+ 
+===== «CodeList» Planendringstype
+**Definisjon:** 
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/planendringstype
  
 //  ----------- Skillelinje -----------
 '''
@@ -887,6 +1077,61 @@ __Plan-5.0__: [.underline]##«FeatureType» RpGrense##
 //  *********** Sideskift *********** 
 <<<
  
+===== Pakke: Rp Planområder::Arealplan Kodelister
+**Definisjon:** kodelister for egenskaper som tilhører Areralplanobjektet, men som er beholdt for gamle instanser av RpOmråde
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpplantype]]
+ 
+===== Arealplan Kodelister::«CodeList» Plantype
+**Definisjon:** type arealplan
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/plantype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpplanstatus]]
+ 
+===== Arealplan Kodelister::«CodeList» Planstatus
+**Definisjon:** planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6)
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/planstatus
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpomplanbestemmelser]]
+ 
+===== Arealplan Kodelister::«CodeList» OmPlanbestemmelser
+**Definisjon:** om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert
+
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/omplanbestemmelser
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rplovreferansetype]]
+ 
+===== Arealplan Kodelister::«CodeList» Lovreferansetype
+**Definisjon:** hvilken lov planen er vedtatt etter
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/lovreferansetype
+ 
+//  ----------- Skillelinje -----------
+'''
+[[rpforslagsstillertype]]
+ 
+===== Arealplan Kodelister::«CodeList» ForslagsstillerType
+**Definisjon:** om forslagsstiller er privat eller offentlig 
+
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planregister/forslagsstillertype
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
 ==== Pakke: Rp Abstrakte typer
 **Definisjon:** 
  
@@ -916,9 +1161,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpObjekt##
 **Arver egenskaper fra : **
 <<rpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
  
-**Overfører egenskaper til: **
-<<rprpstøysone, RpStøySone>>, <<rprpsikringsone, RpSikringSone>>, <<rprpangitthensynsone, RpAngittHensynSone>>, <<rprpinfrastruktursone, RpInfrastrukturSone>>, <<rprpbåndleggingsone, RpBåndleggingSone>>, <<rprpfaresone, RpFareSone>>, <<rprpdetaljeringsone, RpDetaljeringSone>>, <<rprpgjennomføringsone, RpGjennomføringSone>>, <<rprpregulerthøyde, RpRegulertHøyde>>, <<rprbfornyelseområde, RbFornyelseOmråde>>, <<rprpjuridisklinje, RpJuridiskLinje>>, <<rprpbestemmelseområde, RpBestemmelseOmråde>>, <<rprparealformålområde, RpArealformålOmråde>>, <<rprbrekkefølgeområde, RbRekkefølgeOmråde>>, <<rprbfareområde, RbFareOmråde>>, <<rprpbestemmelseregterreng, RpBestemmelseRegTerreng>>, <<rprbrestriksjonområde, RbRestriksjonOmråde>>, <<rprbbevaringområde, RbBevaringOmråde>>, <<rprphandlingområde, RpHandlingOmråde>>, <<rprpjuridiskpunkt, RpJuridiskPunkt>>, <<rprbformålområde, RbFormålOmråde>>, <<rprpbestemmelsemidlbygganlegg, RpBestemmelseMidlByggAnlegg>>, <<rp___rpendringområde, ___RpEndringOmråde>>, <<rprphensynsone, RpHensynSone>>, <<rprppåskrift, RpPåskrift>>
- 
  
 [discrete]
 ====== Attributter
@@ -931,7 +1173,7 @@ __Plan-5.0__: [.underline]##«FeatureType» RpObjekt##
 |**Definisjon** 
  
 |nasjonalArealplanId 
-|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|<<rpnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
 |[1..1] 
 |identifikasjon av arealplanen som objektet tilhører.  
  
@@ -944,24 +1186,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpObjekt##
 |<<rpvertikallag, «dataType» Vertikallag>> 
 |[0..1] 
 |identifikasjon og plassering av lag innen et vertikalnivå  
- 
-|===
-// Slutt på tabell _______________
- 
-[discrete]
-====== Roller
-// Topp av tabell _______________
-[cols="20, 20, 10, 50"]
-|===
-|**Rollenavn** 
-|**Objekttype** 
-|**Multiplisitet** 
-|**Definisjon** 
- 
-|påskrift 
-|<<rprppåskrift, RpPåskrift>> 
-|[0..*] 
-| 
  
 |===
 // Slutt på tabell _______________
@@ -980,9 +1204,6 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 **Arver egenskaper fra : **
 <<rpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
  
-**Overfører egenskaper til: **
-<<rprpbestemmelserom, RpBestemmelseRom>>, <<rprphensynrom, RpHensynRom>>, <<rprphandlingrom, RpHandlingRom>>
- 
  
 [discrete]
 ====== Attributter
@@ -995,7 +1216,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 |**Definisjon** 
  
 |nasjonalArealplanId 
-|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|<<rpnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
 |[1..1] 
 |identifikasjon av arealplanen som objektet tilhører.  
  
@@ -1024,9 +1245,6 @@ Brukes der det er behov for å ta vare på kvalitesinformasjon som ikke kan ligg
 **Arver egenskaper fra : **
 <<rpsosi_fellesegenskaper_kartobjekt, SOSI_Fellesegenskaper_Kartobjekt>>
  
-**Overfører egenskaper til: **
-<<rprpformålgrense, RpFormålGrense>>, <<rprpgrense, RpGrense>>
- 
  
 [discrete]
 ====== Attributter
@@ -1039,7 +1257,7 @@ Brukes der det er behov for å ta vare på kvalitesinformasjon som ikke kan ligg
 |**Definisjon** 
  
 |nasjonalArealplanId 
-|Planregister::Felles datatyper::[.underline]##«dataType» NasjonalArealplanId## 
+|<<rpnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
 |[0..1] 
 |identifikasjon av arealplanen som objektet tilhører.  
  
@@ -1405,6 +1623,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpSikringSone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
+|sikring 
+|<<rprpsikringsonetype, «CodeList» RpSikringSoneType>> 
+|[1..1] 
+|type sikring i hensynsone for sikring  
+ 
 |beskrivelse 
 |CharacterString 
 |[0..1] 
@@ -1414,11 +1637,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpSikringSone##
 |CharacterString 
 |[1..1] 
 |navn/feltbetegnelse på hensynssone  
- 
-|sikring 
-|<<rprpsikringsonetype, «CodeList» RpSikringSoneType>> 
-|[1..1] 
-|type sikring i hensynsone for sikring  
  
 |===
 // Slutt på tabell _______________
@@ -1483,6 +1701,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpStøySone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
+|støy 
+|<<rprpstøysonetype, «CodeList» RpStøySoneType>> 
+|[1..1] 
+|type støy i hensynsone for støy 
+ 
 |beskrivelse 
 |CharacterString 
 |[0..1] 
@@ -1492,11 +1715,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpStøySone##
 |CharacterString 
 |[1..1] 
 |navn/feltbetegnelse på hensynssone  
- 
-|støy 
-|<<rprpstøysonetype, «CodeList» RpStøySoneType>> 
-|[1..1] 
-|type støy i hensynsone for støy 
  
 |===
 // Slutt på tabell _______________
@@ -1563,6 +1781,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpFareSone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
+|fare 
+|<<rprpfaresonetype, «CodeList» RpFareSoneType>> 
+|[1..1] 
+|type fare i hensynssone for fare  
+ 
 |hensynSonenavn 
 |CharacterString 
 |[1..1] 
@@ -1572,11 +1795,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpFareSone##
 |CharacterString 
 |[0..1] 
 |supplerende beskrivelse 
- 
-|fare 
-|<<rprpfaresonetype, «CodeList» RpFareSoneType>> 
-|[1..1] 
-|type fare i hensynssone for fare  
  
 |===
 // Slutt på tabell _______________
@@ -1641,6 +1859,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpInfrastrukturSone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
+|infrastruktur 
+|<<rprpinfrastruktursonetype, «CodeList» RpInfrastrukturSoneType>> 
+|[1..1] 
+|type infrastrukturkrav i hensynsone for infrastruktur  
+ 
 |beskrivelse 
 |CharacterString 
 |[0..1] 
@@ -1650,11 +1873,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpInfrastrukturSone##
 |CharacterString 
 |[1..1] 
 |navn/feltbetegnelse på hensynssone  
- 
-|infrastruktur 
-|<<rprpinfrastruktursonetype, «CodeList» RpInfrastrukturSoneType>> 
-|[1..1] 
-|type infrastrukturkrav i hensynsone for infrastruktur  
  
 |===
 // Slutt på tabell _______________
@@ -1719,6 +1937,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpAngittHensynSone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
+|angittHensyn 
+|<<rprpangitthensynsonetype, «CodeList» RpAngittHensynSoneType>> 
+|[1..1] 
+|type angitt hensyn i hensynssone for nærmere angitt særlig hensyn  
+ 
 |hensynSonenavn 
 |CharacterString 
 |[1..1] 
@@ -1728,11 +1951,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpAngittHensynSone##
 |CharacterString 
 |[0..1] 
 |supplerende beskrivelse 
- 
-|angittHensyn 
-|<<rprpangitthensynsonetype, «CodeList» RpAngittHensynSoneType>> 
-|[1..1] 
-|type angitt hensyn i hensynssone for nærmere angitt særlig hensyn  
  
 |===
 // Slutt på tabell _______________
@@ -1797,16 +2015,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpBåndleggingSone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
-|hensynSonenavn 
-|CharacterString 
-|[1..1] 
-|navn/feltbetegnelse på hensynssone  
- 
-|beskrivelse 
-|CharacterString 
-|[0..1] 
-|supplerende beskrivelse 
- 
 |båndlegging 
 |<<rprpbåndleggingsonetype, «CodeList» RpBåndleggingSoneType>> 
 |[1..1] 
@@ -1816,6 +2024,16 @@ __Plan-5.0__: [.underline]##«FeatureType» RpBåndleggingSone##
 |Date 
 |[0..1] 
 |dato når båndleggingen opphører 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[1..1] 
+|navn/feltbetegnelse på hensynssone  
+ 
+|beskrivelse 
+|CharacterString 
+|[0..1] 
+|supplerende beskrivelse 
  
 |===
 // Slutt på tabell _______________
@@ -1881,6 +2099,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpGjennomføringSone##
 |[1..1] 
 |objektets utstrekning og avgrensing i grunnriss (2D) 
  
+|gjennomføring 
+|<<rprpgjennomføringsonetype, «CodeList» RpGjennomføringSoneType>> 
+|[1..1] 
+|type særskilte gjennomføringsvirkemidler i gjennomføringssone  
+ 
 |hensynSonenavn 
 |CharacterString 
 |[1..1] 
@@ -1890,11 +2113,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpGjennomføringSone##
 |CharacterString 
 |[0..1] 
 |supplerende beskrivelse 
- 
-|gjennomføring 
-|<<rprpgjennomføringsonetype, «CodeList» RpGjennomføringSoneType>> 
-|[1..1] 
-|type særskilte gjennomføringsvirkemidler i gjennomføringssone  
  
 |===
 // Slutt på tabell _______________
@@ -2115,7 +2333,7 @@ __Plan-5.0__: [.underline]##«FeatureType» RpBestemmelseOmråde##
 |[1..1] 
 |navn/feltbetegnelse på bestemmelsesområde  
  
-|bestemmelseHjemmel 
+|rpBestemmelseHjemmel 
 |<<rprpbestemmelsehjemmel, «CodeList» RpBestemmelseHjemmel>> 
 |[1..*] 
 |kode for hjemmel til planbestemmelse i reguleringsplan  
@@ -2199,20 +2417,20 @@ __Plan-5.0__: [.underline]##«FeatureType» RpBestemmelseMidlByggAnlegg##
 |[1..1] 
 |navn/feltbetegnelse for bestemmelseområde  
  
-|gyldigTilDato 
-|Date 
+|saksnummer 
+|<<rpsaksnummer, «dataType» Saksnummer>> 
 |[0..1] 
-|utløpsdato for bestemmelseområdet.  
+|entydig nummerering av en sak i et saksbehandlingsverktøy 
  
 |avgjørelsesdato 
 |Date 
-|[0..1] 
+|[1..1] 
 |vedtaksdato for etablering av området 
  
-|saksnummer 
-|Planregister::Felles datatyper::[.underline]##«dataType» Saksnummer## 
-|[0..1] 
-|entydig nummerering av en sak i et saksbehandlingsverktøy 
+|gyldigTilDato 
+|Date 
+|[1..1] 
+|utløpsdato for bestemmelseområdet.  
  
 |===
 // Slutt på tabell _______________
@@ -2476,6 +2694,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RpJuridiskPunkt##
 |[1..1] 
 |punkt for stedfesting av bestemmelser 
  
+|symbolretning 
+|Vector 
+|[0..1] 
+|retningsvektor i kartkoordinatsystemet som fastsetter retning av kartsymbol 
+ 
 |juridiskPunkttype 
 |<<rprpjuridiskpunkttype, «CodeList» RpJuridiskPunktType>> 
 |[1..1] 
@@ -2485,11 +2708,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RpJuridiskPunkt##
 |CharacterString 
 |[0..1] 
 |entydig tekstlig betegnelse som identiserer kartobjektet,  
- 
-|symbolretning 
-|Vector 
-|[0..1] 
-|retningsvektor i kartkoordinatsystemet som fastsetter retning av kartsymbol 
  
 |===
 // Slutt på tabell _______________
@@ -2511,7 +2729,7 @@ __Plan-5.0__: [.underline]##«Enumeration»RpJuridiskPunktType##
 //  *********** Sideskift *********** 
 <<<
  
-==== Pakke: Regulert høyde
+==== Pakke: Regulert høyde og terreng
 **Definisjon:** 
  
 //  ----------- Skillelinje -----------
@@ -2752,7 +2970,7 @@ __Plan-5.0__: [.underline]##«FeatureType» RpPåskrift##
 |påskriftType 
 |<<rppåskrifttype, «CodeList» PåskriftType>> 
 |[0..1] 
-|kategorisering av hva påskriften i plankartet omhandler 
+|hva påskriften i plankartet omhandler 
  
 |===
 // Slutt på tabell _______________
@@ -2785,12 +3003,6 @@ image::Diagrammer\Hoveddiagram Rp1985.png[link=Diagrammer\Hoveddiagram Rp1985.pn
  
 //  ----------- Skillelinje -----------
 '''
-.Hoveddiagram Rp1985 Kodelister
-image::Diagrammer\Hoveddiagram Rp1985 Kodelister.png[link=Diagrammer\Hoveddiagram Rp1985 Kodelister.png, , alt="Diagram som viser alle klassene i pakka."]
- 
- 
-//  ----------- Skillelinje -----------
-'''
 [[rprbformålområde]]
  
 ===== «FeatureType» RbFormålOmråde
@@ -2818,11 +3030,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RbFormålOmråde##
 |[1..1] 
 |formålområdets flategeometri 
  
-|feltnavn 
-|CharacterString 
-|[0..1] 
-|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
- 
 |reguleringsformål 
 |<<rpregformbrukformål, «CodeList» RegformBrukFormål>> 
 |[1..1] 
@@ -2832,6 +3039,11 @@ __Plan-5.0__: [.underline]##«FeatureType» RbFormålOmråde##
 |CharacterString 
 |[0..1] 
 |utdyping av reguleringsformål  
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
  
 |utnytting 
 |<<rputnytting, «dataType» Utnytting>> 
@@ -2870,24 +3082,6 @@ __Plan-5.0__: [.underline]##«FeatureType» RbFormålOmråde##
 |<<rprpformålgrense, RpFormålGrense>> 
 |[0..*] 
 |avgrensningslinje for området 
- 
-|===
-// Slutt på tabell _______________
- 
-[discrete]
-====== Restriksjoner
-// Topp av tabell _______________
-[cols="30, 70"]
-|===
-|**Restriksjon** 
-|**Beskrivelse** 
- 
-|Betinget krav om utdyping 
-|Utdyping skal brukes for disse formålene:  
-199, 299, 398, 399, 459, 469, 631, 699, 790, 990, 999         
-           
-
- 
  
 |===
 // Slutt på tabell _______________
@@ -2934,15 +3128,15 @@ __Plan-5.0__: [.underline]##«FeatureType» RbBevaringOmråde##
 |[1..1] 
 |objektets utstrekning i grunnriss 
  
-|feltnavn 
-|CharacterString 
-|[0..1] 
-|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
- 
 |reguleringsformål 
 |<<rpregformbevaring, «CodeList» RegformBevaring>> 
 |[1..1] 
 |type bevaringsformål  
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
  
 |===
 // Slutt på tabell _______________
@@ -2990,15 +3184,15 @@ __Plan-5.0__: [.underline]##«FeatureType» RbFareOmråde##
 |[1..1] 
 |objektets utstrekning i grunnriss 
  
-|feltnavn 
-|CharacterString 
-|[0..1] 
-|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
- 
 |reguleringsformål 
 |<<rpregformfare, «CodeList» RegformFare>> 
 |[1..1] 
 |type reguleringsformål 
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
  
 |reguleringsformålsutdyping 
 |CharacterString 
@@ -3050,15 +3244,15 @@ __Plan-5.0__: [.underline]##«FeatureType» RbFornyelseOmråde##
 |[1..1] 
 |objektets utstrekning i grunnriss 
  
-|feltnavn 
-|CharacterString 
-|[0..1] 
-|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan  
- 
 |reguleringsformål 
 |<<rpregformfornyelse, «CodeList» RegformFornyelse>> 
 |[1..1] 
 |type reguleringsformål  
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan  
  
 |===
 // Slutt på tabell _______________
@@ -3105,15 +3299,15 @@ __Plan-5.0__: [.underline]##«FeatureType» RbRekkefølgeOmråde##
 |[1..1] 
 |objektets utstrekning i grunnriss 
  
-|feltnavn 
-|CharacterString 
-|[0..1] 
-|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
- 
 |reguleringsformål 
 |<<rpregformrekkefølge, «CodeList» RegformRekkefølge>> 
 |[1..1] 
 |type reguleringsformål  
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
  
 |===
 // Slutt på tabell _______________
@@ -3160,15 +3354,15 @@ __Plan-5.0__: [.underline]##«FeatureType» RbRestriksjonOmråde##
 |[1..1] 
 |objektets utstrekning i grunnriss 
  
-|feltnavn 
-|CharacterString 
-|[0..1] 
-|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
- 
 |reguleringsformål 
 |<<rpregformrestriksjon, «CodeList» RegformRestriksjon>> 
 |[1..1] 
 |type reguleringsformål  
+ 
+|feltnavn 
+|CharacterString 
+|[0..1] 
+|navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan 
  
 |===
 // Slutt på tabell _______________
@@ -3188,47 +3382,71 @@ __Plan-5.0__: [.underline]##«Enumeration»RegformRestriksjon##
 //  *********** Sideskift *********** 
 <<<
  
-==== Pakke: Ekstra diagrammer
+==== Pakke: Endringer fra Rp2019
 **Definisjon:** 
  
 //  ----------- Skillelinje -----------
 '''
-.Hoveddiagram Rp Hensyn kopi
-image::Diagrammer\Hoveddiagram Rp Hensyn kopi.png[link=Diagrammer\Hoveddiagram Rp Hensyn kopi.png, , alt="Diagram med navn  Hoveddiagram Rp Hensyn kopi  som viser UML-klasser beskrevet i teksten nedenfor."]
+.Gjennomgående endringer fra Rp2019
+image::Diagrammer\Gjennomgående endringer fra Rp2019.png[link=Diagrammer\Gjennomgående endringer fra Rp2019.png, , alt="Diagram med navn  Gjennomgående endringer fra Rp2019  som viser UML-klasser beskrevet i teksten nedenfor."]
  
  
 //  ----------- Skillelinje -----------
 '''
-.Hoveddiagram Rp SOSI-Objekt
-image::Diagrammer\Hoveddiagram Rp SOSI-Objekt.png[link=Diagrammer\Hoveddiagram Rp SOSI-Objekt.png, , alt="Diagram som viser Fellesegenskaper"]
+.Endringer fra Rp2019  Fellesegenskaper
+image::Diagrammer\Endringer fra Rp2019  Fellesegenskaper.png[link=Diagrammer\Endringer fra Rp2019  Fellesegenskaper.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
  
  
 //  ----------- Skillelinje -----------
 '''
-.Diagram Rp UtsattRettsvirkning 
-image::Diagrammer\Diagram Rp UtsattRettsvirkning .png[link=Diagrammer\Diagram Rp UtsattRettsvirkning .png, , alt="Diagram med navn  Diagram Rp UtsattRettsvirkning   som viser UML-klasser beskrevet i teksten nedenfor."]
+.Endringer fra Rp2019  NasjonalArealplanID
+image::Diagrammer\Endringer fra Rp2019  NasjonalArealplanID.png[link=Diagrammer\Endringer fra Rp2019  NasjonalArealplanID.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
  
  
 //  ----------- Skillelinje -----------
 '''
-.Hoveddiagram RpHensyn 2
-image::Diagrammer\Hoveddiagram RpHensyn 2.png[link=Diagrammer\Hoveddiagram RpHensyn 2.png, , alt="Diagram med navn  Hoveddiagram RpHensyn 2  som viser UML-klasser beskrevet i teksten nedenfor."]
+.Endringer fra Rp2019  RpOmråde
+image::Diagrammer\Endringer fra Rp2019  RpOmråde.png[link=Diagrammer\Endringer fra Rp2019  RpOmråde.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
  
  
 //  ----------- Skillelinje -----------
 '''
-.Kodelister og datatyper RpFormål
-image::Diagrammer\Kodelister og datatyper RpFormål.png[link=Diagrammer\Kodelister og datatyper RpFormål.png, , alt="Diagram med navn  Kodelister og datatyper RpFormål  som viser UML-klasser beskrevet i teksten nedenfor."]
+.Endringer fra Rp2019  Vertikalnivå
+image::Diagrammer\Endringer fra Rp2019  Vertikalnivå.png[link=Diagrammer\Endringer fra Rp2019  Vertikalnivå.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
  
  
 //  ----------- Skillelinje -----------
 '''
-.Realisering Rp fra Generelle Typer
-image::Diagrammer\Realisering Rp fra Generelle Typer.png[link=Diagrammer\Realisering Rp fra Generelle Typer.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+.Endringer fra Rp2019  Formål
+image::Diagrammer\Endringer fra Rp2019  Formål.png[link=Diagrammer\Endringer fra Rp2019  Formål.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
  
  
 //  ----------- Skillelinje -----------
 '''
-.Realisering Rp Kvalitet
-image::Diagrammer\Realisering Rp Kvalitet.png[link=Diagrammer\Realisering Rp Kvalitet.png, , alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"]
+.Endringer fra Rp2019  Hensyn
+image::Diagrammer\Endringer fra Rp2019  Hensyn.png[link=Diagrammer\Endringer fra Rp2019  Hensyn.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Endringer fra Rp2019  Bestemmelsesobjekter
+image::Diagrammer\Endringer fra Rp2019  Bestemmelsesobjekter.png[link=Diagrammer\Endringer fra Rp2019  Bestemmelsesobjekter.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Endringer fra Rp2019  Regulert høyde
+image::Diagrammer\Endringer fra Rp2019  Regulert høyde.png[link=Diagrammer\Endringer fra Rp2019  Regulert høyde.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Endringer fra Rp2019  RpPåskrift
+image::Diagrammer\Endringer fra Rp2019  RpPåskrift.png[link=Diagrammer\Endringer fra Rp2019  RpPåskrift.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Endringer fra Rp2019  Rp1985
+image::Diagrammer\Endringer fra Rp2019  Rp1985.png[link=Diagrammer\Endringer fra Rp2019  Rp1985.png, , alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"]
  

@@ -487,7 +487,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2026-04-29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-05-21</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:</p></td>
@@ -517,10 +517,6 @@ SOSI Generell objektkatalog::FKB Generell del::<span class="underline">FKB Gener
 SOSI Generelle konsepter::SOSI Generelle typer::<span class="underline">«ApplicationSchema» Generelle typer 4.5</span><br>
 SOSI Generelle konsepter::SOSI Generelle typer::<span class="underline">«ApplicationSchema» Generelle typer 5.1</span><br>
 SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema» Plan 4.5.2</span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Avhengig av</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Arealplan 5.0 ::Planregister::<span class="underline">«ApplicationSchema» Planregister</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -578,10 +574,6 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 <p><strong>Realisert fra: </strong>
 <em>Generelle typer 5.1</em>: <span class="underline">«FeatureType» SOSI_Objekt</span></p>
 </div>
-<div class="paragraph">
-<p><strong>Overfører egenskaper til: </strong>
-<a href="#rpf_rpobjekt">F_RpObjekt</a>, <a href="#rpf<em>rpområde">F</em>RpOmråde</a>, <a href="#rprpobjekt">RpObjekt</a>, <a href="#rpf_rpendringområde">F_RpEndringOmråde</a>, <a href="#rp<em>rphjelpeobjekt"></em>RpHjelpeobjekt</a>, <a href="#rprpavgrensingslinje">RpAvgrensingslinje</a>, <a href="#rprpromligobjekt">RpRomligObjekt</a></p>
-</div>
 <h6 id="_attributter" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -621,12 +613,6 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">opphav</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde</p></td>
-</tr>
 </tbody>
 </table>
 <hr>
@@ -639,10 +625,6 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 <div class="paragraph">
 <p><strong>Realisert fra: </strong>
 <em>Generelle typer 5.1</em>: <span class="underline">«FeatureType» SOSI_Objekt</span></p>
-</div>
-<div class="paragraph">
-<p><strong>Overfører egenskaper til: </strong>
-<a href="#rprpområde">RpOmråde</a>, <a href="#rprputsattrettsvirkningområde">RpUtsattRettsvirkningOmråde</a>, <a href="#rprpendringområde">RpEndringOmråde</a></p>
 </div>
 <h6 id="_attributter_2" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
@@ -862,58 +844,40 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_rp_planområder">Pakke: Rp Planområder</h4>
+<h4 id="_pakke_rp_felles_datatyper">Pakke: Rp  Felles datatyper</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> modellpakke for planområde til reguleringsplaner</p>
+<p><strong>Definisjon:</strong> modellpakke som definerer datatyper som brukes gjennomgående i flere deler av registeret, og som skal sikre interaksjon mellom systemene</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram RpOmråde.png"><img src="Diagrammer/Hoveddiagram%20RpOmråde.png" alt="Diagram med navn  Hoveddiagram RpOmråde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Hoveddiagram Felles datatyper.png"><img src="Diagrammer/Hoveddiagram%20Felles%20datatyper.png" alt="Diagram med navn  Hoveddiagram Felles datatyper  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 6. Hoveddiagram RpOmråde</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Rp UtsattRettsvirkning.png"><img src="Diagrammer/Hoveddiagram%20Rp%20UtsattRettsvirkning.png" alt="Diagram med navn  Hoveddiagram Rp UtsattRettsvirkning  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figure 7. Hoveddiagram Rp UtsattRettsvirkning</div>
+<div class="title">Figure 6. Hoveddiagram Felles datatyper</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Rp Endringsområde.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Endringsområde.png" alt="Diagram med navn  Hoveddiagram Rp Endringsområde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Hoveddiagram NasjonalArealplanID.png"><img src="Diagrammer/Hoveddiagram%20NasjonalArealplanID.png" alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."></a>
 </div>
-<div class="title">Figure 8. Hoveddiagram Rp Endringsområde</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Oversikt planområder for planer vedtatt ihht Plan 5.0.png"><img src="Diagrammer/Oversikt%20planområder%20for%20planer%20vedtatt%20ihht%20Plan%205.0.png" alt="Diagram med navn  Oversikt planområder for planer vedtatt ihht Plan 5.0  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figure 9. Oversikt planområder for planer vedtatt ihht Plan 5.0</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Eksisterende bruk av RpOmråde"><img src="Diagrammer/Eksisterende%20bruk%20av%20RpOmråde,%20iht.%20Plan%204.5.2%20og%20tidligere.png" alt="Diagram med navn  Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere  som viser UML-klasser beskrevet i teksten nedenfor." width="iht. Plan 4.5.2 og tidligere.png"></a>
-</div>
-<div class="title">Figure 10. Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere</div>
+<div class="title">Figure 7. Hoveddiagram NasjonalArealplanID</div>
 </div>
 <hr>
 <div class="sect4">
-<h5 id="rprpområde">«FeatureType» RpOmråde</h5>
+<h5 id="rpsaksnummer">«dataType» Saksnummer</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> planområde for reguleringsplan</p>
+<p><strong>Definisjon:</strong> en generell datatype for å referere til og identifisere en sak i en organisasjon. Det kan knyttes saksnummer til hver planbehandling, men vanligvis vil alle planbehandlinger frem til planens ikrafttredelse være knyttet til samme saksnummer.</p>
+</div>
+<div class="paragraph">
+<p>Merknad:
+Saksnummer er også definert i NOARK 4, som
+- SaksID (SA.ID, integer, 10 siffer)
+- Saksår (SA.AAR, integer, 4 siffer)
+- Sekvensnummer sak (SA.SEKNR, integer, 6 siffer)</p>
 </div>
 <div class="paragraph">
 <p><strong>Realisert fra: </strong>
-<em>Plan-5.0</em>: <span class="underline">«FeatureType» RpOmråde</span></p>
-</div>
-<div class="paragraph">
-<p><strong>Arver egenskaper fra : </strong>
-<a href="#rpsosi_fellesegenskaper_planområde">SOSI_Fellesegenskaper_Planområde</a></p>
+<em>Plan-5.0</em>: <span class="underline">«dataType» Saksnummer</span></p>
 </div>
 <h6 id="_attributter_5" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
@@ -931,8 +895,270 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">saksår</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Årstallet saken ble initiert</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sakssekvensnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">løpenummer for saken innenfor året.</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpnasjonalarealplanid">«dataType» NasjonalArealplanId</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften § 2 - <a href="https://lovdata.no/forskrift/2025-01-20-52/§2" class="bare">https://lovdata.no/forskrift/2025-01-20-52/§2</a>)</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«dataType» NasjonalArealplanId</span></p>
+</div>
+<h6 id="_attributter_6" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">administrativEnhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpadministrativenhetskode">«dataType» AdministrativEnhetskode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entydig identifikasjon av administrativ enhet som vedtar planen (vedtaksmyndighet)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">planId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entydig identifikasjon for en plan innen den administrative enheten</p></td>
+</tr>
+</tbody>
+</table>
+<h6 id="_restriksjoner_2" class="discrete">Restriksjoner</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inntil16 tegn for planid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Det kan anvendes inntil 16 tegn for planid</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpadministrativenhetskode">«dataType» AdministrativEnhetskode</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> entydig identifikasjon av administrativ enhet</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«Union» AdministrativEnhetskode</span></p>
+</div>
+<h6 id="_attributter_7" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpkommunenummer">«CodeList» Kommunenummer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offisiell nummerering av kommuner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fylkesnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpfylkesnummer">«CodeList» Fylkesnummer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offisiell nummerering av fylker</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">landkode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rplandkode">«Enumeration»Landkode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kode med verdien 'NO', som angir at administrativ enhet er staten Norge, ihht. ISO 3166</p></td>
+</tr>
+</tbody>
+</table>
+<h6 id="_restriksjoner_3" class="discrete">Restriksjoner</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bare én administrativ enhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Det skal angis én administrativ kode<br>
+<br></p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpkommunenummer">«CodeList» Kommunenummer</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> kodeliste for kommunenummer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«CodeList» Kommunenummer</span></p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer" class="bare">https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpfylkesnummer">«CodeList» Fylkesnummer</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> kodeliste for fylkesnummer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer" class="bare">https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rplandkode">«Enumeration»Landkode</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> alfanumerisk kode for nasjonalt nivå / Norge.</p>
+</div>
+<div class="paragraph">
+<p>Avledet fra "ISO 3166 Codes for the representation of names of countries and their subdivisions"</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«Enumeration»Landkode</span></p>
+</div>
+<h6 id="_koder" class="discrete">Koder</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norge</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pakke_rp_planområder">Pakke: Rp Planområder</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> modellpakke for planområde til reguleringsplaner</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram RpOmråde.png"><img src="Diagrammer/Hoveddiagram%20RpOmråde.png" alt="Diagram med navn  Hoveddiagram RpOmråde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 8. Hoveddiagram RpOmråde</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram Rp UtsattRettsvirkning.png"><img src="Diagrammer/Hoveddiagram%20Rp%20UtsattRettsvirkning.png" alt="Diagram med navn  Hoveddiagram Rp UtsattRettsvirkning  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 9. Hoveddiagram Rp UtsattRettsvirkning</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Hoveddiagram Rp Endringsområde.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Endringsområde.png" alt="Diagram med navn  Hoveddiagram Rp Endringsområde  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 10. Hoveddiagram Rp Endringsområde</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Oversikt planområder for planer vedtatt ihht Plan 5.0.png"><img src="Diagrammer/Oversikt%20planområder%20for%20planer%20vedtatt%20ihht%20Plan%205.0.png" alt="Diagram med navn  Oversikt planområder for planer vedtatt ihht Plan 5.0  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figure 11. Oversikt planområder for planer vedtatt ihht Plan 5.0</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Eksisterende bruk av RpOmråde"><img src="Diagrammer/Eksisterende%20bruk%20av%20RpOmråde,%20iht.%20Plan%204.5.2%20og%20tidligere.png" alt="Diagram med navn  Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere  som viser UML-klasser beskrevet i teksten nedenfor." width="iht. Plan 4.5.2 og tidligere.png"></a>
+</div>
+<div class="title">Figure 12. Eksisterende bruk av RpOmråde, iht. Plan 4.5.2 og tidligere</div>
+</div>
+<hr>
+<div class="sect4">
+<h5 id="rprpområde">«FeatureType» RpOmråde</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> planområde for reguleringsplan</p>
+</div>
+<div class="paragraph">
+<p><strong>Realisert fra: </strong>
+<em>Plan-5.0</em>: <span class="underline">«FeatureType» RpOmråde</span></p>
+</div>
+<div class="paragraph">
+<p><strong>Arver egenskaper fra : </strong>
+<a href="#rpsosi_fellesegenskaper_planområde">SOSI_Fellesegenskaper_Planområde</a></p>
+</div>
+<h6 id="_attributter_8" class="discrete">Attributter</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributtnavn</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datatype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">referanse til arealplanen som planområdet tilhører.</p></td>
 </tr>
@@ -956,13 +1182,13 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plantype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Arealplan i Planreg::<span class="underline">«CodeList» Plantype</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpplantype">«CodeList» Plantype</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type kommuneplan</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">planstatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Arealplan i Planreg::<span class="underline">«CodeList» Planstatus</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpplanstatus">«CodeList» Planstatus</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6)</p></td>
 </tr>
@@ -974,13 +1200,13 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">omPlanbestemmelser</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Arealplan i Planreg::<span class="underline">«CodeList» OmPlanbestemmelser</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpomplanbestemmelser">«CodeList» OmPlanbestemmelser</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lovreferanse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Arealplan i Planreg::<span class="underline">«CodeList» Lovreferansetype</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rplovreferansetype">«CodeList» Lovreferansetype</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hvilken lov planen er vedtatt etter</p></td>
 </tr>
@@ -992,7 +1218,7 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">forslagsstillerType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Arealplan i Planreg::<span class="underline">«CodeList» ForslagsstillerType</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpforslagsstillertype">«CodeList» ForslagsstillerType</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">om forslagsstiller er privat eller offentlig</p></td>
 </tr>
@@ -1057,7 +1283,7 @@ SOSI Generell objektkatalog::Plan::<span class="underline">«ApplicationSchema»
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_2" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_4" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1100,7 +1326,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rpsosi_fellesegenskaper_planområde">SOSI_Fellesegenskaper_Planområde</a></p>
 </div>
-<h6 id="_attributter_6" class="discrete">Attributter</h6>
+<h6 id="_attributter_9" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1117,7 +1343,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">referanse til arealplanen som planområdet tilhører.</p></td>
 </tr>
@@ -1141,21 +1367,15 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">saksummer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» Saksnummer</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpsaksnummer">«dataType» Saksnummer</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">entydig nummerering av en sak i et saksbehandlingsverktøy</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endeligVedtattDato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endeligVedtakDato</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vedtaksdato for rettsvirkning for område med utsatt rettsvirkning</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kunngjøringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato for kunngjøring av endelig vedtatt arealplan eller planbestemmelse, pbl. § 6-3, 8-5 siste ledd, 11-15 andre ledd og 12-12 siste ledd</p></td>
 </tr>
 </tbody>
 </table>
@@ -1188,7 +1408,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_3" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_5" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1231,7 +1451,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rpsosi_fellesegenskaper_planområde">SOSI_Fellesegenskaper_Planområde</a></p>
 </div>
-<h6 id="_attributter_7" class="discrete">Attributter</h6>
+<h6 id="_attributter_10" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1248,7 +1468,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">referanse til arealplanen som planområdet tilhører.</p></td>
 </tr>
@@ -1272,7 +1492,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">endringstype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Arealplan i Planreg::<span class="underline">«CodeList» Planendringstype</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpplanendringstype">«CodeList» Planendringstype</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">om endringen er foretatt som en mindre endring eller en endring</p></td>
 </tr>
@@ -1284,7 +1504,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">saksnummer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» Saksnummer</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpsaksnummer">«dataType» Saksnummer</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">entydig nummerering av en sak i et saksbehandlingsverktøy</p></td>
 </tr>
@@ -1299,12 +1519,6 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dato når endringen av arealplanen trådte ikraft</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kunngjøringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato for når en sak blir offentlig kunngjort</p></td>
 </tr>
 </tbody>
 </table>
@@ -1329,15 +1543,9 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tilhørende kartobjekt</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">avgrensesAv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpgrense">RpGrense</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">avgrensningslinje for området</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_4" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_6" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1372,6 +1580,16 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <hr>
 </div>
 <div class="sect4">
+<h5 id="rpplanendringstype">«CodeList» Planendringstype</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/planendringstype" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/planendringstype</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
 <h5 id="rpvertikalnivå">«CodeList» Vertikalnivå</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> beliggenhet i forhold til jordoverflaten (kart- og planforskriften § 9 - <a href="https://lovdata.no/forskrift/2025-01-20-52/§9" class="bare">https://lovdata.no/forskrift/2025-01-20-52/§9</a>)</p>
@@ -1394,7 +1612,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«dataType» Vertikallag</span></p>
 </div>
-<h6 id="_attributter_8" class="discrete">Attributter</h6>
+<h6 id="_attributter_11" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1438,7 +1656,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpavgrensingslinje">RpAvgrensingslinje</a></p>
 </div>
-<h6 id="_attributter_9" class="discrete">Attributter</h6>
+<h6 id="_attributter_12" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1461,7 +1679,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_5" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_7" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1480,6 +1698,63 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
+<div class="sect4">
+<h5 id="_pakke_rp_planområderarealplan_kodelister">Pakke: Rp Planområder::Arealplan Kodelister</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> kodelister for egenskaper som tilhører Areralplanobjektet, men som er beholdt for gamle instanser av RpOmråde</p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpplantype">Arealplan Kodelister::«CodeList» Plantype</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> type arealplan</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/plantype" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/plantype</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpplanstatus">Arealplan Kodelister::«CodeList» Planstatus</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> planens behandling og rettsvirkning (pbl. §§ 11-12 til 11-15, samt pbl. 1985 §§ 20-5 og 20-6)</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/planstatus" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/planstatus</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpomplanbestemmelser">Arealplan Kodelister::«CodeList» OmPlanbestemmelser</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> om planen har bestemmelser (pbl. §§ 11-9 til  11-11 / pbl. 1985 § 20-4), og hvordan disse er representert</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/omplanbestemmelser" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/omplanbestemmelser</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rplovreferansetype">Arealplan Kodelister::«CodeList» Lovreferansetype</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> hvilken lov planen er vedtatt etter</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/lovreferansetype" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/lovreferansetype</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="rpforslagsstillertype">Arealplan Kodelister::«CodeList» ForslagsstillerType</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> om forslagsstiller er privat eller offentlig</p>
+</div>
+<div class="paragraph">
+<p><strong>Ekstern kodeliste: </strong><a href="https://register.geonorge.no/sosi-kodelister/plan/planregister/forslagsstillertype" class="bare">https://register.geonorge.no/sosi-kodelister/plan/planregister/forslagsstillertype</a></p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_pakke_rp_abstrakte_typer">Pakke: Rp Abstrakte typer</h4>
@@ -1491,14 +1766,14 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram RpObjekt.png"><img src="Diagrammer/Hoveddiagram%20RpObjekt.png" alt="Diagram med navn  Hoveddiagram RpObjekt  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 11. Hoveddiagram RpObjekt</div>
+<div class="title">Figure 13. Hoveddiagram RpObjekt</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Rp Hjelpegeometrier.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Hjelpegeometrier.png" alt="Diagram med navn  Hoveddiagram Rp Hjelpegeometrier  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 12. Hoveddiagram Rp Hjelpegeometrier</div>
+<div class="title">Figure 14. Hoveddiagram Rp Hjelpegeometrier</div>
 </div>
 <hr>
 <div class="sect4">
@@ -1514,11 +1789,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rpsosi_fellesegenskaper_kartobjekt">SOSI_Fellesegenskaper_Kartobjekt</a></p>
 </div>
-<div class="paragraph">
-<p><strong>Overfører egenskaper til: </strong>
-<a href="#rprpstøysone">RpStøySone</a>, <a href="#rprpsikringsone">RpSikringSone</a>, <a href="#rprpangitthensynsone">RpAngittHensynSone</a>, <a href="#rprpinfrastruktursone">RpInfrastrukturSone</a>, <a href="#rprpbåndleggingsone">RpBåndleggingSone</a>, <a href="#rprpfaresone">RpFareSone</a>, <a href="#rprpdetaljeringsone">RpDetaljeringSone</a>, <a href="#rprpgjennomføringsone">RpGjennomføringSone</a>, <a href="#rprpregulerthøyde">RpRegulertHøyde</a>, <a href="#rprbfornyelseområde">RbFornyelseOmråde</a>, <a href="#rprpjuridisklinje">RpJuridiskLinje</a>, <a href="#rprpbestemmelseområde">RpBestemmelseOmråde</a>, <a href="#rprparealformålområde">RpArealformålOmråde</a>, <a href="#rprbrekkefølgeområde">RbRekkefølgeOmråde</a>, <a href="#rprbfareområde">RbFareOmråde</a>, <a href="#rprpbestemmelseregterreng">RpBestemmelseRegTerreng</a>, <a href="#rprbrestriksjonområde">RbRestriksjonOmråde</a>, <a href="#rprbbevaringområde">RbBevaringOmråde</a>, <a href="#rprphandlingområde">RpHandlingOmråde</a>, <a href="#rprpjuridiskpunkt">RpJuridiskPunkt</a>, <a href="#rprbformålområde">RbFormålOmråde</a>, <a href="#rprpbestemmelsemidlbygganlegg">RpBestemmelseMidlByggAnlegg</a>, <a href="#rp<em>_rpendringområde"></em>_RpEndringOmråde</a>, <a href="#rprphensynsone">RpHensynSone</a>, <a href="#rprppåskrift">RpPåskrift</a></p>
-</div>
-<h6 id="_attributter_10" class="discrete">Attributter</h6>
+<h6 id="_attributter_13" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1535,7 +1806,7 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av arealplanen som objektet tilhører.</p></td>
 </tr>
@@ -1553,29 +1824,6 @@ Det får ikke være overlapp mellom noen av disse formålsflatene</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_4" class="discrete">Roller</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rollenavn</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Objekttype</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiplisitet</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">påskrift</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprppåskrift">RpPåskrift</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
 <hr>
 </div>
 <div class="sect4">
@@ -1588,11 +1836,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rpsosi_fellesegenskaper_kartobjekt">SOSI_Fellesegenskaper_Kartobjekt</a></p>
 </div>
-<div class="paragraph">
-<p><strong>Overfører egenskaper til: </strong>
-<a href="#rprpbestemmelserom">RpBestemmelseRom</a>, <a href="#rprphensynrom">RpHensynRom</a>, <a href="#rprphandlingrom">RpHandlingRom</a></p>
-</div>
-<h6 id="_attributter_11" class="discrete">Attributter</h6>
+<h6 id="_attributter_14" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1609,7 +1853,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av arealplanen som objektet tilhører.</p></td>
 </tr>
@@ -1641,11 +1885,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rpsosi_fellesegenskaper_kartobjekt">SOSI_Fellesegenskaper_Kartobjekt</a></p>
 </div>
-<div class="paragraph">
-<p><strong>Overfører egenskaper til: </strong>
-<a href="#rprpformålgrense">RpFormålGrense</a>, <a href="#rprpgrense">RpGrense</a></p>
-</div>
-<h6 id="_attributter_12" class="discrete">Attributter</h6>
+<h6 id="_attributter_15" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1662,7 +1902,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nasjonalArealplanId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» NasjonalArealplanId</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpnasjonalarealplanid">«dataType» NasjonalArealplanId</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av arealplanen som objektet tilhører.</p></td>
 </tr>
@@ -1693,7 +1933,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram RpArealformål.png"><img src="Diagrammer/Hoveddiagram%20RpArealformål.png" alt="Diagrammet viser alle klassene i pakka"></a>
 </div>
-<div class="title">Figure 13. Hoveddiagram RpArealformål</div>
+<div class="title">Figure 15. Hoveddiagram RpArealformål</div>
 </div>
 <hr>
 <div class="sect4">
@@ -1709,7 +1949,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_13" class="discrete">Attributter</h6>
+<h6 id="_attributter_16" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1780,7 +2020,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_5" class="discrete">Roller</h6>
+<h6 id="_roller_4" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1803,7 +2043,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_6" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_8" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1897,7 +2137,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«dataType» Utnytting</span></p>
 </div>
-<h6 id="_attributter_14" class="discrete">Attributter</h6>
+<h6 id="_attributter_17" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1932,7 +2172,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_7" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_9" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1983,7 +2223,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpavgrensingslinje">RpAvgrensingslinje</a></p>
 </div>
-<h6 id="_attributter_15" class="discrete">Attributter</h6>
+<h6 id="_attributter_18" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2006,7 +2246,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_8" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_10" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2036,14 +2276,14 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Rp Hensyn.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Hensyn.png" alt="Diagram med navn  Hoveddiagram Rp Hensyn  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 14. Hoveddiagram Rp Hensyn</div>
+<div class="title">Figure 16. Hoveddiagram Rp Hensyn</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram RpHensyn Kodelister.png"><img src="Diagrammer/Hoveddiagram%20RpHensyn%20Kodelister.png" alt="Diagram med navn  Hoveddiagram RpHensyn Kodelister  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 15. Hoveddiagram RpHensyn Kodelister</div>
+<div class="title">Figure 17. Hoveddiagram RpHensyn Kodelister</div>
 </div>
 <hr>
 <div class="sect4">
@@ -2059,7 +2299,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_16" class="discrete">Attributter</h6>
+<h6 id="_attributter_19" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2081,6 +2321,12 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sikring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpsikringsonetype">«CodeList» RpSikringSoneType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type sikring i hensynsone for sikring</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
@@ -2092,15 +2338,9 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på hensynssone</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sikring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpsikringsonetype">«CodeList» RpSikringSoneType</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type sikring i hensynsone for sikring</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_roller_6" class="discrete">Roller</h6>
+<h6 id="_roller_5" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2152,7 +2392,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_17" class="discrete">Attributter</h6>
+<h6 id="_attributter_20" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2174,6 +2414,12 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">støy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpstøysonetype">«CodeList» RpStøySoneType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type støy i hensynsone for støy</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
@@ -2185,15 +2431,9 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på hensynssone</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">støy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpstøysonetype">«CodeList» RpStøySoneType</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type støy i hensynsone for støy</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_roller_7" class="discrete">Roller</h6>
+<h6 id="_roller_6" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2246,7 +2486,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_18" class="discrete">Attributter</h6>
+<h6 id="_attributter_21" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2268,6 +2508,12 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fare</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpfaresonetype">«CodeList» RpFareSoneType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type fare i hensynssone for fare</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hensynSonenavn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
@@ -2279,15 +2525,9 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">supplerende beskrivelse</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fare</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpfaresonetype">«CodeList» RpFareSoneType</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type fare i hensynssone for fare</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_roller_8" class="discrete">Roller</h6>
+<h6 id="_roller_7" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2339,7 +2579,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_19" class="discrete">Attributter</h6>
+<h6 id="_attributter_22" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2361,6 +2601,12 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">infrastruktur</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpinfrastruktursonetype">«CodeList» RpInfrastrukturSoneType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type infrastrukturkrav i hensynsone for infrastruktur</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
@@ -2372,15 +2618,9 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på hensynssone</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">infrastruktur</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpinfrastruktursonetype">«CodeList» RpInfrastrukturSoneType</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type infrastrukturkrav i hensynsone for infrastruktur</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_roller_9" class="discrete">Roller</h6>
+<h6 id="_roller_8" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2432,7 +2672,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_20" class="discrete">Attributter</h6>
+<h6 id="_attributter_23" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2454,6 +2694,12 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angittHensyn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpangitthensynsonetype">«CodeList» RpAngittHensynSoneType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type angitt hensyn i hensynssone for nærmere angitt særlig hensyn</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hensynSonenavn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
@@ -2465,15 +2711,9 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">supplerende beskrivelse</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">angittHensyn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpangitthensynsonetype">«CodeList» RpAngittHensynSoneType</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type angitt hensyn i hensynssone for nærmere angitt særlig hensyn</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_roller_10" class="discrete">Roller</h6>
+<h6 id="_roller_9" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2525,7 +2765,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_21" class="discrete">Attributter</h6>
+<h6 id="_attributter_24" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2547,18 +2787,6 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hensynSonenavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på hensynssone</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">supplerende beskrivelse</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">båndlegging</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpbåndleggingsonetype">«CodeList» RpBåndleggingSoneType</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
@@ -2570,9 +2798,21 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dato når båndleggingen opphører</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hensynSonenavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på hensynssone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">supplerende beskrivelse</p></td>
+</tr>
 </tbody>
 </table>
-<h6 id="_roller_11" class="discrete">Roller</h6>
+<h6 id="_roller_10" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2624,7 +2864,7 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_22" class="discrete">Attributter</h6>
+<h6 id="_attributter_25" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2646,6 +2886,12 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning og avgrensing i grunnriss (2D)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gjennomføring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpgjennomføringsonetype">«CodeList» RpGjennomføringSoneType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type særskilte gjennomføringsvirkemidler i gjennomføringssone</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hensynSonenavn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
@@ -2657,15 +2903,9 @@ Brukes for å definere objekttyper med rom-geometri (3D), som supplererer utvalg
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">supplerende beskrivelse</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gjennomføring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpgjennomføringsonetype">«CodeList» RpGjennomføringSoneType</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type særskilte gjennomføringsvirkemidler i gjennomføringssone</p></td>
-</tr>
 </tbody>
 </table>
-<h6 id="_roller_12" class="discrete">Roller</h6>
+<h6 id="_roller_11" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2722,7 +2962,7 @@ Benyttes ikke i plan for detaljregulering</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_23" class="discrete">Attributter</h6>
+<h6 id="_attributter_26" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2763,7 +3003,7 @@ Benyttes ikke i plan for detaljregulering</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_13" class="discrete">Roller</h6>
+<h6 id="_roller_12" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2819,7 +3059,7 @@ hensynsrom i 3D for en hensynssone i reguleringsplan</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpromligobjekt">RpRomligObjekt</a></p>
 </div>
-<h6 id="_attributter_24" class="discrete">Attributter</h6>
+<h6 id="_attributter_27" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2842,7 +3082,7 @@ hensynsrom i 3D for en hensynssone i reguleringsplan</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_9" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_11" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2872,7 +3112,7 @@ hensynsrom i 3D for en hensynssone i reguleringsplan</p>
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Rp Bestemmelser i kartet.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Bestemmelser%20i%20kartet.png" alt="Diagrammet viser alle klassene i pakka"></a>
 </div>
-<div class="title">Figure 16. Hoveddiagram Rp Bestemmelser i kartet</div>
+<div class="title">Figure 18. Hoveddiagram Rp Bestemmelser i kartet</div>
 </div>
 <hr>
 <div class="sect4">
@@ -2888,7 +3128,7 @@ hensynsrom i 3D for en hensynssone i reguleringsplan</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_25" class="discrete">Attributter</h6>
+<h6 id="_attributter_28" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2916,14 +3156,14 @@ hensynsrom i 3D for en hensynssone i reguleringsplan</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på bestemmelsesområde</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bestemmelseHjemmel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rpBestemmelseHjemmel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpbestemmelsehjemmel">«CodeList» RpBestemmelseHjemmel</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..*]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kode for hjemmel til planbestemmelse i reguleringsplan</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_14" class="discrete">Roller</h6>
+<h6 id="_roller_13" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2985,7 +3225,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_26" class="discrete">Attributter</h6>
+<h6 id="_attributter_29" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3013,26 +3253,26 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 <td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse for bestemmelseområde</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">gyldigTilDato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">saksnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpsaksnummer">«dataType» Saksnummer</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">utløpsdato for bestemmelseområdet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entydig nummerering av en sak i et saksbehandlingsverktøy</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">avgjørelsesdato</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vedtaksdato for etablering av området</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">saksnummer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Planregister::Felles datatyper::<span class="underline">«dataType» Saksnummer</span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">entydig nummerering av en sak i et saksbehandlingsverktøy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gyldigTilDato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">utløpsdato for bestemmelseområdet.</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_15" class="discrete">Roller</h6>
+<h6 id="_roller_14" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3070,7 +3310,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpromligobjekt">RpRomligObjekt</a></p>
 </div>
-<h6 id="_attributter_27" class="discrete">Attributter</h6>
+<h6 id="_attributter_30" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3093,7 +3333,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_10" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_12" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -3128,7 +3368,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_28" class="discrete">Attributter</h6>
+<h6 id="_attributter_31" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3151,7 +3391,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_16" class="discrete">Roller</h6>
+<h6 id="_roller_15" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3192,7 +3432,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpromligobjekt">RpRomligObjekt</a></p>
 </div>
-<h6 id="_attributter_29" class="discrete">Attributter</h6>
+<h6 id="_attributter_32" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3215,7 +3455,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_11" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_13" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -3248,7 +3488,7 @@ Det er utgitt en NPAD Del 1.2 som beskriver det rettslige grunnlaget og den tekn
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_30" class="discrete">Attributter</h6>
+<h6 id="_attributter_33" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3313,7 +3553,7 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_31" class="discrete">Attributter</h6>
+<h6 id="_attributter_34" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3335,6 +3575,12 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">punkt for stedfesting av bestemmelser</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">symbolretning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">retningsvektor i kartkoordinatsystemet som fastsetter retning av kartsymbol</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">juridiskPunkttype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpjuridiskpunkttype">«CodeList» RpJuridiskPunktType</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
@@ -3345,12 +3591,6 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">entydig tekstlig betegnelse som identiserer kartobjektet,</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">symbolretning</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vector</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">retningsvektor i kartkoordinatsystemet som fastsetter retning av kartsymbol</p></td>
 </tr>
 </tbody>
 </table>
@@ -3372,7 +3612,7 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_regulert_høyde">Pakke: Regulert høyde</h4>
+<h4 id="_pakke_regulert_høyde_og_terreng">Pakke: Regulert høyde og terreng</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong></p>
 </div>
@@ -3381,7 +3621,7 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Rp Regulert høyde og terreng.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Regulert%20høyde%20og%20terreng.png" alt="Diagram som viser høyde fra planbestemmelse"></a>
 </div>
-<div class="title">Figure 17. Hoveddiagram Rp Regulert høyde og terreng</div>
+<div class="title">Figure 19. Hoveddiagram Rp Regulert høyde og terreng</div>
 </div>
 <hr>
 <div class="sect4">
@@ -3397,7 +3637,7 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_32" class="discrete">Attributter</h6>
+<h6 id="_attributter_35" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3437,7 +3677,7 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 <p><strong>Realisert fra: </strong>
 <em>Plan-5.0</em>: <span class="underline">«dataType» HøydeFraPlanbestemmelse</span></p>
 </div>
-<h6 id="_attributter_33" class="discrete">Attributter</h6>
+<h6 id="_attributter_36" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3478,7 +3718,7 @@ pbl. 1985 §§ 25, 26 og 28-2)</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_restriksjoner_12" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner_14" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -3541,7 +3781,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_34" class="discrete">Attributter</h6>
+<h6 id="_attributter_37" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3593,7 +3833,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram RpPåskrift.png"><img src="Diagrammer/Hoveddiagram%20RpPåskrift.png" alt="Diagram som viser objekttypen Påskrift"></a>
 </div>
-<div class="title">Figure 18. Hoveddiagram RpPåskrift</div>
+<div class="title">Figure 20. Hoveddiagram RpPåskrift</div>
 </div>
 <hr>
 <div class="sect4">
@@ -3609,7 +3849,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_35" class="discrete">Attributter</h6>
+<h6 id="_attributter_38" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3646,7 +3886,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">påskriftType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rppåskrifttype">«CodeList» PåskriftType</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kategorisering av hva påskriften i plankartet omhandler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hva påskriften i plankartet omhandler</p></td>
 </tr>
 </tbody>
 </table>
@@ -3677,14 +3917,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <div class="content">
 <a class="image" href="Diagrammer\Hoveddiagram Rp1985.png"><img src="Diagrammer/Hoveddiagram%20Rp1985.png" alt="Diagram som viser alle klassene i pakka."></a>
 </div>
-<div class="title">Figure 19. Hoveddiagram Rp1985</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Rp1985 Kodelister.png"><img src="Diagrammer/Hoveddiagram%20Rp1985%20Kodelister.png" alt="Diagram som viser alle klassene i pakka."></a>
-</div>
-<div class="title">Figure 20. Hoveddiagram Rp1985 Kodelister</div>
+<div class="title">Figure 21. Hoveddiagram Rp1985</div>
 </div>
 <hr>
 <div class="sect4">
@@ -3700,7 +3933,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_36" class="discrete">Attributter</h6>
+<h6 id="_attributter_39" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3722,12 +3955,6 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">formålområdets flategeometri</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpregformbrukformål">«CodeList» RegformBrukFormål</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
@@ -3738,6 +3965,12 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">utdyping av reguleringsformål</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">utnytting</p></td>
@@ -3765,7 +3998,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 </tr>
 </tbody>
 </table>
-<h6 id="_roller_17" class="discrete">Roller</h6>
+<h6 id="_roller_16" class="discrete">Roller</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3785,24 +4018,6 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rprpformålgrense">RpFormålGrense</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">avgrensningslinje for området</p></td>
-</tr>
-</tbody>
-</table>
-<h6 id="_restriksjoner_13" class="discrete">Restriksjoner</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Restriksjon</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betinget krav om utdyping</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Utdyping skal brukes for disse formålene:
-199, 299, 398, 399, 459, 469, 631, 699, 790, 990, 999</p></td>
 </tr>
 </tbody>
 </table>
@@ -3835,7 +4050,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_37" class="discrete">Attributter</h6>
+<h6 id="_attributter_40" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3857,16 +4072,16 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning i grunnriss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpregformbevaring">«CodeList» RegformBevaring</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type bevaringsformål</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
 </tr>
 </tbody>
 </table>
@@ -3900,7 +4115,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_38" class="discrete">Attributter</h6>
+<h6 id="_attributter_41" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3922,16 +4137,16 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning i grunnriss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpregformfare">«CodeList» RegformFare</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type reguleringsformål</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformålsutdyping</p></td>
@@ -3970,7 +4185,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_39" class="discrete">Attributter</h6>
+<h6 id="_attributter_42" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3992,16 +4207,16 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning i grunnriss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpregformfornyelse">«CodeList» RegformFornyelse</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type reguleringsformål</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
 </tr>
 </tbody>
 </table>
@@ -4034,7 +4249,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_40" class="discrete">Attributter</h6>
+<h6 id="_attributter_43" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4056,16 +4271,16 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning i grunnriss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpregformrekkefølge">«CodeList» RegformRekkefølge</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type reguleringsformål</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
 </tr>
 </tbody>
 </table>
@@ -4098,7 +4313,7 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <p><strong>Arver egenskaper fra : </strong>
 <a href="#rprpobjekt">RpObjekt</a></p>
 </div>
-<h6 id="_attributter_41" class="discrete">Attributter</h6>
+<h6 id="_attributter_44" class="discrete">Attributter</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4120,16 +4335,16 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 <td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning i grunnriss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reguleringsformål</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#rpregformrestriksjon">«CodeList» RegformRestriksjon</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type reguleringsformål</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feltnavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navn/feltbetegnelse på formålsfelt innen regulerings- og bebyggelsesplan</p></td>
 </tr>
 </tbody>
 </table>
@@ -4151,65 +4366,93 @@ Terrenget angis enten slik det skal være når tiltaket er gjennomført eller sl
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pakke_ekstra_diagrammer">Pakke: Ekstra diagrammer</h4>
+<h4 id="_pakke_endringer_fra_rp2019">Pakke: Endringer fra Rp2019</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong></p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Rp Hensyn kopi.png"><img src="Diagrammer/Hoveddiagram%20Rp%20Hensyn%20kopi.png" alt="Diagram med navn  Hoveddiagram Rp Hensyn kopi  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Gjennomgående endringer fra Rp2019.png"><img src="Diagrammer/Gjennomgående%20endringer%20fra%20Rp2019.png" alt="Diagram med navn  Gjennomgående endringer fra Rp2019  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figure 21. Hoveddiagram Rp Hensyn kopi</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram Rp SOSI-Objekt.png"><img src="Diagrammer/Hoveddiagram%20Rp%20SOSI-Objekt.png" alt="Diagram som viser Fellesegenskaper"></a>
-</div>
-<div class="title">Figure 22. Hoveddiagram Rp SOSI-Objekt</div>
+<div class="title">Figure 22. Gjennomgående endringer fra Rp2019</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Diagram Rp UtsattRettsvirkning .png"><img src="Diagrammer/Diagram%20Rp%20UtsattRettsvirkning%20.png" alt="Diagram med navn  Diagram Rp UtsattRettsvirkning   som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Fellesegenskaper.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Fellesegenskaper.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
 </div>
-<div class="title">Figure 23. Diagram Rp UtsattRettsvirkning</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Hoveddiagram RpHensyn 2.png"><img src="Diagrammer/Hoveddiagram%20RpHensyn%202.png" alt="Diagram med navn  Hoveddiagram RpHensyn 2  som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figure 24. Hoveddiagram RpHensyn 2</div>
+<div class="title">Figure 23. Endringer fra Rp2019  Fellesegenskaper</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Kodelister og datatyper RpFormål.png"><img src="Diagrammer/Kodelister%20og%20datatyper%20RpFormål.png" alt="Diagram med navn  Kodelister og datatyper RpFormål  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="Diagrammer\Endringer fra Rp2019  NasjonalArealplanID.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20NasjonalArealplanID.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
 </div>
-<div class="title">Figure 25. Kodelister og datatyper RpFormål</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="Diagrammer\Realisering Rp fra Generelle Typer.png"><img src="Diagrammer/Realisering%20Rp%20fra%20Generelle%20Typer.png" alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"></a>
-</div>
-<div class="title">Figure 26. Realisering Rp fra Generelle Typer</div>
+<div class="title">Figure 24. Endringer fra Rp2019  NasjonalArealplanID</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="Diagrammer\Realisering Rp Kvalitet.png"><img src="Diagrammer/Realisering%20Rp%20Kvalitet.png" alt="Diagram som viser hvordan Fellesegenskaper er realisert fra SOSI Generelle Typer 5.1"></a>
+<a class="image" href="Diagrammer\Endringer fra Rp2019  RpOmråde.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20RpOmråde.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
 </div>
-<div class="title">Figure 27. Realisering Rp Kvalitet</div>
+<div class="title">Figure 25. Endringer fra Rp2019  RpOmråde</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Vertikalnivå.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Vertikalnivå.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 26. Endringer fra Rp2019  Vertikalnivå</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Formål.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Formål.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 27. Endringer fra Rp2019  Formål</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Hensyn.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Hensyn.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 28. Endringer fra Rp2019  Hensyn</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Bestemmelsesobjekter.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Bestemmelsesobjekter.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 29. Endringer fra Rp2019  Bestemmelsesobjekter</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Regulert høyde.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Regulert%20høyde.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 30. Endringer fra Rp2019  Regulert høyde</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  RpPåskrift.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20RpPåskrift.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 31. Endringer fra Rp2019  RpPåskrift</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="Diagrammer\Endringer fra Rp2019  Rp1985.png"><img src="Diagrammer/Endringer%20fra%20Rp2019%20%20Rp1985.png" alt="Diagram som illustrerer endringer siden forrige versjon av spesifikasjonen"></a>
+</div>
+<div class="title">Figure 32. Endringer fra Rp2019  Rp1985</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-12 10:18:44 +0200
+Last updated 2026-05-21 16:02:04 +0200
 </div>
 </div>
 </body>
