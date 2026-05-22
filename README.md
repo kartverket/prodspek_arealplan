@@ -1,5 +1,6 @@
 
-Utkast modellbeskrivelse [Kommuneplan](./Kommuneplan/NPAD_modellRapport.adoc)
+Utkast NPAD Del 3.1 Kommuneplan [produktspesifikasjon](./Kommuneplan/NPAD_Kommuneplan_utkast.pdf)
+med   [modellbeskrivelse](./Kommuneplan/NPAD_modellRapport.adoc)
 
 Utkast NPAD Del 3.2 Reguleringsplan [produktspesifikasjon](./Reguleringsplan/NPAD_Reguleringsplan_utkast.pdf)
 med   [modellbeskrivelse](./Reguleringsplan/NPAD_modellRapport.adoc)
