@@ -1,4 +1,8 @@
 
+Bruk lenkene under for å lese dokumentene.
+(Browseren til venstre kan lett lede feil)
+
+
 Utkast NPAD Del 3.1 Kommuneplan [produktspesifikasjon](./Kommuneplan/NPAD_Kommuneplan_utkast.pdf)
 med   [modellbeskrivelse](./Kommuneplan/NPAD_modellRapport.adoc)
 
