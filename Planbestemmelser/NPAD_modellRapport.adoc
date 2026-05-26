@@ -1,0 +1,929 @@
+ 
+=== «ApplicationSchema» Planbestemmelser
+**Definisjon:** UML-modell for planbestemmelser med tilhørende referanse til plankartet, som gjelder ved innsending av planforslag. Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser
+ 
+[discrete]
+==== Profilparametre i tagged values
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|SOSI_kortnavn: 
+|Planbestemmelser 
+ 
+|SOSI_modellstatus: 
+|utkast 
+ 
+|SOSI_produktgruppe: 
+|arealplan 
+ 
+|SOSI_spesifikasjonstype: 
+|produktspesifikasjon 
+ 
+|SOSI_versjon: 
+|2026-05-21 
+ 
+|xmlns: 
+|pb 
+ 
+|xsdDocument: 
+|planbestemmelser.xsd 
+ 
+|xsdEncodingRule: 
+|sosi50 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+==== Avhengigheter
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|Realisert fra 
+|SOSI Generelle konsepter::SOSI Generelle typer::[.underline]##«ApplicationSchema» Generelle typer 5.1## +
+SOSI Generell objektkatalog::Plan::[.underline]##«ApplicationSchema» Plan-5.0## 
+ 
+|Avhengig av 
+|SOSI Produktspesifikasjoner::Kommunal- og distriktsdepartementet::Arealplan::Reguleringsplan::[.underline]##«ApplicationSchema» Reguleringsplan-2026-Utkast## 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkeavhengigheter Planbestemmelser
+image::Diagrammer\Pakkeavhengigheter Planbestemmelser.png[link=Diagrammer\Pakkeavhengigheter Planbestemmelser.png, , alt="Diagram med navn  Pakkeavhengigheter Planbestemmelser  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+.Pakkerealisering Planbestemmelser RpForslag
+image::Diagrammer\Pakkerealisering Planbestemmelser RpForslag.png[link=Diagrammer\Pakkerealisering Planbestemmelser RpForslag.png, , alt="Diagram som viser at denne modellen er realisert fra SOSI Generelle typer 5.1 og fagområdestandarden Plan 5.0"]
+ 
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: SOSI Fellesegenskaper
+**Definisjon:** pakke med utvalgte generelle egenskaper og datatyper fra SOSI Del 1 Generelle typer
+ 
+//  ----------- Skillelinje -----------
+'''
+.Fellesegenskaper fra SOSI_Objekt
+image::Diagrammer\Fellesegenskaper fra SOSI_Objekt.png[link=Diagrammer\Fellesegenskaper fra SOSI_Objekt.png, , alt="Diagram som viser Fellesegenskaper og hvordan de er realisert fra SOSI Generelle Typer 5.1"]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbsosi_fellesegenskaper]]
+ 
+===== __«FeatureType» SOSI_Fellesegenskaper (abstrakt)__
+**Definisjon:** abstrakt objekttype som bærer de egenskapene fra SOSI_Objekt som er anvendt på objekttypene i denne modellen.
+
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«FeatureType» SOSI_Fellesegenskaper##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|identifikasjon 
+|<<pbidentifikasjon, «dataType» Identifikasjon>> 
+|[1..1] 
+|unik identifikasjon av et dataobjekt. 
+ 
+|oppdateringsdato 
+|DateTime 
+|[1..1] 
+|tidspunkt for siste endring på objektet  
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbidentifikasjon]]
+ 
+===== «dataType» Identifikasjon
+**Definisjon:** Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
+ 
+**Realisert fra: **
+__Generelle typer 5.1__: [.underline]##«dataType» Identifikasjon##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|lokalId 
+|CharacterString 
+|[1..1] 
+|lokal identifikator av et objekt 
+ 
+|navnerom 
+|CharacterString 
+|[1..1] 
+|navnerom som unikt identifiserer datakilden til et objekt.   
+ 
+|versjonId 
+|CharacterString 
+|[0..1] 
+|identifikasjon av en spesiell versjon av et geografisk objekt (instans) 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Felles datatyper
+**Definisjon:** modellpakke som definerer datatyper som brukes gjennomgående i flere deler av registeret, og som skal sikre interaksjon mellom systemene
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram NasjonalArealplanID
+image::Diagrammer\Hoveddiagram NasjonalArealplanID.png[link=Diagrammer\Hoveddiagram NasjonalArealplanID.png, , alt="Diagram som viser den sammensatte datatypen NasjonalArealplanId."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbnasjonalarealplanid]]
+ 
+===== «dataType» NasjonalArealplanId
+**Definisjon:** landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften § 2 - https://lovdata.no/forskrift/2025-01-20-52/§2)
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» NasjonalArealplanId##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|administrativEnhet 
+|<<pbadministrativenhetskode, «dataType» AdministrativEnhetskode>> 
+|[1..1] 
+|entydig identifikasjon av administrativ enhet som vedtar planen (vedtaksmyndighet) 
+ 
+|planId 
+|CharacterString 
+|[1..1] 
+|entydig identifikasjon for en plan innen den administrative enheten 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|inntil16 tegn for planid 
+|Det kan anvendes inntil 16 tegn for planid
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbadministrativenhetskode]]
+ 
+===== «dataType» AdministrativEnhetskode
+**Definisjon:** entydig identifikasjon av administrativ enhet
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Union» AdministrativEnhetskode##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|kommunenummer 
+|<<pbkommunenummer, «CodeList» Kommunenummer>> 
+|[0..1] 
+|offisiell nummerering av kommuner 
+ 
+|fylkesnummer 
+|<<pbfylkesnummer, «CodeList» Fylkesnummer>> 
+|[0..1] 
+|offisiell nummerering av fylker 
+ 
+|landkode 
+|<<pblandkode, «Enumeration»Landkode>> 
+|[0..1] 
+|kode med verdien 'NO', som angir at administrativ enhet er staten Norge, ihht. ISO 3166 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|bare én administrativ enhet 
+|Det skal angis én administrativ kode +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbkommunenummer]]
+ 
+===== «CodeList» Kommunenummer
+**Definisjon:** kodeliste for kommunenummer.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«CodeList» Kommunenummer##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbfylkesnummer]]
+ 
+===== «CodeList» Fylkesnummer
+**Definisjon:** kodeliste for fylkesnummer.
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pblandkode]]
+ 
+===== «Enumeration»Landkode
+**Definisjon:** alfanumerisk kode for nasjonalt nivå / Norge.
+
+Avledet fra "ISO 3166 Codes for the representation of names of countries and their subdivisions"
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Landkode##
+ 
+ 
+[discrete]
+====== Koder
+// Topp av tabell _______________
+[cols="20,80"]
+|===
+|**Kodenavn:** 
+|**Definisjon:** 
+ 
+|NO 
+|Norge 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Bestemmelser
+**Definisjon:** samling av planbestemmelser
+Modellen er tilpasset Nasjonal mal for reguleringsplanbestemmelser
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Bestemmelser
+image::Diagrammer\Hoveddiagram Bestemmelser.png[link=Diagrammer\Hoveddiagram Bestemmelser.png, , alt="Diagram med navn  Hoveddiagram Bestemmelser  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbreguleringsplanbestemmelser]]
+ 
+===== «FeatureType» Reguleringsplanbestemmelser
+**Definisjon:** bestemmelser til en reguleringsplan (pbl. §§ 12-1, 12-2 og 12-3). 
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» Reguleringsplanbestemmelser##
+ 
+**Arver egenskaper fra : **
+<<pbsosi_fellesegenskaper, SOSI_Fellesegenskaper>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|<<pbnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
+|[1..1] 
+|landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften §§ 2 og 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|versjonsdato 
+|Date 
+|[0..1] 
+|datoen for denne versjonen av planforslaget 
+ 
+|versjonsnummer 
+|CharacterString 
+|[0..1] 
+|viser det innsendte planforslagets versjon 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Roller
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Rollenavn** 
+|**Objekttype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|planhensikt 
+|<<pbplanenshensikt, PlanensHensikt>> 
+|[0..1] 
+|referanse til bestemmelse om planens hensikt 
+ 
+|fellesbestemmelse 
+|<<pbfellesbestemmelse, Fellesbestemmelse>> 
+|[0..*] 
+|referanse til bestemmelse som gjelder hele planen 
+ 
+|kravOmDetaljregulering 
+|<<pbkravomdetaljregulering, KravOmDetaljregulering>> 
+|[0..*] 
+|referanse til bestemmelse om detaljregulering 
+ 
+|formålsbestemmelse 
+|<<pbbestemmelsetilarealformål, BestemmelseTilArealformål>> 
+|[0..*] 
+|referanse til planbestemmelser til formål
+ 
+ 
+|hensynsbestemmelse 
+|<<pbbestemmelsetilhensynssone, BestemmelseTilHensynssone>> 
+|[0..*] 
+|referanse til planbestemmelser til hensynssoner
+ 
+ 
+|områdebestemmelse 
+|<<pbbestemmelsetilbestområde, BestemmelseTilBestOmråde>> 
+|[0..*] 
+|referanse til planbestemmelser knyttet til bestemmelsesområder 
+ 
+|juridiskDokument 
+|<<pbjuridiskbindendedokument, JuridiskBindendeDokument>> 
+|[0..*] 
+|juridisk bindende saksdokumentasjon i tillegg til bestemmelsene 
+ 
+|rekkefølgebestemmelse 
+|<<pbbestemmelseomrekkefølge, BestemmelseOmRekkefølge>> 
+|[0..*] 
+|referanse til rekkefølgebestemmelse 
+ 
+|arealplan 
+|<<pbarealplan, Arealplan>> 
+|[1] 
+|referanse til arealpkanen i planregisteret 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbplanbestemmelse]]
+ 
+===== __«featureType» Planbestemmelse (abstrakt)__
+**Definisjon:** abstrakt klasse for tekstlige bestemmelser som er gitt til en arealplan, og som inneholder egenskapstyper som er felles for alle typer tekstlige enkeltbestemmelser i arealplanen. 
+
+Dette er er en abstrakt klasse med subklasser. Hver av subklassene definerer hvordan enkeltbestemmelene av vedkommende type skal representeres  
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» Planbestemmelse##
+ 
+**Arver egenskaper fra : **
+<<pbsosi_fellesegenskaper, SOSI_Fellesegenskaper>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|nasjonalArealplanId 
+|<<pbnasjonalarealplanid, «dataType» NasjonalArealplanId>> 
+|[0..1] 
+|landsdekkende entydig og unikt kjennetegn (identifikasjon) på en arealplan  (kart- og planforskriften §§ 2 og 9 - https://lovdata.no/forskrift/2025-01-20-52/§2) 
+ 
+|nummerering 
+|CharacterString 
+|[1..1] 
+|angir avsnittsnummering i dokumentet / samlingen av bestemmelser og gir en unik henvisning til bestemmelsen. 
+ 
+|overskrift 
+|CharacterString 
+|[0..1] 
+|planbestemmelsens overskrift 
+ 
+|tekst 
+|<<pbformaterttekst, «dataType» FormatertTekst>> 
+|[0..1] 
+|bestemmelsestekst på et format som tillater strukturering av teksten, f,eks. som tabeller og punktlister 
+ 
+|sorteringsrekkefølge 
+|Integer 
+|[1..1] 
+|heltall som kan styre rekkefølgen av bestemmelsene i dokumentet 
+ 
+|versjonsdato 
+|Date 
+|[0..1] 
+|denne versjonens dato 
+ 
+|versjonsnummer 
+|CharacterString 
+|[0..1] 
+|denne versjonens versjonsnummer 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbformaterttekst]]
+ 
+===== «dataType» FormatertTekst
+**Definisjon:** tekst og illustrasjoner som er tilpasset dokumentformatet ved digitalisering av planbestemmelser
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«dataType» FormatertTekst##
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|tekstInnhold 
+|CharacterString 
+|[1..1] 
+|brødtekst som inkluderer formatteringskoder 
+ 
+|tekstFormat 
+|<<pbtekstformat, «CodeList» TekstFormat>> 
+|[0..1] 
+|type format som teksten er formattert i henhold til 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbtekstformat]]
+ 
+===== «CodeList» TekstFormat
+**Definisjon:** kodeliste for tekstformater
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/tekstformat
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbjuridiskbindendedokument]]
+ 
+===== «FeatureType» JuridiskBindendeDokument
+**Definisjon:** Dokument som gis juridisk virkning gjennom henvisning i planbestemmelsene.
+Eksempler: illustrasjonsplan,geoteknisk rapport.
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» JuridiskBindendeDokument##
+ 
+**Arver egenskaper fra : **
+<<pbsosi_fellesegenskaper, SOSI_Fellesegenskaper>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|tittel 
+|string 
+|[1..1] 
+|dokumentets tittel 
+ 
+|dokumentreferanse 
+|CharacterString 
+|[1..1] 
+|filnavn på dokumentet (evt. URL-adresse, arkivreferanse for allment tilgj. dokument) 
+ 
+|sammendrag 
+|CharacterString 
+|[0..1] 
+|sammendrag av dokumentet 
+ 
+|rapportnummer 
+|CharacterString 
+|[0..1] 
+|rapportnummer 
+ 
+|dokumentetsDato 
+|Date 
+|[0..1] 
+|dokumentets dato 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  *********** Sideskift *********** 
+<<<
+ 
+==== Pakke: Bestemmelsestyper
+**Definisjon:** objekttyper som beskriver ulike typer planbestemmelser.
+Enkeltbestemmelsene er kategorisert i henhold til malen for planbestemmelser. Dette er modellert med en supertype med egenskaper som er felles for alle typer planbestemmelse, og en subtype forhvert kapittel i malen, eventuelt med ekstra egenskaper og koblingsnøkler.
+For hver type planbestemmelse er det angitt hvilken type kartobjekt i plankartet som bestemmelsen kan referere til. Referansen til et kartobjekt er feltkoden (navnet) på kartobjektet.
+ 
+//  ----------- Skillelinje -----------
+'''
+.Hoveddiagram Bestemmelsestyper
+image::Diagrammer\Hoveddiagram Bestemmelsestyper.png[link=Diagrammer\Hoveddiagram Bestemmelsestyper.png, , alt="Diagram med navn  Hoveddiagram Bestemmelsestyper  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbplanenshensikt]]
+ 
+===== «FeatureType» PlanensHensikt
+**Definisjon:** Tekst som angir hovedhensikten eller formålet med planen, poengtert angitt. 
+Hensikten med planen bør formuleres slik at den er til støtte i vurderinger av søknader om dispensasjon eller forslag til endring av planen.  Utfyllende beskrivelse skal fremgå av planbeskrivelsen. 
+Plasseres i kap 1 iht. gjeldende mal for planbestemmelsesdokumenter
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» PlanensHensikt##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbfellesbestemmelse]]
+ 
+===== «FeatureType» Fellesbestemmelse
+**Definisjon:** Bestemmelse som gjelder  hele  planen. 
+Bestemmelsen plasseres i kap 2 iht. gjeldende mal
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» Fellesbestemmelse##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbkravomdetaljregulering]]
+ 
+===== «FeatureType» KravOmDetaljregulering
+**Definisjon:** bestemmelse i områderegulering som identifiserer områder der det settes krav om detaljregulering  (pbl §12-7 nr. 11) utover fellesbestemmelsene for hele planområdet. 
+Bestemmelsen plasseres i kap 3 iht. gjeldende mal.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» KravOmDetaljregulering##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|feltnavn 
+|CharacterString 
+|[0..*] 
+|navn på formålsområde som bestemmelsen gjelder for 
+ 
+|bestemmelseOmrådeNavn 
+|CharacterString 
+|[0..*] 
+|navn på bestemmseområde som bestemmelsen gjelder for 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Gjelder formålsområde og/eller bestemmelsområde 
+|Skal kobles til formålsområde og/eller bestemmelseområde +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbbestemmelsetilarealformål]]
+ 
+===== «FeatureType» BestemmelseTilArealformål
+**Definisjon:** bestemmelse til arealformål i planen.
+Bestemmelsen plasseres i kap 4 iht gjeldende mal
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» BestemmelseTilArealformål##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|gjelderHovedformål 
+|<<pbhovedformål, «CodeList» Hovedformål>> 
+|[0..*] 
+|hvilket hovedformål denne bestemmelsen gjelder for 
+ 
+|fellesForHovedformål 
+|Boolean 
+|[0..1] 
+|angir om bestemmelsen gjelder for alle områder med det gitte hovedformålet. 
+ 
+|feltnavn 
+|CharacterString 
+|[0..*] 
+|navn på formålsområde som bestemmelsen gjelder for 
+ 
+|objektnavn 
+|CharacterString 
+|[0..*] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Kan gjelde et helt hovedformål 
+|Kan gjelde et eller flere hovedfomål dersom referanser mangler +
+ +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbhovedformål]]
+ 
+===== «CodeList» Hovedformål
+**Definisjon:** kodeliste for hovedformål i reguleringsplan (pbl. § 12-5). Tallkoden henviser til nr under pbl. § 12-5.
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»Hovedformål##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/hovedformål
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbbestemmelsetilhensynssone]]
+ 
+===== «FeatureType» BestemmelseTilHensynssone
+**Definisjon:** bestemmelse til hensynssone som gir hensynssonen rettslig innhold. 
+Bestemmelsen plasseres i kap 5 ihht. gjeldende mal
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» BestemmelseTilHensynssone##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|hensynSonenavn 
+|CharacterString 
+|[0..*] 
+|navn på hensynsone som bestemmelsen gjelder for 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbbestemmelsetilbestområde]]
+ 
+===== «FeatureType» BestemmelseTilBestOmråde
+**Definisjon:** bestemmelser og eller retningslinjer særskilt knyttet til et avgrenset område innenfor eller på tvers av flere arealformål (§12-7 nr 1-14). 
+Bestemmelsen plasseres i kap 6 ihht. gjeldende mal
+
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» BestemmelseTilBestOmråde##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|bestemmelseOmrådeNavn 
+|CharacterString 
+|[0..*] 
+|navn på bestemmseområde som bestemmelsen gjelder for 
+ 
+|objektnavn 
+|CharacterString 
+|[0..*] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Gjelder bestemmelsesområde og eller juridisk punkt/linje 
+|Skal kobles til bestemmelsesområde og/eller juridisk punkt/linje +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbbestemmelseomrekkefølge]]
+ 
+===== «FeatureType» BestemmelseOmRekkefølge
+**Definisjon:** bestemmelse om særskilt rekkefølge for gjennomføring av tiltak etter planen (§ 12-7 nr. 10). Bestemmelsen plasseres i kap 7 ihht. gjeldende mal
+
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«FeatureType» BestemmelseOmRekkefølge##
+ 
+**Arver egenskaper fra : **
+<<pbplanbestemmelse, Planbestemmelse>>
+ 
+ 
+[discrete]
+====== Attributter
+// Topp av tabell _______________
+[cols="20, 20, 10, 50"]
+|===
+|**Attributtnavn** 
+|**Datatype** 
+|**Multiplisitet** 
+|**Definisjon** 
+ 
+|rekkefølgeangivelse 
+|<<pbrekkefølgeangivelse, «CodeList» RekkefølgeAngivelse>> 
+|[1..1] 
+|Kodeliste for å angi fastsatt rekkefølge av tiltak (§ 12-7 nr. 10). 
+ 
+|feltnavn 
+|CharacterString 
+|[0..*] 
+|navn på formålsområde som bestemmelsen gjelder for 
+ 
+|objektnavn 
+|CharacterString 
+|[0..*] 
+| 
+ 
+|===
+// Slutt på tabell _______________
+ 
+[discrete]
+====== Restriksjoner
+// Topp av tabell _______________
+[cols="30, 70"]
+|===
+|**Restriksjon** 
+|**Beskrivelse** 
+ 
+|Gjelder formålsområder og/eller juridisk punkt/linje 
+|Skal kobles til formålsområde og/eller juridisk punkt/linje +
+ 
+ 
+|===
+// Slutt på tabell _______________
+ 
+//  ----------- Skillelinje -----------
+'''
+[[pbrekkefølgeangivelse]]
+ 
+===== «CodeList» RekkefølgeAngivelse
+**Definisjon:** Kodeliste for bestemmelser om særskilt rekkefølge av tiltak (§ 12-7 nr. 10).
+ 
+**Realisert fra: **
+__Plan-5.0__: [.underline]##«Enumeration»RekkefølgeAngivelse##
+ 
+**Ekstern kodeliste: **https://register.geonorge.no/sosi-kodelister/plan/planbestemmelser/rekkefølgeangivelse 
